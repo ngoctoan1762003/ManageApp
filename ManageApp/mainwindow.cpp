@@ -132,3 +132,45 @@ void MainWindow::on_thanhToanButton_clicked()
     hoaDonWindow->Display(ui->hoaDon->rowCount(), soLuong, tenHangChon, giaHangChon);
 }
 
+
+void MainWindow::on_minusButton_clicked()
+{
+    int minusIndex;
+    for(int i=0; i<=ui->hoaDon->rowCount(); i++){
+        QAbstractItemModel *model = ui->hoaDon->model();
+
+        QModelIndex index = model->index(i, 0);
+        if(index.data().toString()==monHangChon->getTen()){
+            minusIndex=i;
+            soLuong[monHangChon->getChiSoTrongHD()]--;
+
+            if(soLuong[monHangChon->getChiSoTrongHD()]==0){
+                numberOfRow--;
+                tenHangChon.erase(tenHangChon.begin() + monHangChon->getChiSoTrongHD());
+                giaHangChon.erase(giaHangChon.begin() + monHangChon->getChiSoTrongHD());
+                soLuong.erase(soLuong.begin() + monHangChon->getChiSoTrongHD());
+            }
+
+            break;
+        }
+    }
+
+    ui->hoaDon->setRowCount(numberOfRow);
+    QTableWidgetItem *item;
+    for(int j=minusIndex; j<ui->hoaDon->rowCount(); j++){
+        for(int i=0; i<ui->hoaDon->columnCount(); i++){
+            item= new QTableWidgetItem;
+            if(i==0) item->setText(tenHangChon[j]);
+            if(i==1) item->setText(QString::fromStdString(to_string(soLuong[j])));
+            if(i==2) item->setText(QString::fromStdString(to_string(giaHangChon[j])));
+            if(i==3) item->setText(QString::fromStdString(to_string(giaHangChon[j]*soLuong[j])));
+            ui->hoaDon->setItem(j,i,item);
+        }
+    }
+
+    sum+=giaHangChon[monHangChon->getChiSoTrongHD()];
+    ui->tongTienLabel->setText(QString::fromStdString(to_string(sum)));
+    finalsum=sum*(1+0.05);
+    ui->tongTienCuoiLabel->setText(QString::fromStdString(to_string((int)finalsum)));
+}
+

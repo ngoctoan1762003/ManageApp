@@ -30,6 +30,12 @@ void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, ve
 
     QString chiTiet;
     QString add;
+    int sum=0;
+    chiTiet.append("Ban");
+    chiTiet.append("1");
+    chiTiet.append("\t\t\t");
+    chiTiet.append("Time\n\n");
+
     chiTiet.append("Stt\tTen\t\t\tSoLuong\t\tGia\n");
     for(int i=0; i<row; i++){
         add="";
@@ -41,10 +47,17 @@ void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, ve
         add.append(changeString(QString::fromStdString(to_string(soLuong[i])),20));
         add.append("\t");
         add.append(changeString(QString::fromStdString(to_string(tongTien[i]*soLuong[i])),20));
+        sum+=tongTien[i]*soLuong[i];
         add.append("\n");
         qDebug().nospace()<<add;
         chiTiet.append(add);
     }
-            qDebug().nospace()<<add;
+    chiTiet.append("\n\nThanh tien: \t\t\t\t\t");
+    chiTiet.append(QString::fromStdString(to_string(sum)));
+    chiTiet.append("\n\nPhu phi\t\t\t\t\t\t");
+    chiTiet.append("phu");
+    chiTiet.append("\n\nTong phai tra\t\t\t\t\t");
+    chiTiet.append("Tong");
+    chiTiet.append("\n\n\t\tXin chan thanh cam on quy khach\t\t");
     ui->chiTietHoaDon->setText(chiTiet);
 }

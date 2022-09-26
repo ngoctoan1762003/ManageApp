@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[8];
-    char stringdata0[143];
+    QByteArrayData data[9];
+    char stringdata0[166];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,14 +39,16 @@ QT_MOC_LITERAL(3, 36, 7), // "checked"
 QT_MOC_LITERAL(4, 44, 20), // "on_addButton_clicked"
 QT_MOC_LITERAL(5, 65, 26), // "on_kemCheeseChoose_toggled"
 QT_MOC_LITERAL(6, 92, 23), // "on_traDaoChoose_toggled"
-QT_MOC_LITERAL(7, 116, 26) // "on_thanhToanButton_clicked"
+QT_MOC_LITERAL(7, 116, 26), // "on_thanhToanButton_clicked"
+QT_MOC_LITERAL(8, 143, 22) // "on_minusButton_clicked"
 
     },
     "MainWindow\0on_traSuaChoose_toggled\0\0"
     "checked\0on_addButton_clicked\0"
     "on_kemCheeseChoose_toggled\0"
     "on_traDaoChoose_toggled\0"
-    "on_thanhToanButton_clicked"
+    "on_thanhToanButton_clicked\0"
+    "on_minusButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +58,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,17 +66,19 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   39,    2, 0x08 /* Private */,
-       4,    0,   42,    2, 0x08 /* Private */,
-       5,    1,   43,    2, 0x08 /* Private */,
-       6,    1,   46,    2, 0x08 /* Private */,
-       7,    0,   49,    2, 0x08 /* Private */,
+       1,    1,   44,    2, 0x08 /* Private */,
+       4,    0,   47,    2, 0x08 /* Private */,
+       5,    1,   48,    2, 0x08 /* Private */,
+       6,    1,   51,    2, 0x08 /* Private */,
+       7,    0,   54,    2, 0x08 /* Private */,
+       8,    0,   55,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Bool,    3,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    3,
     QMetaType::Void, QMetaType::Bool,    3,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -91,6 +95,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_kemCheeseChoose_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 3: _t->on_traDaoChoose_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 4: _t->on_thanhToanButton_clicked(); break;
+        case 5: _t->on_minusButton_clicked(); break;
         default: ;
         }
     }
@@ -125,13 +130,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

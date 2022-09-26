@@ -45,6 +45,8 @@ private slots:
 
     void on_thanhToanButton_clicked();
 
+    void on_minusButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;
