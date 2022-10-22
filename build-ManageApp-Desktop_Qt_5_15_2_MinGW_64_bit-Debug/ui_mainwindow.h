@@ -55,23 +55,26 @@ public:
     QLabel *label_15;
     QFrame *line;
     QPushButton *thanhToanButton;
-    QPushButton *pushButton_6;
+    QPushButton *taoMoiButton;
     QLabel *label_16;
     QTextEdit *textEdit_2;
     QTextEdit *textEdit_3;
     QLabel *label_17;
-    QStackedWidget *stackedWidget;
+    QStackedWidget *stackedMenu;
     QWidget *page;
     QLabel *label_18;
     QPushButton *traSuaChoose;
-    QPushButton *kemCheeseChoose;
+    QPushButton *traTacChoose;
     QPushButton *traDaoChoose;
+    QPushButton *traSuaChoose_2;
     QWidget *page_2;
     QPushButton *addButton;
     QPushButton *minusButton;
     QTableWidget *hoaDon;
     QLabel *label_3;
     QLabel *tongTienCuoiLabel;
+    QPushButton *finishDayButton;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -148,30 +151,30 @@ public:
         columnView_6->setGeometry(QRect(10, 180, 521, 161));
         label_11 = new QLabel(centralwidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(820, 550, 311, 16));
+        label_11->setGeometry(QRect(551, 553, 311, 16));
         tongTienLabel = new QLabel(centralwidget);
         tongTienLabel->setObjectName(QString::fromUtf8("tongTienLabel"));
-        tongTienLabel->setGeometry(QRect(1190, 550, 111, 16));
+        tongTienLabel->setGeometry(QRect(921, 553, 111, 16));
         label_13 = new QLabel(centralwidget);
         label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setGeometry(QRect(820, 590, 381, 31));
+        label_13->setGeometry(QRect(551, 593, 381, 31));
         label_14 = new QLabel(centralwidget);
         label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(820, 650, 37, 21));
+        label_14->setGeometry(QRect(551, 653, 37, 21));
         label_15 = new QLabel(centralwidget);
         label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(820, 700, 271, 31));
+        label_15->setGeometry(QRect(551, 703, 271, 31));
         line = new QFrame(centralwidget);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(830, 680, 421, 16));
+        line->setGeometry(QRect(561, 683, 421, 16));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         thanhToanButton = new QPushButton(centralwidget);
         thanhToanButton->setObjectName(QString::fromUtf8("thanhToanButton"));
-        thanhToanButton->setGeometry(QRect(1109, 747, 161, 91));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(850, 750, 161, 91));
+        thanhToanButton->setGeometry(QRect(840, 750, 161, 91));
+        taoMoiButton = new QPushButton(centralwidget);
+        taoMoiButton->setObjectName(QString::fromUtf8("taoMoiButton"));
+        taoMoiButton->setGeometry(QRect(581, 753, 161, 91));
         label_16 = new QLabel(centralwidget);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setGeometry(QRect(30, 700, 221, 16));
@@ -184,9 +187,9 @@ public:
         label_17 = new QLabel(centralwidget);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(30, 600, 231, 31));
-        stackedWidget = new QStackedWidget(centralwidget);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(1350, 110, 401, 701));
+        stackedMenu = new QStackedWidget(centralwidget);
+        stackedMenu->setObjectName(QString::fromUtf8("stackedMenu"));
+        stackedMenu->setGeometry(QRect(1350, 110, 401, 701));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         label_18 = new QLabel(page);
@@ -204,15 +207,15 @@ public:
 "}\n"
 ""));
         traSuaChoose->setIconSize(QSize(100, 100));
-        kemCheeseChoose = new QPushButton(page);
-        kemCheeseChoose->setObjectName(QString::fromUtf8("kemCheeseChoose"));
-        kemCheeseChoose->setGeometry(QRect(140, 20, 120, 120));
-        kemCheeseChoose->setMinimumSize(QSize(120, 120));
-        kemCheeseChoose->setStyleSheet(QString::fromUtf8("#traSuaChoose{\n"
+        traTacChoose = new QPushButton(page);
+        traTacChoose->setObjectName(QString::fromUtf8("traTacChoose"));
+        traTacChoose->setGeometry(QRect(140, 20, 120, 120));
+        traTacChoose->setMinimumSize(QSize(120, 120));
+        traTacChoose->setStyleSheet(QString::fromUtf8("#traTacChoose{\n"
 "background-color: transparent;\n"
 "}\n"
 ""));
-        kemCheeseChoose->setIconSize(QSize(100, 100));
+        traTacChoose->setIconSize(QSize(100, 100));
         traDaoChoose = new QPushButton(page);
         traDaoChoose->setObjectName(QString::fromUtf8("traDaoChoose"));
         traDaoChoose->setGeometry(QRect(270, 20, 120, 120));
@@ -222,10 +225,19 @@ public:
 "}\n"
 ""));
         traDaoChoose->setIconSize(QSize(100, 100));
-        stackedWidget->addWidget(page);
+        traSuaChoose_2 = new QPushButton(page);
+        traSuaChoose_2->setObjectName(QString::fromUtf8("traSuaChoose_2"));
+        traSuaChoose_2->setGeometry(QRect(10, 150, 120, 120));
+        traSuaChoose_2->setMinimumSize(QSize(120, 120));
+        traSuaChoose_2->setStyleSheet(QString::fromUtf8("#traSuaChoose{\n"
+"background-color: transparent;\n"
+"}\n"
+""));
+        traSuaChoose_2->setIconSize(QSize(100, 100));
+        stackedMenu->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
-        stackedWidget->addWidget(page_2);
+        stackedMenu->addWidget(page_2);
         addButton = new QPushButton(centralwidget);
         addButton->setObjectName(QString::fromUtf8("addButton"));
         addButton->setGeometry(QRect(1600, 809, 141, 31));
@@ -249,10 +261,16 @@ public:
         hoaDon->horizontalHeader()->setDefaultSectionSize(184);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(1190, 650, 37, 31));
+        label_3->setGeometry(QRect(921, 653, 37, 31));
         tongTienCuoiLabel = new QLabel(centralwidget);
         tongTienCuoiLabel->setObjectName(QString::fromUtf8("tongTienCuoiLabel"));
-        tongTienCuoiLabel->setGeometry(QRect(1190, 700, 91, 16));
+        tongTienCuoiLabel->setGeometry(QRect(921, 703, 91, 16));
+        finishDayButton = new QPushButton(centralwidget);
+        finishDayButton->setObjectName(QString::fromUtf8("finishDayButton"));
+        finishDayButton->setGeometry(QRect(1090, 680, 161, 71));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(1090, 770, 161, 71));
         MainWindow->setCentralWidget(centralwidget);
         columnView_6->raise();
         columnView->raise();
@@ -277,17 +295,19 @@ public:
         label_15->raise();
         line->raise();
         thanhToanButton->raise();
-        pushButton_6->raise();
+        taoMoiButton->raise();
         label_16->raise();
         textEdit_2->raise();
         textEdit_3->raise();
         label_17->raise();
-        stackedWidget->raise();
+        stackedMenu->raise();
         addButton->raise();
         minusButton->raise();
         hoaDon->raise();
         label_3->raise();
         tongTienCuoiLabel->raise();
+        finishDayButton->raise();
+        pushButton_2->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
@@ -298,7 +318,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedMenu->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -324,13 +344,14 @@ public:
         label_14->setText(QCoreApplication::translate("MainWindow", "VAT", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng c\341\273\231ng", nullptr));
         thanhToanButton->setText(QCoreApplication::translate("MainWindow", "Thanh to\303\241n", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o m\341\273\233i", nullptr));
+        taoMoiButton->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o m\341\273\233i", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "Ghi ch\303\272", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "M\303\243 gi\341\272\243m gi\303\241", nullptr));
         label_18->setText(QString());
         traSuaChoose->setText(QString());
-        kemCheeseChoose->setText(QString());
+        traTacChoose->setText(QString());
         traDaoChoose->setText(QString());
+        traSuaChoose_2->setText(QString());
         addButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         minusButton->setText(QCoreApplication::translate("MainWindow", "-", nullptr));
         QTableWidgetItem *___qtablewidgetitem = hoaDon->horizontalHeaderItem(0);
@@ -343,6 +364,8 @@ public:
         ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Th\303\240nh ti\341\273\201n", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "10%", nullptr));
         tongTienCuoiLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        finishDayButton->setText(QCoreApplication::translate("MainWindow", "K\341\272\277t th\303\272c ng\303\240y l\303\240m", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng quan", nullptr));
     } // retranslateUi
 
 };

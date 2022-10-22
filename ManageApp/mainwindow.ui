@@ -227,8 +227,8 @@
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>550</y>
+      <x>551</x>
+      <y>553</y>
       <width>311</width>
       <height>16</height>
      </rect>
@@ -240,8 +240,8 @@
    <widget class="QLabel" name="tongTienLabel">
     <property name="geometry">
      <rect>
-      <x>1190</x>
-      <y>550</y>
+      <x>921</x>
+      <y>553</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -253,8 +253,8 @@
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>590</y>
+      <x>551</x>
+      <y>593</y>
       <width>381</width>
       <height>31</height>
      </rect>
@@ -266,8 +266,8 @@
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>650</y>
+      <x>551</x>
+      <y>653</y>
       <width>37</width>
       <height>21</height>
      </rect>
@@ -279,8 +279,8 @@
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>700</y>
+      <x>551</x>
+      <y>703</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -292,8 +292,8 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>680</y>
+      <x>561</x>
+      <y>683</y>
       <width>421</width>
       <height>16</height>
      </rect>
@@ -305,8 +305,8 @@
    <widget class="QPushButton" name="thanhToanButton">
     <property name="geometry">
      <rect>
-      <x>1109</x>
-      <y>747</y>
+      <x>840</x>
+      <y>750</y>
       <width>161</width>
       <height>91</height>
      </rect>
@@ -315,11 +315,11 @@
      <string>Thanh toán</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="taoMoiButton">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>750</y>
+      <x>581</x>
+      <y>753</y>
       <width>161</width>
       <height>91</height>
      </rect>
@@ -374,7 +374,7 @@
      <string>Mã giảm giá</string>
     </property>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="stackedMenu">
     <property name="geometry">
      <rect>
       <x>1350</x>
@@ -440,10 +440,41 @@ background-color: transparent;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="kemCheeseChoose">
+     <widget class="QPushButton" name="traTacChoose">
       <property name="geometry">
        <rect>
         <x>140</x>
+        <y>20</y>
+        <width>120</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>120</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#traTacChoose{
+background-color: transparent;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="traDaoChoose">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
         <y>20</y>
         <width>120</width>
         <height>120</height>
@@ -471,11 +502,11 @@ background-color: transparent;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="traDaoChoose">
+     <widget class="QPushButton" name="traSuaChoose_2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>20</y>
+        <x>10</x>
+        <y>150</y>
         <width>120</width>
         <height>120</height>
        </rect>
@@ -570,8 +601,8 @@ background-color: transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1190</x>
-      <y>650</y>
+      <x>921</x>
+      <y>653</y>
       <width>37</width>
       <height>31</height>
      </rect>
@@ -583,14 +614,40 @@ background-color: transparent;
    <widget class="QLabel" name="tongTienCuoiLabel">
     <property name="geometry">
      <rect>
-      <x>1190</x>
-      <y>700</y>
+      <x>921</x>
+      <y>703</y>
       <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>0</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="finishDayButton">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>680</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kết thúc ngày làm</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>770</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tổng quan</string>
     </property>
    </widget>
    <zorder>columnView_6</zorder>
@@ -616,17 +673,19 @@ background-color: transparent;
    <zorder>label_15</zorder>
    <zorder>line</zorder>
    <zorder>thanhToanButton</zorder>
-   <zorder>pushButton_6</zorder>
+   <zorder>taoMoiButton</zorder>
    <zorder>label_16</zorder>
    <zorder>textEdit_2</zorder>
    <zorder>textEdit_3</zorder>
    <zorder>label_17</zorder>
-   <zorder>stackedWidget</zorder>
+   <zorder>stackedMenu</zorder>
    <zorder>addButton</zorder>
    <zorder>minusButton</zorder>
    <zorder>hoaDon</zorder>
    <zorder>label_3</zorder>
    <zorder>tongTienCuoiLabel</zorder>
+   <zorder>finishDayButton</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

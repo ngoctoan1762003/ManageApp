@@ -1,8 +1,12 @@
 #include "hoadonwindow.h"
 #include "ui_hoadonwindow.h"
 #include <QDebug>
+#include <iostream>
 #include <QString>
 #include <string>
+#include <QFile>
+#include <QDebug>
+#include <QMessageBox>
 
 HoaDonWindow::HoaDonWindow(QWidget *parent) :
     QDialog(parent),
@@ -49,7 +53,7 @@ void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, ve
         add.append(changeString(QString::fromStdString(to_string(tongTien[i]*soLuong[i])),20));
         sum+=tongTien[i]*soLuong[i];
         add.append("\n");
-        qDebug().nospace()<<add;
+        //qDebug().nospace()<<add;
         chiTiet.append(add);
     }
     chiTiet.append("\n\nThanh tien: \t\t\t\t\t");
@@ -61,3 +65,6 @@ void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, ve
     chiTiet.append("\n\n\t\tXin chan thanh cam on quy khach\t\t");
     ui->chiTietHoaDon->setText(chiTiet);
 }
+
+
+

@@ -1,0 +1,10 @@
+release/SaveDay.o
+release/hoadonwindow.o
+release/main.o
+release/mainwindow.o
+release/manager.o
+release/monhang.o
+release/save.o
+release/qrc_Resource.o
+release/moc_hoadonwindow.o
+release/moc_mainwindow.o

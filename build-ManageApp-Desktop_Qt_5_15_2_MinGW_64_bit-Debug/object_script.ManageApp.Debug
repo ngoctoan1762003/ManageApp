@@ -1,0 +1,10 @@
+debug/SaveDay.o
+debug/hoadonwindow.o
+debug/main.o
+debug/mainwindow.o
+debug/manager.o
+debug/monhang.o
+debug/save.o
+debug/qrc_Resource.o
+debug/moc_hoadonwindow.o
+debug/moc_mainwindow.o

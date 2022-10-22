@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <iomanip>
 #include <string>
+#include <fstream>
+#include "Save.h"
 
 using namespace std;
 
@@ -19,6 +21,9 @@ public:
     explicit HoaDonWindow(QWidget *parent = nullptr);
     ~HoaDonWindow();
     void Display(int row, vector<int> soLuong, vector<QString> ten, vector<int> tongTien);
+
+private slots:
+
 
 private:
     Ui::HoaDonWindow *ui;
