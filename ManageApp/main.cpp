@@ -1,6 +1,7 @@
 #include "mainwindow.h"
-
+#include "linkedlist.h"
 #include <QApplication>
+
 
 int main(int argc, char *argv[])
 {

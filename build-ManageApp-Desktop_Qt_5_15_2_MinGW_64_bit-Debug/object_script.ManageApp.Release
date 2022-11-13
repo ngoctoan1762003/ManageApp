@@ -5,6 +5,8 @@ release/mainwindow.o
 release/manager.o
 release/monhang.o
 release/save.o
+release/tongket.o
 release/qrc_Resource.o
 release/moc_hoadonwindow.o
 release/moc_mainwindow.o
+release/moc_tongket.o

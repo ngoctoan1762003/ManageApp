@@ -5,6 +5,8 @@ debug/mainwindow.o
 debug/manager.o
 debug/monhang.o
 debug/save.o
+debug/tongket.o
 debug/qrc_Resource.o
 debug/moc_hoadonwindow.o
 debug/moc_mainwindow.o
+debug/moc_tongket.o

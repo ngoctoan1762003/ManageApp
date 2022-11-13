@@ -9,6 +9,8 @@
 #include "save.h"
 #include "SaveDay.h"
 #include "manager.h"
+#include "tongket.h"
+#include "linkedlist.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,19 +21,28 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     int numberOfRow=0;
 
-    vector<QString> tenHangChon;
-    vector<int> soLuong;
-    vector<int> giaHangChon;
-    vector<Save> saveObject;
+    LinkedList<MonHang> tenHangChon;
+    LinkedList<int> soLuong;
+    LinkedList<int> giaHangChon;
+    //vector<Save> saveObject;
+    LinkedList<int>* tempsl;
+    LinkedList<int>* tempgia;
+    LinkedList<MonHang>* tempmh;
+
+    Node<int>* nodei=new Node<int>;
+    Node<int>* nodegia=new Node<int>;
+    Node<MonHang>* node=new Node<MonHang>;
+    Node<Save>* nodeSave=new Node<Save>;
 
     int sum=0;
+    int sumDay=0;
     float finalsum=0;
     //QTableWidget table= ui->hoaDon;
     MonHang *monHangChon;
-    MonHang *traSua = new MonHang(20000, "Trà Sữa");
-    MonHang *traTac = new MonHang(15000, "Trà Tắc");
-    MonHang *traDao = new MonHang(22000, "Trà Đào");
-    MonHang *xucXich= new MonHang(10000, "Xúc Xích");
+    MonHang *traSua = new MonHang(01, 20000, "Trà Sữa", "Ly", "Trà");
+    MonHang *traTac = new MonHang(01, 15000, "Trà Tắc", "Ly", "Trà");
+    MonHang *traDao = new MonHang(01, 22000, "Trà Đào", "Ly", "Trà");
+    MonHang *xucXich= new MonHang(01, 10000, "Xúc Xích", "Cây", "Đồ ăn");
 
     SaveDay saveDay;
     Manager manager;
@@ -55,8 +66,6 @@ private slots:
 
     void on_minusButton_clicked();
 
-    void writeFile();
-
     void readFile();
 
     void on_finishDayButton_clicked();
@@ -72,5 +81,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;
+    TongKet *tongKet;
 };
+
 #endif // MAINWINDOW_H

@@ -1,7 +1,16 @@
+-----Ngay 1-----
+
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 1
+Trà Tắc	3
+
 -----Ngay 2-----
 
-So Luong :3
-TraSua 4
-Kem Cheese 3
-Tra Dao 2
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 1
+Trà Sữa	4
 

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QDebug>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->minusButton->hide();
     ui->addButton->hide();
+
+    tenHangChon.CreateList();
+    soLuong.CreateList();
     QPixmap *pixmap;
     pixmap=new QPixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
     QIcon *ButtonIcon;
@@ -95,46 +100,81 @@ void MainWindow::Update(){
 void MainWindow::on_addButton_clicked()
 {
     int addIndex=0;
+
     for(int i=0; i<=ui->hoaDon->rowCount(); i++){
         QAbstractItemModel *model = ui->hoaDon->model();
 
         QModelIndex index = model->index(i, 0);
+        qDebug()<<"Vong lap";
+        //qDebug()<<monHangChon->getTen();
         if(index.data().toString()==monHangChon->getTen()){
             addIndex=i;
-            soLuong[monHangChon->getChiSoTrongHD()]++;
+            qDebug()<<"index"<<monHangChon->getChiSoTrongHD();
+                        qDebug()<<"index"<<tenHangChon[i].value->getTen();
 
+            *soLuong[monHangChon->getChiSoTrongHD()].value+=1;
+            qDebug()<<"so luong: "<<*soLuong[monHangChon->getChiSoTrongHD()].value;
             break;
         }
+
+
         if(i==ui->hoaDon->rowCount() && index.data().toString()!=monHangChon->getTen()){
             addIndex=i;
             numberOfRow++;
+            qDebug()<<"Oke";
 
-            monHangChon->setChiSoTrongHD(tenHangChon.size());
+            monHangChon->setChiSoTrongHD(ui->hoaDon->rowCount());
 
-            tenHangChon.push_back(monHangChon->getTen());
-            giaHangChon.push_back(monHangChon->getGia());
-            soLuong.push_back(1);
+            //static Node<MonHang> node;
+            node= new Node<MonHang>;
+            node->CreateNode();
+            node->value=new MonHang;
+            *node->value=*monHangChon;
+
+            tenHangChon.AddTail(node);
+            //delete node;
+                        qDebug()<<"Oke2";
+
+
+            //static Node<int> nodei;
+            nodei=new Node<int>;
+            nodei->CreateNode();
+            nodei->value=new int;
+            *nodei->value=1;
+            soLuong.AddTail(nodei);
+            //delete nodei;
+            qDebug()<<"Oke3";
+
+
+            nodegia=new Node<int>;
+            nodegia->CreateNode();
+            nodegia->value=new int;
+            *nodegia->value=monHangChon->getGia();
+            qDebug()<<*nodegia->value;
+            giaHangChon.AddTail(nodegia);
+            //qDebug()<<*giaHangChon[monHangChon->getChiSoTrongHD()].value;
+
             break;
         }
     }
-
+    qDebug()<<"ok";
     ui->hoaDon->setRowCount(numberOfRow);
     QTableWidgetItem *item;
     for(int i=0; i<ui->hoaDon->columnCount(); i++){
         item= new QTableWidgetItem;
         if(i==0) item->setText(monHangChon->getTen());
-        if(i==1) item->setText(QString::fromStdString(to_string(soLuong[monHangChon->getChiSoTrongHD()])));
-        if(i==2) item->setText(QString::fromStdString(to_string(giaHangChon[monHangChon->getChiSoTrongHD()])));
-        if(i==3) item->setText(QString::fromStdString(to_string(giaHangChon[monHangChon->getChiSoTrongHD()]*soLuong[monHangChon->getChiSoTrongHD()])));
+        if(i==1) item->setText(QString::fromStdString(to_string(*soLuong[monHangChon->getChiSoTrongHD()].value)));
+        if(i==2) item->setText(QString::fromStdString(to_string(*giaHangChon[monHangChon->getChiSoTrongHD()].value)));
+        if(i==3) {
+            int tong=(*giaHangChon[monHangChon->getChiSoTrongHD()].value)*(*soLuong[monHangChon->getChiSoTrongHD()].value);
+            item->setText(QString::fromStdString(to_string(tong)));
+        }
         ui->hoaDon->setItem(addIndex,i,item);
+                qDebug()<<"done";
     }
-    sum+=giaHangChon[monHangChon->getChiSoTrongHD()];
+    sum+=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
     Update();
-}
-
-void MainWindow::writeFile(){
-
-
+                qDebug()<<"doneadd";
 }
 
 void MainWindow::readFile(){
@@ -145,10 +185,10 @@ void MainWindow::readFile(){
     for(int i=0; i<n; i++){
         string tenHang;
         infile>>tenHang;
-        tenHangChon.push_back(QString::fromStdString(tenHang));
+        //tenHangChon.AddTail(QString::fromStdString(tenHang));
         int so;
         infile>>so;
-        soLuong.push_back(so);
+        //soLuong.push_back(so);
     }
     infile.close();
 }
@@ -156,15 +196,27 @@ void MainWindow::readFile(){
 void MainWindow::on_thanhToanButton_clicked()
 {
     hoaDonWindow=new HoaDonWindow(this);
-    hoaDonWindow->resize(650,500+soLuong.size()*20);
+    hoaDonWindow->resize(650,500+ui->hoaDon->rowCount()*20);
     hoaDonWindow->show();
-    hoaDonWindow->Display(ui->hoaDon->rowCount(), soLuong, tenHangChon, giaHangChon);
+    tempsl=new LinkedList<int>;
+    tempgia=new LinkedList<int>;
+    tempmh=new LinkedList<MonHang>;
+    tempsl=&soLuong;
+    tempgia=&giaHangChon;
+    tempmh=&tenHangChon;
+    hoaDonWindow->Display(ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
 
     //qDebug()<<soLuong.size();
 
     Save saveObject;
-    saveObject.createNewSaveObject(soLuong.size(), finalsum, soLuong, tenHangChon);
-    saveDay.saveObjectArr.push_back(saveObject);
+    saveObject.createNewSaveObject(ui->hoaDon->rowCount(), finalsum, tempsl, tempmh);
+    nodeSave=new Node<Save>;
+    nodeSave->CreateNode();
+    nodeSave->value=new Save;
+    *nodeSave->value=saveObject;
+    qDebug()<<nodeSave->value->GetSaveTongTien();
+    saveDay.saveObjectArr.AddTail(nodeSave);
+    sumDay+=sum;
 }
 
 
@@ -177,13 +229,13 @@ void MainWindow::on_minusButton_clicked()
         QModelIndex index = model->index(i, 0);
         if(index.data().toString()==monHangChon->getTen()){
             minusIndex=i;
-            soLuong[monHangChon->getChiSoTrongHD()]--;
+            soLuong[monHangChon->getChiSoTrongHD()].value--;
 
-            if(soLuong[monHangChon->getChiSoTrongHD()]==0){
+            if(soLuong[monHangChon->getChiSoTrongHD()].value==0){
                 numberOfRow--;
-                tenHangChon.erase(tenHangChon.begin() + monHangChon->getChiSoTrongHD());
-                giaHangChon.erase(giaHangChon.begin() + monHangChon->getChiSoTrongHD());
-                soLuong.erase(soLuong.begin() + monHangChon->getChiSoTrongHD());
+                //tenHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD());
+                //giaHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD()-1);
+                //soLuong.RemoveAfterIndex(monHangChon->getChiSoTrongHD());
             }
 
             break;
@@ -196,15 +248,15 @@ void MainWindow::on_minusButton_clicked()
         for(int j=minusIndex; j<ui->hoaDon->rowCount(); j++){
             for(int i=0; i<ui->hoaDon->columnCount(); i++){
                 item= new QTableWidgetItem;
-                if(i==0) item->setText(tenHangChon[j]);
-                if(i==1) item->setText(QString::fromStdString(to_string(soLuong[j])));
-                if(i==2) item->setText(QString::fromStdString(to_string(giaHangChon[j])));
-                if(i==3) item->setText(QString::fromStdString(to_string(giaHangChon[j]*soLuong[j])));
+                if(i==0) item->setText(tenHangChon[j].value->getTen());
+                if(i==1) item->setText(QString::fromStdString(to_string(*soLuong[j].value)));
+                //if(i==2) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value)));
+                //if(i==3) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value*(*soLuong[j].value))));
                 ui->hoaDon->setItem(j,i,item);
             }
         }
 
-        sum-=giaHangChon[monHangChon->getChiSoTrongHD()];
+        //sum-=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
         Update();
     }
 }
@@ -217,16 +269,27 @@ void MainWindow::on_finishDayButton_clicked()
     outfile.open("./SaleData.txt", std::ios::app);
     manager.saveDayArr.push_back(saveDay);
     outfile<<"-----Ngay "<<count<<"-----"<<endl<<endl;
-    for(int i=0; i<saveDay.saveObjectArr.size(); i++){
-        outfile<<"So Luong :"<<saveDay.saveObjectArr[i].GetSoLuongHang()<<endl;
-        vector<int> soLuongHang=saveDay.saveObjectArr[i].GetSaveSoLuong();
-        vector<QString> tenHang=saveDay.saveObjectArr[i].GetSaveTenHang();
-        for(int j=0; j<soLuongHang.size(); j++){
-            outfile<<tenHang[j].toStdString()<<" "<<soLuongHang[j]<<endl;
+    outfile<<"So Luong Hoa Don: "<<saveDay.saveObjectArr.GetSize()<<endl<<endl;
+    for(int i=0; i<saveDay.saveObjectArr.GetSize(); i++){
+        outfile<<"Hóa Đơn Thứ "<<i+1<<endl;
+        outfile<<"Số Lượng Hàng: "<<saveDay.saveObjectArr[i].value->GetSaveSoLuongHang()<<endl;
+        for(int j=0; j<saveDay.saveObjectArr.GetSize(); j++){
+            outfile<<saveDay.saveObjectArr.GetNode(j)->value->saveMonHang.GetNode(j)->value->getTen().toStdString()<<"\t"<<*saveDay.saveObjectArr.GetNode(j)->value->saveSoLuong.GetNode(j)->value<<endl;
         }
         outfile<<endl;
     }
+
+    tongKet=new TongKet(this);
+    tongKet->resize(650,500+ui->hoaDon->rowCount()*20);
+    tongKet->show();
+        qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
+    int soHoaDon=saveDay.saveObjectArr.GetSize();
+    qDebug()<<soHoaDon;
+    tongKet->Display(soHoaDon, sumDay, count);
+    qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+
     saveDay.saveObjectArr.clear();
+    sumDay=0;
     outfile.close();
 }
 

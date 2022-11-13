@@ -1,0 +1,8 @@
+Bàn 1:
+	Mã bàn:
+	Tên bàn:
+	Vị trí tổng quan:
+Bàn 2:
+	Mã bàn:
+	Tên bàn:
+	Vị trí tổng quan:

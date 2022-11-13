@@ -1,23 +1,27 @@
 #ifndef SAVE_H
 #define SAVE_H
 #include <vector>
+#include "linkedlist.h"
+#include "monhang.h"
+#include "linkedlist.h"
 #include <QString>
 
 using namespace std;
 
 class Save
 {
-    int soLuongHang;
-    int tongTien;
-    vector<int> saveSoLuong;
-    vector<QString> saveTenHang;
-public:
+    public:
+    int saveSoLuongHang;
+    int saveTongTien;
+    LinkedList<int> saveSoLuong;
+    LinkedList<MonHang> saveMonHang;
+
     Save();
-    void createNewSaveObject(int , int, vector<int>, vector<QString>);
-    int GetSoLuongHang();
-    int GetTongTien();
-    vector<int> GetSaveSoLuong();
-    vector<QString> GetSaveTenHang();
+    void createNewSaveObject(int , int, LinkedList<int>*&, LinkedList<MonHang>*&);
+    int GetSaveSoLuongHang();
+    int GetSaveTongTien();
+    void GetSaveSoLuong(LinkedList<int>*&);
+    void GetSaveMonHang(LinkedList<MonHang>*&);
 };
 
 #endif // SAVE_H

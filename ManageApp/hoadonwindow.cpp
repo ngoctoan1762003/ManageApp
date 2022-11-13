@@ -29,10 +29,10 @@ QString changeString(QString in, int sizeNeed){
     }
     return newString;
 }
-void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, vector<int> tongTien)
+void HoaDonWindow::Display(int row, LinkedList<int>*& soLuong, LinkedList<MonHang>*& ten, LinkedList<int>*& tongTien)
 {
 
-    QString chiTiet;
+    QString chiTiet="";
     QString add;
     int sum=0;
     chiTiet.append("Ban");
@@ -43,27 +43,33 @@ void HoaDonWindow::Display(int row, vector<int> soLuong, vector<QString> ten, ve
     chiTiet.append("Stt\tTen\t\t\tSoLuong\t\tGia\n");
     for(int i=0; i<row; i++){
         add="";
-        //qDebug("hi");
+
         add.append(changeString(QString::fromStdString(to_string(i+1)),10));
         add.append("\t");
-        add.append(changeString(ten[i],25));
+        QString addName=ten->GetNode(i)->value->getTen();
+        add.append(changeString(addName,25));
         add.append("\t");
-        add.append(changeString(QString::fromStdString(to_string(soLuong[i])),20));
+
+        add.append(changeString(QString::fromStdString(to_string(*soLuong->GetNode(i)->value)),20));
         add.append("\t");
-        add.append(changeString(QString::fromStdString(to_string(tongTien[i]*soLuong[i])),20));
-        sum+=tongTien[i]*soLuong[i];
+
+        add.append(changeString(QString::fromStdString(to_string((*tongTien->GetNode(i)->value)*(*soLuong->GetNode(i)->value))),20));
+        sum=sum+(*tongTien->GetNode(i)->value)*(*soLuong->GetNode(i)->value);
         add.append("\n");
-        //qDebug().nospace()<<add;
+
         chiTiet.append(add);
     }
+
     chiTiet.append("\n\nThanh tien: \t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(sum)));
     chiTiet.append("\n\nPhu phi\t\t\t\t\t\t");
-    chiTiet.append("phu");
+    chiTiet.append(QString::fromStdString(to_string(sum/10)));
     chiTiet.append("\n\nTong phai tra\t\t\t\t\t");
-    chiTiet.append("Tong");
+    chiTiet.append(QString::fromStdString(to_string(sum+sum/10)));
     chiTiet.append("\n\n\t\tXin chan thanh cam on quy khach\t\t");
     ui->chiTietHoaDon->setText(chiTiet);
+
+                                qDebug("hidonereal");
 }
 
 

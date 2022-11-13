@@ -1,0 +1,8 @@
+Khách hàng 1:
+	Tên khách hàng: 
+	Mã khách hàng:
+	Điểm tích lũy:
+Khách hàng 2:
+	Tên khách hàng:
+	Mã khách hàng:
+	Điểm tích lũy:

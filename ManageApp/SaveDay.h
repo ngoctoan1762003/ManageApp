@@ -1,13 +1,14 @@
 #ifndef SAVEDAY_H
 #define SAVEDAY_H
-#include "Save.h"
+#include "save.h"
+#include "linkedlist.h"
 
 
 class SaveDay
 {
 public:
     //SaveDay *saveDay;
-    vector<Save> saveObjectArr;
+    LinkedList<Save> saveObjectArr;
     //Manager();
 
 };

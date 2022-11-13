@@ -21,9 +21,11 @@ SOURCES += \
 HEADERS += \
     SaveDay.h \
     hoadonwindow.h \
+    linkedlist.h \
     mainwindow.h \
     manager.h \
     monhang.h \
+    node.h \
     save.h \
     tongket.h
 

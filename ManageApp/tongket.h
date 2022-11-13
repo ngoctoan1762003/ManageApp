@@ -14,6 +14,7 @@ class TongKet : public QDialog
 public:
     explicit TongKet(QWidget *parent = nullptr);
     ~TongKet();
+    void Display(int, int, int);
 
 private:
     Ui::TongKet *ui;

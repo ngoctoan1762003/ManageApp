@@ -5,23 +5,30 @@ Save::Save()
 
 }
 
-void Save::createNewSaveObject(int soLuongHang, int tongTien, vector<int> saveSoLuong, vector<QString> saveTenHang){
+void Save::createNewSaveObject(int soLuongHang, int tongTien, LinkedList<int>*& saveSoLuong, LinkedList<MonHang>*& saveMonHang){
     //Save newSave;
-    this->soLuongHang=soLuongHang;
-    this->tongTien=tongTien;
-    this->saveSoLuong=saveSoLuong;
-    this->saveTenHang=saveTenHang;
+    this->saveSoLuongHang=soLuongHang;
+    this->saveTongTien=tongTien;
+    for(int i=0; i<soLuongHang; i++){
+            this->saveSoLuong.AddTail(saveSoLuong->GetNode(i));
+            this->saveMonHang.AddTail(saveMonHang->GetNode(i));
+    }
+
     //return newSave;
 }
-int Save::GetSoLuongHang(){
-    return this->soLuongHang;
+int Save::GetSaveSoLuongHang(){
+    return this->saveSoLuongHang;
 }
-int Save::GetTongTien(){
-    return this->tongTien;
+int Save::GetSaveTongTien(){
+    return this->saveTongTien;
 }
-vector<int> Save::GetSaveSoLuong(){
-    return this->saveSoLuong;
+void Save::GetSaveSoLuong(LinkedList<int>*& a){
+    for(int i=0; i<saveSoLuongHang; i++){
+        *a->GetNode(i)->value=*saveSoLuong[i].value;
+    }
 }
-vector<QString> Save::GetSaveTenHang(){
-    return this->saveTenHang;
+void Save::GetSaveMonHang(LinkedList<MonHang>*& a){
+    for(int i=0; i<saveSoLuongHang; i++){
+        *a->GetNode(i)->value=*saveSoLuong[i].value;
+    }
 }

@@ -1,0 +1,46 @@
+n
+001
+Trà sữa
+20000
+Ly
+Nước uống
+002
+Trà tắc
+20000
+Ly
+Nước uống
+003
+Trà chanh
+20000
+Ly
+Nước uống
+004
+Pepsi
+15000
+Chai
+Nước ngọt
+005
+Coca
+15000
+Chai
+Nước ngọt
+006
+Sting
+12000
+Chai
+Nước ngọt
+007
+Trà xanh không độ
+12000
+Chai
+Nước ngọt
+008
+C2
+12000
+Chai
+Nước ngọt
+009
+Xúc xích
+10000
+Cây
+Đồ ăn

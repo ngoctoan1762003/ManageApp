@@ -5,7 +5,8 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-#include "Save.h"
+#include "monhang.h"
+#include "linkedlist.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ class HoaDonWindow : public QDialog
 public:
     explicit HoaDonWindow(QWidget *parent = nullptr);
     ~HoaDonWindow();
-    void Display(int row, vector<int> soLuong, vector<QString> ten, vector<int> tongTien);
+    void Display(int, LinkedList<int>*&, LinkedList<MonHang>*&, LinkedList<int>*&);
 
 private slots:
 
