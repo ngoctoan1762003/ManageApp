@@ -121,7 +121,7 @@ void MainWindow::on_addButton_clicked()
         if(i==ui->hoaDon->rowCount() && index.data().toString()!=monHangChon->getTen()){
             addIndex=i;
             numberOfRow++;
-            qDebug()<<"Oke";
+            //qDebug()<<"Oke";
 
             monHangChon->setChiSoTrongHD(ui->hoaDon->rowCount());
 
@@ -143,7 +143,7 @@ void MainWindow::on_addButton_clicked()
             *nodei->value=1;
             soLuong.AddTail(nodei);
             //delete nodei;
-            qDebug()<<"Oke3";
+            //qDebug()<<"Oke3";
 
 
             nodegia=new Node<int>;
@@ -157,7 +157,7 @@ void MainWindow::on_addButton_clicked()
             break;
         }
     }
-    qDebug()<<"ok";
+    //qDebug()<<"ok";
     ui->hoaDon->setRowCount(numberOfRow);
     QTableWidgetItem *item;
     for(int i=0; i<ui->hoaDon->columnCount(); i++){
@@ -170,7 +170,7 @@ void MainWindow::on_addButton_clicked()
             item->setText(QString::fromStdString(to_string(tong)));
         }
         ui->hoaDon->setItem(addIndex,i,item);
-                qDebug()<<"done";
+                //qDebug()<<"done";
     }
     sum+=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
     Update();
@@ -217,6 +217,14 @@ void MainWindow::on_thanhToanButton_clicked()
     qDebug()<<nodeSave->value->GetSaveTongTien();
     saveDay.saveObjectArr.AddTail(nodeSave);
     sumDay+=sum;
+
+    tenHangChon.clear();
+    giaHangChon.clear();
+    soLuong.clear();
+    ui->hoaDon->setRowCount(0);
+    sum=0;
+    numberOfRow=0;
+    Update();
 }
 
 
@@ -267,14 +275,22 @@ void MainWindow::on_finishDayButton_clicked()
     count++;
     ofstream outfile;
     outfile.open("./SaleData.txt", std::ios::app);
-    manager.saveDayArr.push_back(saveDay);
+    manager.addSaveDay=new Node<SaveDay>;
+    manager.addSaveDay->CreateNode();
+    manager.addSaveDay->value=new SaveDay;
+    *manager.addSaveDay->value=saveDay;
+    manager.saveDayArr.AddTail(manager.addSaveDay);
     outfile<<"-----Ngay "<<count<<"-----"<<endl<<endl;
     outfile<<"So Luong Hoa Don: "<<saveDay.saveObjectArr.GetSize()<<endl<<endl;
     for(int i=0; i<saveDay.saveObjectArr.GetSize(); i++){
         outfile<<"Hóa Đơn Thứ "<<i+1<<endl;
         outfile<<"Số Lượng Hàng: "<<saveDay.saveObjectArr[i].value->GetSaveSoLuongHang()<<endl;
-        for(int j=0; j<saveDay.saveObjectArr.GetSize(); j++){
-            outfile<<saveDay.saveObjectArr.GetNode(j)->value->saveMonHang.GetNode(j)->value->getTen().toStdString()<<"\t"<<*saveDay.saveObjectArr.GetNode(j)->value->saveSoLuong.GetNode(j)->value<<endl;
+        qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang;
+        for(int j=0; j<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang; j++){
+            qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen();
+            qDebug()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value;
+            outfile<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen().toStdString()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value<<endl;
+
         }
         outfile<<endl;
     }
@@ -282,11 +298,11 @@ void MainWindow::on_finishDayButton_clicked()
     tongKet=new TongKet(this);
     tongKet->resize(650,500+ui->hoaDon->rowCount()*20);
     tongKet->show();
-        qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
+        //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
     int soHoaDon=saveDay.saveObjectArr.GetSize();
-    qDebug()<<soHoaDon;
+    //qDebug()<<soHoaDon;
     tongKet->Display(soHoaDon, sumDay, count);
-    qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+    //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 
     saveDay.saveObjectArr.clear();
     sumDay=0;

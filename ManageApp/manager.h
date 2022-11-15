@@ -2,12 +2,18 @@
 #define MANAGER_H
 #include "SaveDay.h"
 #include "monhang.h"
+#include "node.h"
+#include "linkedlist.h"
 #include <fstream>
 
 class Manager
 {
 public:
-    vector<SaveDay> saveDayArr;
+    LinkedList<SaveDay> saveDayArr;
+    LinkedList<MonHang> monHang;
+    Node<MonHang>* addNodeMonHang;
+    MonHang* addMonHang;
+    Node<SaveDay>* addSaveDay=new Node<SaveDay>;
     Manager();
     void loadMonHang();
     //Manager *manager;

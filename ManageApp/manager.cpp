@@ -5,10 +5,10 @@ Manager::Manager()
 
 }
 void Manager::loadMonHang(){
+    addMonHang=new MonHang;
     ifstream infile;
     infile.open("./SaleData.txt", std::ios::in);
     int n;
-    MonHang monHang;
     int ma;
     int gia;
     string ten;
@@ -17,7 +17,17 @@ void Manager::loadMonHang(){
     infile>>n;
     for(int i=0; i<n; i++){
         infile>>ma;
+        addMonHang->setMa(ma);
         infile>>ten;
+        addMonHang->setTen(QString::fromStdString(ten));
         infile>>gia;
+        addMonHang->setGia(gia);
     }
+
+    addNodeMonHang=new Node<MonHang>;
+    addNodeMonHang->CreateNode();
+    addNodeMonHang->value=new MonHang;
+    *addNodeMonHang->value=*addMonHang;
+
+    monHang.AddTail(addNodeMonHang);
 }

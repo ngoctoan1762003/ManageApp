@@ -1400,10 +1400,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_hoadonwindow.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_tongket.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_hoadonwindow.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_tongket.h"
 },
 {
     "arguments": [
@@ -1474,9 +1474,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_tongket.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_hoadonwindow.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_tongket.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_hoadonwindow.h"
 }
 ]
