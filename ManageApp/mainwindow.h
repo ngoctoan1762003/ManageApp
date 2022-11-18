@@ -39,10 +39,10 @@ class MainWindow : public QMainWindow
     float finalsum=0;
     //QTableWidget table= ui->hoaDon;
     MonHang *monHangChon;
-    MonHang *traSua = new MonHang(01, 20000, "Trà Sữa", "Ly", "Trà");
-    MonHang *traTac = new MonHang(01, 15000, "Trà Tắc", "Ly", "Trà");
-    MonHang *traDao = new MonHang(01, 22000, "Trà Đào", "Ly", "Trà");
-    MonHang *xucXich= new MonHang(01, 10000, "Xúc Xích", "Cây", "Đồ ăn");
+    MonHang *traSua = new MonHang;
+    MonHang *traTac = new MonHang;
+    MonHang *traDao = new MonHang;
+    MonHang *xucXich= new MonHang;
 
     SaveDay saveDay;
     Manager manager;
@@ -66,7 +66,7 @@ private slots:
 
     void on_minusButton_clicked();
 
-    void readFile();
+    //void readFile();
 
     void on_finishDayButton_clicked();
 

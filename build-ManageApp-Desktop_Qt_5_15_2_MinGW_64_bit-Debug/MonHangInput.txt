@@ -1,46 +1,51 @@
-n
-001
-Trà sữa
+10
+1
+TraSua
 20000
 Ly
-Nước uống
-002
-Trà tắc
+Tra
+2
+TraTac
+18000
+Ly
+Tra
+3
+TraChanh
 20000
 Ly
-Nước uống
-003
-Trà chanh
-20000
-Ly
-Nước uống
-004
+Tra
+4
 Pepsi
 15000
 Chai
-Nước ngọt
-005
+NuocNgot
+5
 Coca
 15000
 Chai
-Nước ngọt
-006
+NuocNgot
+6
 Sting
 12000
 Chai
-Nước ngọt
-007
-Trà xanh không độ
+NuocNgot
+7
+TraXanhKhongDo
 12000
 Chai
-Nước ngọt
-008
+NuocNgot
+8
 C2
 12000
 Chai
-Nước ngọt
-009
-Xúc xích
+NuocNgot
+9
+XucXich
 10000
-Cây
-Đồ ăn
+Xien
+DoAn
+10
+TraDao
+22000
+Ly
+Tra

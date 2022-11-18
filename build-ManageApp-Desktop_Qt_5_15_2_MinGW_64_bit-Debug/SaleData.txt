@@ -74,3 +74,25 @@ Số Lượng Hàng: 2
 Trà Tắc	2
 Trà Sữa	2
 
+-----Ngay 1-----
+
+So Luong Hoa Don: 2
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 2
+Trà Sữa	3
+Trà Tắc	2
+
+Hóa Đơn Thứ 2
+Số Lượng Hàng: 2
+Trà Tắc	1
+Trà Đào	3
+
+-----Ngay 2-----
+
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 1
+Trà Sữa	3
+

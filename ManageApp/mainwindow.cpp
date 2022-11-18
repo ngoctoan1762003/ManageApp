@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    manager.loadMonHang();
+
 
     ui->minusButton->hide();
     ui->addButton->hide();
@@ -30,6 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->traDaoChoose->setCheckable(true);
     //ui->traSuaChoose->setIconSize(pixmap.rect().size());
 
+    traSua=manager.GetMonHang("TraSua");
+    traTac=manager.GetMonHang("TraTac");
+    traDao=manager.GetMonHang("TraDao");
+    xucXich=manager.GetMonHang("XucXich");
+    qDebug()<<manager.monHang.GetNode(0)->value->getTen();
+        qDebug()<<manager.monHang.GetNode(3)->value->getTen();
 }
 
 MainWindow::~MainWindow()
@@ -177,7 +185,7 @@ void MainWindow::on_addButton_clicked()
                 qDebug()<<"doneadd";
 }
 
-void MainWindow::readFile(){
+/*void MainWindow::readFile(){
     ifstream infile;
     infile.open("./SaleData.txt", std::ios::app);
     int n;
@@ -191,7 +199,7 @@ void MainWindow::readFile(){
         //soLuong.push_back(so);
     }
     infile.close();
-}
+}*/
 
 void MainWindow::on_thanhToanButton_clicked()
 {

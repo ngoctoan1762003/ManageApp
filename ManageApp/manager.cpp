@@ -1,33 +1,52 @@
 #include "manager.h"
-
+#include <QDebug>
 Manager::Manager()
 {
 
 }
 void Manager::loadMonHang(){
-    addMonHang=new MonHang;
+
     ifstream infile;
-    infile.open("./SaleData.txt", std::ios::in);
-    int n;
+    infile.open("./MonHangInput.txt", std::ios::in);
+    //int n;
     int ma;
-    int gia;
     string ten;
+    int gia;
     string donViTinh;
     string loaiHang;
-    infile>>n;
-    for(int i=0; i<n; i++){
+    infile>>size;
+    qDebug()<<size;
+    for(int i=0; i<size; i++){
+        addMonHang=new MonHang;
         infile>>ma;
         addMonHang->setMa(ma);
         infile>>ten;
+        //QDebug()<<QString::fromStdString(ten);
         addMonHang->setTen(QString::fromStdString(ten));
         infile>>gia;
         addMonHang->setGia(gia);
+        infile>>donViTinh;
+        addMonHang->setDonViTinh(donViTinh);
+        infile>>loaiHang;
+        addMonHang->setLoaiHang(loaiHang);
+
+        addNodeMonHang=new Node<MonHang>;
+        addNodeMonHang->CreateNode();
+        addNodeMonHang->value=new MonHang;
+        *addNodeMonHang->value=*addMonHang;
+
+        monHang.AddTail(addNodeMonHang);
     }
+}
+MonHang* Manager::GetMonHang(string name){
+    //qDebug()<<this->size;
+    for(int i=0; i<this->size; i++){
 
-    addNodeMonHang=new Node<MonHang>;
-    addNodeMonHang->CreateNode();
-    addNodeMonHang->value=new MonHang;
-    *addNodeMonHang->value=*addMonHang;
-
-    monHang.AddTail(addNodeMonHang);
+        if(name==monHang.GetNode(i)->value->getTen().toStdString()) {
+                //qDebug()<<"oke";
+            return monHang.GetNode(i)->value;
+        }
+    }
+    qDebug()<<"ko";
+    return NULL;
 }
