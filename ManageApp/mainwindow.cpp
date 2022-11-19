@@ -48,7 +48,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_traSuaChoose_toggled(bool checked)
 {
     if(checked){
-        monHangChon=traSua;
+        monHangChon=manager.GetMonHang("TraSua");
         ui->minusButton->show();
         ui->addButton->show();
         QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
@@ -66,7 +66,7 @@ void MainWindow::on_traSuaChoose_toggled(bool checked)
 void MainWindow::on_traTacChoose_toggled(bool checked)
 {
     if(checked){
-        monHangChon=traTac;
+        monHangChon=manager.GetMonHang("TraTac");
         ui->minusButton->show();
         ui->addButton->show();
         QPixmap pixmap("D:/ManageApp/ManageApp/Image/tratac.png");
@@ -84,7 +84,7 @@ void MainWindow::on_traTacChoose_toggled(bool checked)
 void MainWindow::on_traDaoChoose_toggled(bool checked)
 {
     if(checked){
-        monHangChon=traDao;
+        monHangChon=manager.GetMonHang("TraDao");
         ui->minusButton->show();
         ui->addButton->show();
         QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
@@ -101,7 +101,7 @@ void MainWindow::on_traDaoChoose_toggled(bool checked)
 
 void MainWindow::Update(){
     ui->tongTienLabel->setText(QString::fromStdString(to_string(sum)));
-    finalsum=sum*(1+0.05);
+    finalsum=sum*(1+0.1);
     ui->tongTienCuoiLabel->setText(QString::fromStdString(to_string((int)finalsum)));
 }
 
@@ -184,22 +184,6 @@ void MainWindow::on_addButton_clicked()
     Update();
                 qDebug()<<"doneadd";
 }
-
-/*void MainWindow::readFile(){
-    ifstream infile;
-    infile.open("./SaleData.txt", std::ios::app);
-    int n;
-    infile>>n;
-    for(int i=0; i<n; i++){
-        string tenHang;
-        infile>>tenHang;
-        //tenHangChon.AddTail(QString::fromStdString(tenHang));
-        int so;
-        infile>>so;
-        //soLuong.push_back(so);
-    }
-    infile.close();
-}*/
 
 void MainWindow::on_thanhToanButton_clicked()
 {

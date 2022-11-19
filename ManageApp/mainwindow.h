@@ -66,8 +66,6 @@ private slots:
 
     void on_minusButton_clicked();
 
-    //void readFile();
-
     void on_finishDayButton_clicked();
 
     void on_taoMoiButton_clicked();
