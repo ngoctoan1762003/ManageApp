@@ -75,6 +75,7 @@ public:
     QLabel *tongTienCuoiLabel;
     QPushButton *finishDayButton;
     QPushButton *pushButton_2;
+    QPushButton *editButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -271,6 +272,9 @@ public:
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(1090, 770, 161, 71));
+        editButton = new QPushButton(centralwidget);
+        editButton->setObjectName(QString::fromUtf8("editButton"));
+        editButton->setGeometry(QRect(1090, 530, 161, 71));
         MainWindow->setCentralWidget(centralwidget);
         columnView_6->raise();
         columnView->raise();
@@ -308,6 +312,7 @@ public:
         tongTienCuoiLabel->raise();
         finishDayButton->raise();
         pushButton_2->raise();
+        editButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
@@ -366,6 +371,7 @@ public:
         tongTienCuoiLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         finishDayButton->setText(QCoreApplication::translate("MainWindow", "K\341\272\277t th\303\272c ng\303\240y l\303\240m", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng quan", nullptr));
+        editButton->setText(QCoreApplication::translate("MainWindow", "\304\220i\341\273\201u ch\341\273\211nh", nullptr));
     } // retranslateUi
 
 };

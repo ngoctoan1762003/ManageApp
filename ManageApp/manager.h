@@ -9,7 +9,9 @@
 class Manager
 {
     int size;
+
 public:
+    static int tongDoanhThu;
     LinkedList<SaveDay> saveDayArr;
     LinkedList<MonHang> monHang;
     Node<MonHang>* addNodeMonHang;
@@ -17,6 +19,7 @@ public:
     Node<SaveDay>* addSaveDay=new Node<SaveDay>;
     Manager();
     void loadMonHang();
+    void addMonHangToArr(MonHang*);
     MonHang* GetMonHang(string name);
     //Manager *manager;
 };

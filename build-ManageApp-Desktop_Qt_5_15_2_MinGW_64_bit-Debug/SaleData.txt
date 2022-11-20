@@ -20,3 +20,18 @@ Hóa Đơn Thứ 1
 Số Lượng Hàng: 1
 TraSua	3
 
+-----Ngay 1-----
+
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 0
+
+-----Ngay 2-----
+
+So Luong Hoa Don: 0
+
+-----Ngay 3-----
+
+So Luong Hoa Don: 0
+

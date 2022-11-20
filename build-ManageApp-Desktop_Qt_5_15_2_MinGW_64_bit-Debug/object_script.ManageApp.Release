@@ -1,4 +1,6 @@
 release/SaveDay.o
+release/addform.o
+release/editform.o
 release/hoadonwindow.o
 release/main.o
 release/mainwindow.o
@@ -7,6 +9,8 @@ release/monhang.o
 release/save.o
 release/tongket.o
 release/qrc_Resource.o
+release/moc_addform.o
+release/moc_editform.o
 release/moc_hoadonwindow.o
 release/moc_mainwindow.o
 release/moc_tongket.o

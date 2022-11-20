@@ -4,6 +4,7 @@ Manager::Manager()
 {
 
 }
+int Manager::tongDoanhThu=0;
 void Manager::loadMonHang(){
 
     ifstream infile;
@@ -38,6 +39,19 @@ void Manager::loadMonHang(){
         monHang.AddTail(addNodeMonHang);
     }
 }
+void Manager::addMonHangToArr(MonHang* mh){
+    size++;
+    addNodeMonHang=new Node<MonHang>;
+    addNodeMonHang->CreateNode();
+    addNodeMonHang->value=new MonHang;
+    addNodeMonHang->value->setMa(mh->getMa());
+    addNodeMonHang->value->setTen(mh->getTen());
+    addNodeMonHang->value->setGia(mh->getGia());
+    addNodeMonHang->value->setDonViTinh(mh->getDonViTinh());
+    addNodeMonHang->value->setLoaiHang(mh->getLoaiHang());
+
+    monHang.AddTail(addNodeMonHang);
+}
 MonHang* Manager::GetMonHang(string name){
     //qDebug()<<this->size;
     for(int i=0; i<this->size; i++){
@@ -50,3 +64,4 @@ MonHang* Manager::GetMonHang(string name){
     qDebug()<<"ko";
     return NULL;
 }
+

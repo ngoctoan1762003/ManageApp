@@ -42,7 +42,7 @@ public:
         }
     }
     void RemoveAfterIndex(int index){
-        Node<TValue>* node=Search(index);
+        Node<TValue>* node=GetNode(index);
             if(node!=NULL){
                 Node<TValue>* p=node->next;
                 if(p!=NULL){

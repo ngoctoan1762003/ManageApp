@@ -11,6 +11,7 @@
 #include "manager.h"
 #include "tongket.h"
 #include "linkedlist.h"
+#include "editform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -76,10 +77,19 @@ private slots:
 
     void on_pushButtonDrink_clicked();
 
+    void on_editButton_clicked();
+
+public slots:
+
+    void deleteMonHang(string);
+
+    void addMonHang(MonHang*);
+
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;
     TongKet *tongKet;
+    EditForm *editForm;
 };
 
 #endif // MAINWINDOW_H

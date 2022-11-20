@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
 #include <QDebug>
 
 
@@ -10,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     manager.loadMonHang();
-
 
     ui->minusButton->hide();
     ui->addButton->hide();
@@ -36,8 +34,8 @@ MainWindow::MainWindow(QWidget *parent)
     traTac=manager.GetMonHang("TraTac");
     traDao=manager.GetMonHang("TraDao");
     xucXich=manager.GetMonHang("XucXich");
-    qDebug()<<manager.monHang.GetNode(0)->value->getTen();
-        qDebug()<<manager.monHang.GetNode(3)->value->getTen();
+    //qDebug()<<manager.monHang.GetNode(0)->value->getTen();
+        //qDebug()<<manager.monHang.GetNode(3)->value->getTen();
 }
 
 MainWindow::~MainWindow()
@@ -325,4 +323,33 @@ void MainWindow::on_pushButtonDrink_clicked()
 {
     ui->stackedMenu->setCurrentIndex(0);
 }
+
+
+void MainWindow::on_editButton_clicked()
+{
+    editForm = new EditForm(this);
+    QObject::connect(editForm, SIGNAL(newMonHang(MonHang*)), this, SLOT(addMonHang(MonHang*)));
+    QObject::connect(editForm, SIGNAL(deleteMonHang(string)), this, SLOT(deleteMonHang(string)));
+    editForm->show();
+    LinkedList<MonHang>* temp = &manager.monHang;
+    editForm->Display(manager.monHang.GetSize(), temp);
+}
+
+void MainWindow::addMonHang(MonHang* mh){
+    manager.addMonHangToArr(mh);
+}
+
+void MainWindow::deleteMonHang(string name){
+    int index=-1;
+    for(int i=0; i<manager.monHang.GetSize(); i++){
+        if(manager.monHang.GetNode(i)->value->getTen().toStdString()==name){
+            index=i;
+            break;
+        }
+    }
+    qDebug()<<QString::fromStdString(name);
+    qDebug()<<index;
+    manager.monHang.RemoveAfterIndex(index-1);
+}
+
 

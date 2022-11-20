@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     SaveDay.cpp \
+    addform.cpp \
+    editform.cpp \
     hoadonwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -20,6 +22,8 @@ SOURCES += \
 
 HEADERS += \
     SaveDay.h \
+    addform.h \
+    editform.h \
     hoadonwindow.h \
     linkedlist.h \
     mainwindow.h \
@@ -30,6 +34,8 @@ HEADERS += \
     tongket.h
 
 FORMS += \
+    addform.ui \
+    editform.ui \
     hoadonwindow.ui \
     mainwindow.ui \
     tongket.ui

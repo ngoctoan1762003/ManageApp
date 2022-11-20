@@ -650,6 +650,19 @@ background-color: transparent;
      <string>Tổng quan</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="editButton">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>530</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Điều chỉnh</string>
+    </property>
+   </widget>
    <zorder>columnView_6</zorder>
    <zorder>columnView</zorder>
    <zorder>label</zorder>
@@ -686,6 +699,7 @@ background-color: transparent;
    <zorder>tongTienCuoiLabel</zorder>
    <zorder>finishDayButton</zorder>
    <zorder>pushButton_2</zorder>
+   <zorder>editButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDateTime>
 
 HoaDonWindow::HoaDonWindow(QWidget *parent) :
     QDialog(parent),
@@ -38,7 +39,14 @@ void HoaDonWindow::Display(int row, LinkedList<int>*& soLuong, LinkedList<MonHan
     chiTiet.append("Ban");
     chiTiet.append("1");
     chiTiet.append("\t\t\t");
-    chiTiet.append("Time\n\n");
+    chiTiet.append("\nTime: ");
+
+    QDateTime date = QDateTime::currentDateTime();
+    QString formattedTime = date.toString("dd/MM/yyyy hh:mm:ss");
+    //QByteArray formattedTimeMsg = formattedTime.toLocal8Bit();
+    chiTiet.append(formattedTime);
+    chiTiet.append("\n\n");
+    qDebug() << "Date:"+formattedTime;
 
     chiTiet.append("Stt\tTen\t\t\tSoLuong\t\tGia\n");
     for(int i=0; i<row; i++){
