@@ -5,6 +5,7 @@
 #include <QTableWidget>
 #include <QListWidget>
 #include <QDateTime>
+#include <QMessageBox>
 #include <vector>
 #include "monhang.h"
 #include "hoadonwindow.h"
@@ -42,6 +43,7 @@ class MainWindow : public QMainWindow
     int sumDay=0;
     float finalsum=0;
     //QTableWidget table= ui->hoaDon;
+    Ban *banChon;
     MonHang *monHangChon;
     /*MonHang *traSua = new MonHang;
     MonHang *traTac = new MonHang;
@@ -80,6 +82,8 @@ private slots:
 
     void UpdateMH();
 
+    void UpdateBan();
+
     void on_pushButtonFood_clicked();
 
     void on_pushButtonDrink_clicked();
@@ -99,6 +103,19 @@ private slots:
     void on_caPheList_itemClicked(QListWidgetItem *item);
 
     void on_doAnList_itemClicked(QListWidgetItem *item);
+
+    void on_banTrongNhaList_itemClicked(QListWidgetItem *item);
+
+    void on_lau2BanList_itemClicked(QListWidgetItem *item);
+
+    void on_ngoaiSanBanList_itemClicked(QListWidgetItem *item);
+
+
+    void on_chonBanButton_clicked();
+
+    void on_huyChonBanButton_clicked();
+
+    void on_traBanButton_clicked();
 
 public slots:
 

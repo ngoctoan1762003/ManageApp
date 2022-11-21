@@ -1,5 +1,6 @@
 release/SaveDay.o
 release/addform.o
+release/ban.o
 release/editform.o
 release/hoadonwindow.o
 release/main.o

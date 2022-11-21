@@ -38,6 +38,7 @@ void Manager::loadMonHang(){
 
         monHang.AddTail(addNodeMonHang);
     }
+    infile.close();
 }
 void Manager::saveMonHang(){
     ofstream outfile("./MonHangInput.txt", std::ios::ate);
@@ -45,7 +46,7 @@ void Manager::saveMonHang(){
     outfile<<endl;
     for(int i=0; i<monHang.GetSize(); i++){
         MonHang* temp = monHang.GetNode(i)->value;
-        outfile<<temp->getMa();
+        outfile<<i+1;
         outfile<<endl;
         outfile<<temp->getTen().toStdString();
         outfile<<endl;
@@ -56,6 +57,33 @@ void Manager::saveMonHang(){
         outfile<<temp->getLoaiHang();
         outfile<<endl;
     }
+    outfile.close();
+}
+void Manager::loadBan(){
+    ifstream infile("./BanInput.txt", std::ios::in);
+
+    infile>>SLBan;
+    qDebug()<<SLBan;
+    int ma;
+    string viTri;
+    //qDebug()<<size;
+    for(int i=0; i<SLBan; i++){
+        addBan=new Ban;
+        infile>>ma;
+        addBan->setMa(ma);
+        infile>>viTri;
+        qDebug()<<QString::fromStdString(viTri);
+        //QDebug()<<QString::fromStdString(ten);
+        addBan->setViTri(QString::fromStdString(viTri));
+
+        addNodeBan=new Node<Ban>;
+        addNodeBan->CreateNode();
+        addNodeBan->value=new Ban;
+        *addNodeBan->value=*addBan;
+
+        ban.AddTail(addNodeBan);
+    }
+    infile.close();
 }
 void Manager::addMonHangToArr(MonHang* mh){
     size++;
@@ -81,4 +109,9 @@ MonHang* Manager::GetMonHang(string name){
     qDebug()<<"ko";
     return NULL;
 }
-
+Ban* Manager::GetBan(int ma){
+    for(int i=0; i<SLBan; i++){
+        if(ban.GetNode(i)->value->getMa()==ma) return ban.GetNode(i)->value;
+    }
+    return NULL;
+}

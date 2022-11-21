@@ -9,11 +9,13 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     manager.loadMonHang();
+    manager.loadBan();
 
     ui->minusButton->hide();
     ui->addButton->hide();
 
     UpdateMH();
+    UpdateBan();
 
     tenHangChon.CreateList();
     soLuong.CreateList();
@@ -198,6 +200,11 @@ void MainWindow::on_addButton_clicked()
 
 void MainWindow::on_thanhToanButton_clicked()
 {
+    if(banChon!=NULL && banChon->getState()==true){
+        QMessageBox::about(this, "Lỗi", "Bàn đang chọn đang phục vụ khách");
+        return;
+    }
+
     hoaDonWindow=new HoaDonWindow(this);
     hoaDonWindow->resize(650,500+ui->hoaDon->rowCount()*20);
     hoaDonWindow->show();
@@ -207,7 +214,11 @@ void MainWindow::on_thanhToanButton_clicked()
     tempsl=&soLuong;
     tempgia=&giaHangChon;
     tempmh=&tenHangChon;
-    hoaDonWindow->Display(ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
+
+    QString maBan;
+    if(banChon==NULL) maBan="Không";
+    else maBan=ui->banChooseLabel->text();
+    hoaDonWindow->Display(maBan, ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
 
     //qDebug()<<soLuong.size();
 
@@ -223,11 +234,17 @@ void MainWindow::on_thanhToanButton_clicked()
     sumDay+=sum;
     tongDoanhThu+=sum;
     tongSoHD++;
+    if(banChon!=NULL){
+        manager.GetBan(ui->banChooseLabel->text().toInt())->setState(true);
+        UpdateBan();
+    }
 
     tenHangChon.clear();
     giaHangChon.clear();
     soLuong.clear();
     ui->hoaDon->setRowCount(0);
+    ui->banChooseLabel->setText("");
+    banChon=NULL;
     sum=0;
     numberOfRow=0;
     Update();
@@ -438,7 +455,31 @@ void MainWindow::UpdateMH(){
     }
 }
 
-
+void MainWindow::UpdateBan(){
+    ui->ngoaiSanBanList->clear();
+    ui->banTrongNhaList->clear();
+    ui->lau2BanList->clear();
+    for(int i=0; i<manager.ban.GetSize(); i++){
+        if(manager.ban.GetNode(i)->value->getViTri()=="NgoaiSan"){
+            ui->ngoaiSanBanList->addItem(QString::number(manager.ban.GetNode(i)->value->getMa()));
+            if(manager.ban.GetNode(i)->value->getState()==true) {
+                ui->ngoaiSanBanList->item(ui->ngoaiSanBanList->count()-1)->setBackground(Qt::red);
+            }
+        }
+        if(manager.ban.GetNode(i)->value->getViTri()=="TrongNha"){
+            ui->banTrongNhaList->addItem(QString::number(manager.ban.GetNode(i)->value->getMa()));
+            if(manager.ban.GetNode(i)->value->getState()==true) {
+                ui->banTrongNhaList->item(ui->banTrongNhaList->count()-1)->setBackground(Qt::red);
+            }
+        }
+        if(manager.ban.GetNode(i)->value->getViTri()=="Tang2"){
+            ui->lau2BanList->addItem(QString::number(manager.ban.GetNode(i)->value->getMa()));
+            if(manager.ban.GetNode(i)->value->getState()==true) {
+                ui->lau2BanList->item(ui->lau2BanList->count()-1)->setBackground(Qt::red);
+            }
+        }
+    }
+}
 
 void MainWindow::on_traList_itemClicked(QListWidgetItem *item)
 {
@@ -455,7 +496,6 @@ void MainWindow::on_nuocNgotList_itemClicked(QListWidgetItem *item)
     ui->addButton->show();
 }
 
-
 void MainWindow::on_caPheList_itemClicked(QListWidgetItem *item)
 {
     monHangChon=manager.GetMonHang(item->text().toStdString());
@@ -463,11 +503,46 @@ void MainWindow::on_caPheList_itemClicked(QListWidgetItem *item)
     ui->addButton->show();
 }
 
-
 void MainWindow::on_doAnList_itemClicked(QListWidgetItem *item)
 {
     monHangChon=manager.GetMonHang(item->text().toStdString());
     ui->minusButton->show();
     ui->addButton->show();
+}
+
+void MainWindow::on_banTrongNhaList_itemClicked(QListWidgetItem *item)
+{
+    banChon=manager.GetBan(item->text().toInt());
+}
+
+void MainWindow::on_lau2BanList_itemClicked(QListWidgetItem *item)
+{
+    banChon=manager.GetBan(item->text().toInt());
+}
+
+void MainWindow::on_ngoaiSanBanList_itemClicked(QListWidgetItem *item)
+{
+    banChon=manager.GetBan(item->text().toInt());
+}
+
+void MainWindow::on_chonBanButton_clicked()
+{
+    if(banChon!=NULL && banChon->getState()==false){
+        ui->banChooseLabel->setText(QString::number(banChon->getMa()));
+    }
+}
+
+void MainWindow::on_huyChonBanButton_clicked()
+{
+    banChon=NULL;
+    ui->banChooseLabel->setText("");
+}
+
+void MainWindow::on_traBanButton_clicked()
+{
+    if(banChon!=NULL){
+        banChon->setState(false);
+        UpdateBan();
+    }
 }
 

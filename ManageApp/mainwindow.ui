@@ -31,7 +31,7 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>521</width>
+      <width>401</width>
       <height>141</height>
      </rect>
     </property>
@@ -39,7 +39,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>130</x>
       <y>30</y>
       <width>151</width>
       <height>41</height>
@@ -48,13 +48,16 @@
     <property name="text">
      <string>Trong nhà</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QColumnView" name="columnView_2">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>350</y>
-      <width>521</width>
+      <width>401</width>
       <height>151</height>
      </rect>
     </property>
@@ -62,7 +65,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>110</x>
       <y>360</y>
       <width>191</width>
       <height>31</height>
@@ -70,6 +73,9 @@
     </property>
     <property name="text">
      <string>Ngoài sân</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QColumnView" name="columnChooseView">
@@ -161,7 +167,7 @@
       <x>270</x>
       <y>650</y>
       <width>191</width>
-      <height>22</height>
+      <height>31</height>
      </rect>
     </property>
     <item>
@@ -204,8 +210,8 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>190</y>
+      <x>80</x>
+      <y>180</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -213,13 +219,16 @@
     <property name="text">
      <string>Lầu 2</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QColumnView" name="columnView_6">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>180</y>
-      <width>521</width>
+      <width>401</width>
       <height>161</height>
      </rect>
     </property>
@@ -601,7 +610,7 @@
      <rect>
       <x>30</x>
       <y>60</y>
-      <width>481</width>
+      <width>361</width>
       <height>101</height>
      </rect>
     </property>
@@ -611,7 +620,7 @@
      <rect>
       <x>30</x>
       <y>220</y>
-      <width>481</width>
+      <width>361</width>
       <height>111</height>
      </rect>
     </property>
@@ -621,9 +630,85 @@
      <rect>
       <x>30</x>
       <y>390</y>
-      <width>481</width>
+      <width>361</width>
       <height>101</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="huyChonBanButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hủy chọn</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="traBanButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>380</y>
+      <width>111</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trả bàn</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>10</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Bàn</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="chonBanButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>100</y>
+      <width>111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Chọn bàn</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="banChooseLabel">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>66</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <zorder>columnChooseView</zorder>
@@ -668,6 +753,11 @@
    <zorder>banTrongNhaList</zorder>
    <zorder>lau2BanList</zorder>
    <zorder>ngoaiSanBanList</zorder>
+   <zorder>huyChonBanButton</zorder>
+   <zorder>traBanButton</zorder>
+   <zorder>label_4</zorder>
+   <zorder>chonBanButton</zorder>
+   <zorder>banChooseLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

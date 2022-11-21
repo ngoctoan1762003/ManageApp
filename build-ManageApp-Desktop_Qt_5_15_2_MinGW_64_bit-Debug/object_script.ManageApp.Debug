@@ -1,5 +1,6 @@
 debug/SaveDay.o
 debug/addform.o
+debug/ban.o
 debug/editform.o
 debug/hoadonwindow.o
 debug/main.o

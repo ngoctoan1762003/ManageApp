@@ -30,16 +30,16 @@ QString changeString(QString in, int sizeNeed){
     }
     return newString;
 }
-void HoaDonWindow::Display(int row, LinkedList<int>*& soLuong, LinkedList<MonHang>*& ten, LinkedList<int>*& tongTien)
+void HoaDonWindow::Display(QString maBan, int row, LinkedList<int>*& soLuong, LinkedList<MonHang>*& ten, LinkedList<int>*& tongTien)
 {
 
     QString chiTiet="";
     QString add;
     int sum=0;
-    chiTiet.append("Ban");
-    chiTiet.append("1");
+    chiTiet.append("Bàn: ");
+    chiTiet.append(maBan);
     chiTiet.append("\t\t\t");
-    chiTiet.append("\nTime: ");
+    chiTiet.append("\nThời gian: ");
 
     QDateTime date = QDateTime::currentDateTime();
     QString formattedTime = date.toString("dd/MM/yyyy hh:mm:ss");
@@ -67,16 +67,15 @@ void HoaDonWindow::Display(int row, LinkedList<int>*& soLuong, LinkedList<MonHan
         chiTiet.append(add);
     }
 
-    chiTiet.append("\n\nThanh tien: \t\t\t\t\t");
+    chiTiet.append("\n\nThành tiền: \t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(sum)));
-    chiTiet.append("\n\nPhu phi\t\t\t\t\t\t");
+    chiTiet.append("\n\nPhụ phí\t\t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(sum/10)));
-    chiTiet.append("\n\nTong phai tra\t\t\t\t\t");
+    chiTiet.append("\n\nTổng phải trả\t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(sum+sum/10)));
-    chiTiet.append("\n\n\t\tXin chan thanh cam on quy khach\t\t");
+    chiTiet.append("\n\n\t\tXin chân thành cảm ơn quý khách\t\t");
     ui->chiTietHoaDon->setText(chiTiet);
 
-                                qDebug("hidonereal");
 }
 
 

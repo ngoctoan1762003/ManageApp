@@ -1,19 +1,13 @@
-n
-001
-Bàn góc trái ngoài sân
-Ngoài sân
-002
-Bàn thứ 2 từ trái sang ngoài sân
-Ngoài sân
-003
-Bàn thứ 2 từ phải sang ngoài sân
-Ngoài sân
-004
-Bàn góc phải ngoài sân
-Ngoài sân
-005
-Bàn ở giữa trong nhà
-Trong nhà
-006
-Bàn ở cửa sổ tầng 2
-Tầng 2
+6
+101
+NgoaiSan
+102
+NgoaiSan
+103
+NgoaiSan
+104
+NgoaiSan
+201
+TrongNha
+301
+Tang2

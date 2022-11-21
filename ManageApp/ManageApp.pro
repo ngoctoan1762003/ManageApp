@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     SaveDay.cpp \
     addform.cpp \
+    ban.cpp \
     editform.cpp \
     hoadonwindow.cpp \
     main.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     SaveDay.h \
     addform.h \
+    ban.h \
     editform.h \
     hoadonwindow.h \
     linkedlist.h \

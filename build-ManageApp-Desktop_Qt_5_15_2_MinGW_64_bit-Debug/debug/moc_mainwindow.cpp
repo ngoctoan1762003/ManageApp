@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[26];
-    char stringdata0[482];
+    QByteArrayData data[33];
+    char stringdata0[658];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,23 +41,30 @@ QT_MOC_LITERAL(5, 83, 26), // "on_finishDayButton_clicked"
 QT_MOC_LITERAL(6, 110, 23), // "on_taoMoiButton_clicked"
 QT_MOC_LITERAL(7, 134, 6), // "Update"
 QT_MOC_LITERAL(8, 141, 8), // "UpdateMH"
-QT_MOC_LITERAL(9, 150, 25), // "on_pushButtonFood_clicked"
-QT_MOC_LITERAL(10, 176, 26), // "on_pushButtonDrink_clicked"
-QT_MOC_LITERAL(11, 203, 21), // "on_editButton_clicked"
-QT_MOC_LITERAL(12, 225, 23), // "on_reviewButton_clicked"
-QT_MOC_LITERAL(13, 249, 29), // "on_pushButtonGasDrink_clicked"
-QT_MOC_LITERAL(14, 279, 27), // "on_pushButtonCoffee_clicked"
-QT_MOC_LITERAL(15, 307, 22), // "on_traList_itemClicked"
-QT_MOC_LITERAL(16, 330, 16), // "QListWidgetItem*"
-QT_MOC_LITERAL(17, 347, 4), // "item"
-QT_MOC_LITERAL(18, 352, 27), // "on_nuocNgotList_itemClicked"
-QT_MOC_LITERAL(19, 380, 24), // "on_caPheList_itemClicked"
-QT_MOC_LITERAL(20, 405, 23), // "on_doAnList_itemClicked"
-QT_MOC_LITERAL(21, 429, 13), // "deleteMonHang"
-QT_MOC_LITERAL(22, 443, 6), // "string"
-QT_MOC_LITERAL(23, 450, 10), // "addMonHang"
-QT_MOC_LITERAL(24, 461, 8), // "MonHang*"
-QT_MOC_LITERAL(25, 470, 11) // "editMonHang"
+QT_MOC_LITERAL(9, 150, 9), // "UpdateBan"
+QT_MOC_LITERAL(10, 160, 25), // "on_pushButtonFood_clicked"
+QT_MOC_LITERAL(11, 186, 26), // "on_pushButtonDrink_clicked"
+QT_MOC_LITERAL(12, 213, 21), // "on_editButton_clicked"
+QT_MOC_LITERAL(13, 235, 23), // "on_reviewButton_clicked"
+QT_MOC_LITERAL(14, 259, 29), // "on_pushButtonGasDrink_clicked"
+QT_MOC_LITERAL(15, 289, 27), // "on_pushButtonCoffee_clicked"
+QT_MOC_LITERAL(16, 317, 22), // "on_traList_itemClicked"
+QT_MOC_LITERAL(17, 340, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(18, 357, 4), // "item"
+QT_MOC_LITERAL(19, 362, 27), // "on_nuocNgotList_itemClicked"
+QT_MOC_LITERAL(20, 390, 24), // "on_caPheList_itemClicked"
+QT_MOC_LITERAL(21, 415, 23), // "on_doAnList_itemClicked"
+QT_MOC_LITERAL(22, 439, 30), // "on_banTrongNhaList_itemClicked"
+QT_MOC_LITERAL(23, 470, 26), // "on_lau2BanList_itemClicked"
+QT_MOC_LITERAL(24, 497, 30), // "on_ngoaiSanBanList_itemClicked"
+QT_MOC_LITERAL(25, 528, 24), // "on_chonBanButton_clicked"
+QT_MOC_LITERAL(26, 553, 27), // "on_huyChonBanButton_clicked"
+QT_MOC_LITERAL(27, 581, 23), // "on_traBanButton_clicked"
+QT_MOC_LITERAL(28, 605, 13), // "deleteMonHang"
+QT_MOC_LITERAL(29, 619, 6), // "string"
+QT_MOC_LITERAL(30, 626, 10), // "addMonHang"
+QT_MOC_LITERAL(31, 637, 8), // "MonHang*"
+QT_MOC_LITERAL(32, 646, 11) // "editMonHang"
 
     },
     "MainWindow\0on_addButton_clicked\0\0"
@@ -65,7 +72,7 @@ QT_MOC_LITERAL(25, 470, 11) // "editMonHang"
     "on_minusButton_clicked\0"
     "on_finishDayButton_clicked\0"
     "on_taoMoiButton_clicked\0Update\0UpdateMH\0"
-    "on_pushButtonFood_clicked\0"
+    "UpdateBan\0on_pushButtonFood_clicked\0"
     "on_pushButtonDrink_clicked\0"
     "on_editButton_clicked\0on_reviewButton_clicked\0"
     "on_pushButtonGasDrink_clicked\0"
@@ -73,7 +80,13 @@ QT_MOC_LITERAL(25, 470, 11) // "editMonHang"
     "on_traList_itemClicked\0QListWidgetItem*\0"
     "item\0on_nuocNgotList_itemClicked\0"
     "on_caPheList_itemClicked\0"
-    "on_doAnList_itemClicked\0deleteMonHang\0"
+    "on_doAnList_itemClicked\0"
+    "on_banTrongNhaList_itemClicked\0"
+    "on_lau2BanList_itemClicked\0"
+    "on_ngoaiSanBanList_itemClicked\0"
+    "on_chonBanButton_clicked\0"
+    "on_huyChonBanButton_clicked\0"
+    "on_traBanButton_clicked\0deleteMonHang\0"
     "string\0addMonHang\0MonHang*\0editMonHang"
 };
 #undef QT_MOC_LITERAL
@@ -84,7 +97,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -92,26 +105,33 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  114,    2, 0x08 /* Private */,
-       3,    0,  115,    2, 0x08 /* Private */,
-       4,    0,  116,    2, 0x08 /* Private */,
-       5,    0,  117,    2, 0x08 /* Private */,
-       6,    0,  118,    2, 0x08 /* Private */,
-       7,    0,  119,    2, 0x08 /* Private */,
-       8,    0,  120,    2, 0x08 /* Private */,
-       9,    0,  121,    2, 0x08 /* Private */,
-      10,    0,  122,    2, 0x08 /* Private */,
-      11,    0,  123,    2, 0x08 /* Private */,
-      12,    0,  124,    2, 0x08 /* Private */,
-      13,    0,  125,    2, 0x08 /* Private */,
-      14,    0,  126,    2, 0x08 /* Private */,
-      15,    1,  127,    2, 0x08 /* Private */,
-      18,    1,  130,    2, 0x08 /* Private */,
-      19,    1,  133,    2, 0x08 /* Private */,
-      20,    1,  136,    2, 0x08 /* Private */,
-      21,    1,  139,    2, 0x0a /* Public */,
-      23,    1,  142,    2, 0x0a /* Public */,
-      25,    2,  145,    2, 0x0a /* Public */,
+       1,    0,  149,    2, 0x08 /* Private */,
+       3,    0,  150,    2, 0x08 /* Private */,
+       4,    0,  151,    2, 0x08 /* Private */,
+       5,    0,  152,    2, 0x08 /* Private */,
+       6,    0,  153,    2, 0x08 /* Private */,
+       7,    0,  154,    2, 0x08 /* Private */,
+       8,    0,  155,    2, 0x08 /* Private */,
+       9,    0,  156,    2, 0x08 /* Private */,
+      10,    0,  157,    2, 0x08 /* Private */,
+      11,    0,  158,    2, 0x08 /* Private */,
+      12,    0,  159,    2, 0x08 /* Private */,
+      13,    0,  160,    2, 0x08 /* Private */,
+      14,    0,  161,    2, 0x08 /* Private */,
+      15,    0,  162,    2, 0x08 /* Private */,
+      16,    1,  163,    2, 0x08 /* Private */,
+      19,    1,  166,    2, 0x08 /* Private */,
+      20,    1,  169,    2, 0x08 /* Private */,
+      21,    1,  172,    2, 0x08 /* Private */,
+      22,    1,  175,    2, 0x08 /* Private */,
+      23,    1,  178,    2, 0x08 /* Private */,
+      24,    1,  181,    2, 0x08 /* Private */,
+      25,    0,  184,    2, 0x08 /* Private */,
+      26,    0,  185,    2, 0x08 /* Private */,
+      27,    0,  186,    2, 0x08 /* Private */,
+      28,    1,  187,    2, 0x0a /* Public */,
+      30,    1,  190,    2, 0x0a /* Public */,
+      32,    2,  193,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -127,13 +147,20 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 16,   17,
-    QMetaType::Void, 0x80000000 | 16,   17,
-    QMetaType::Void, 0x80000000 | 16,   17,
-    QMetaType::Void, 0x80000000 | 16,   17,
-    QMetaType::Void, 0x80000000 | 22,    2,
-    QMetaType::Void, 0x80000000 | 24,    2,
-    QMetaType::Void, QMetaType::Int, 0x80000000 | 24,    2,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void, 0x80000000 | 17,   18,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 29,    2,
+    QMetaType::Void, 0x80000000 | 31,    2,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 31,    2,    2,
 
        0        // eod
 };
@@ -151,19 +178,26 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->on_taoMoiButton_clicked(); break;
         case 5: _t->Update(); break;
         case 6: _t->UpdateMH(); break;
-        case 7: _t->on_pushButtonFood_clicked(); break;
-        case 8: _t->on_pushButtonDrink_clicked(); break;
-        case 9: _t->on_editButton_clicked(); break;
-        case 10: _t->on_reviewButton_clicked(); break;
-        case 11: _t->on_pushButtonGasDrink_clicked(); break;
-        case 12: _t->on_pushButtonCoffee_clicked(); break;
-        case 13: _t->on_traList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 14: _t->on_nuocNgotList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 15: _t->on_caPheList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 16: _t->on_doAnList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 17: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
-        case 18: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
-        case 19: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
+        case 7: _t->UpdateBan(); break;
+        case 8: _t->on_pushButtonFood_clicked(); break;
+        case 9: _t->on_pushButtonDrink_clicked(); break;
+        case 10: _t->on_editButton_clicked(); break;
+        case 11: _t->on_reviewButton_clicked(); break;
+        case 12: _t->on_pushButtonGasDrink_clicked(); break;
+        case 13: _t->on_pushButtonCoffee_clicked(); break;
+        case 14: _t->on_traList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 15: _t->on_nuocNgotList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 16: _t->on_caPheList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 17: _t->on_doAnList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 18: _t->on_banTrongNhaList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 19: _t->on_lau2BanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 20: _t->on_ngoaiSanBanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 21: _t->on_chonBanButton_clicked(); break;
+        case 22: _t->on_huyChonBanButton_clicked(); break;
+        case 23: _t->on_traBanButton_clicked(); break;
+        case 24: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
+        case 25: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
+        case 26: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -198,13 +232,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 27;
     }
     return _id;
 }
