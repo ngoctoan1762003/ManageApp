@@ -35,3 +35,21 @@ So Luong Hoa Don: 0
 
 So Luong Hoa Don: 0
 
+-----Ngay 1-----
+
+So Luong Hoa Don: 0
+
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 2
+TraSua	3
+TraTac	1
+
+So Luong Hoa Don: 1
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 2
+TraTac	3
+TraSua	2
+

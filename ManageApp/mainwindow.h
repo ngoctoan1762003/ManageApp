@@ -12,6 +12,7 @@
 #include "tongket.h"
 #include "linkedlist.h"
 #include "editform.h"
+#include "review.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -47,7 +48,9 @@ class MainWindow : public QMainWindow
 
     SaveDay saveDay;
     Manager manager;
-    int count=0;
+    int tongDoanhThu=0;
+    int tongSoHD=0;
+    int soNgay=0;
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -79,11 +82,15 @@ private slots:
 
     void on_editButton_clicked();
 
+    void on_reviewButton_clicked();
+
 public slots:
 
     void deleteMonHang(string);
 
     void addMonHang(MonHang*);
+
+    void editMonHang(int, MonHang*);
 
 private:
     Ui::MainWindow *ui;

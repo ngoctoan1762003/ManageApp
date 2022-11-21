@@ -5,6 +5,7 @@
 #include "linkedlist.h"
 #include "monhang.h"
 #include "addform.h"
+#include "resetprop.h"
 
 namespace Ui {
 class EditForm;
@@ -24,10 +25,12 @@ signals:
 
     void newMonHang(MonHang*);
     void deleteMonHang(string);
+    void editMonHang(int, MonHang*);
 
 public slots:
 
     void AddMonHangToTable(MonHang*);
+    void EditMonHangToTable(MonHang*);
 
 private slots:
 
@@ -37,8 +40,11 @@ private slots:
 
     void on_minusButton_clicked();
 
+    void on_editButton_clicked();
+
 private:
     AddForm *addForm;
+    ReSetProp *resetProp;
     Ui::EditForm *ui;
 };
 

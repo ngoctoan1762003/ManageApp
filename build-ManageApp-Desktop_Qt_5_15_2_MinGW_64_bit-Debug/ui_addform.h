@@ -108,6 +108,7 @@ public:
         donViBox->addItem(QString());
         donViBox->addItem(QString());
         donViBox->addItem(QString());
+        donViBox->addItem(QString());
         donViBox->setObjectName(QString::fromUtf8("donViBox"));
 
         verticalLayout_2->addWidget(donViBox);
@@ -144,6 +145,7 @@ public:
         donViBox->setItemText(1, QCoreApplication::translate("AddForm", "Chai", nullptr));
         donViBox->setItemText(2, QCoreApplication::translate("AddForm", "Lon", nullptr));
         donViBox->setItemText(3, QCoreApplication::translate("AddForm", "Xien", nullptr));
+        donViBox->setItemText(4, QCoreApplication::translate("AddForm", "Dia", nullptr));
 
         loaiHangBox->setItemText(0, QCoreApplication::translate("AddForm", "Tra", nullptr));
         loaiHangBox->setItemText(1, QCoreApplication::translate("AddForm", "NuocNgot", nullptr));

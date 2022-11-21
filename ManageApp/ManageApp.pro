@@ -17,6 +17,8 @@ SOURCES += \
     mainwindow.cpp \
     manager.cpp \
     monhang.cpp \
+    resetprop.cpp \
+    review.cpp \
     save.cpp \
     tongket.cpp
 
@@ -30,6 +32,8 @@ HEADERS += \
     manager.h \
     monhang.h \
     node.h \
+    resetprop.h \
+    review.h \
     save.h \
     tongket.h
 
@@ -38,6 +42,8 @@ FORMS += \
     editform.ui \
     hoadonwindow.ui \
     mainwindow.ui \
+    resetprop.ui \
+    review.ui \
     tongket.ui
 
 # Default rules for deployment.

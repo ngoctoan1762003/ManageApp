@@ -54,6 +54,20 @@ void EditForm::AddMonHangToTable(MonHang* mh){
     emit newMonHang(mh);
 }
 
+void EditForm::EditMonHangToTable(MonHang* mh){
+    QTableWidgetItem *item;
+    for(int i=0; i<ui->monHangTable->columnCount(); i++){
+        item= new QTableWidgetItem;
+        //if(i==0) item->setText(QString::fromStdString(to_string(addIndex)));
+        if(i==0) item->setText(mh->getTen());
+        if(i==1) item->setText(QString::fromStdString(to_string(mh->getGia())));
+        if(i==2) item->setText(QString::fromStdString(mh->getDonViTinh()));
+        if(i==3) item->setText(QString::fromStdString(mh->getLoaiHang()));
+        ui->monHangTable->setItem(ui->monHangTable->currentRow(),i,item);
+    }
+    emit editMonHang(ui->monHangTable->currentRow(), mh);
+    qDebug()<<"done";
+}
 
 void EditForm::on_exitButton_clicked()
 {
@@ -77,5 +91,15 @@ void EditForm::on_minusButton_clicked()
         }
         ui->monHangTable->setRowCount(ui->monHangTable->rowCount()-1);
     }
+}
+
+
+void EditForm::on_editButton_clicked()
+{
+    resetProp=new ReSetProp(this);
+    QObject::connect(resetProp, SIGNAL(ResetProp(MonHang*)), this, SLOT(EditMonHangToTable(MonHang*)));
+    resetProp->show();
+    resetProp->Display(ui->monHangTable->item(ui->monHangTable->currentRow(), 0)->text(),ui->monHangTable->item(ui->monHangTable->currentRow(), 1)->text(),
+                       ui->monHangTable->item(ui->monHangTable->currentRow(), 2)->text(),ui->monHangTable->item(ui->monHangTable->currentRow(), 3)->text());
 }
 

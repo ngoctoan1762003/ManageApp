@@ -6,6 +6,8 @@ debug/main.o
 debug/mainwindow.o
 debug/manager.o
 debug/monhang.o
+debug/resetprop.o
+debug/review.o
 debug/save.o
 debug/tongket.o
 debug/qrc_Resource.o
@@ -13,4 +15,6 @@ debug/moc_addform.o
 debug/moc_editform.o
 debug/moc_hoadonwindow.o
 debug/moc_mainwindow.o
+debug/moc_resetprop.o
+debug/moc_review.o
 debug/moc_tongket.o

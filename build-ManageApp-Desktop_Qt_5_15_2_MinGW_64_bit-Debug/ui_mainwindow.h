@@ -74,8 +74,10 @@ public:
     QLabel *label_3;
     QLabel *tongTienCuoiLabel;
     QPushButton *finishDayButton;
-    QPushButton *pushButton_2;
+    QPushButton *reviewButton;
     QPushButton *editButton;
+    QPushButton *pushButtonFood_2;
+    QPushButton *pushButtonFood_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -109,7 +111,7 @@ public:
         columnChooseView->setGeometry(QRect(1330, 30, 441, 831));
         pushButtonFood = new QPushButton(centralwidget);
         pushButtonFood->setObjectName(QString::fromUtf8("pushButtonFood"));
-        pushButtonFood->setGeometry(QRect(1380, 50, 161, 41));
+        pushButtonFood->setGeometry(QRect(1350, 50, 91, 41));
         QIcon icon;
         QString iconThemeName = QString::fromUtf8("phone");
         if (QIcon::hasThemeIcon(iconThemeName)) {
@@ -120,7 +122,7 @@ public:
         pushButtonFood->setIcon(icon);
         pushButtonDrink = new QPushButton(centralwidget);
         pushButtonDrink->setObjectName(QString::fromUtf8("pushButtonDrink"));
-        pushButtonDrink->setGeometry(QRect(1570, 50, 171, 41));
+        pushButtonDrink->setGeometry(QRect(1650, 50, 91, 41));
         columnDisplayView = new QColumnView(centralwidget);
         columnDisplayView->setObjectName(QString::fromUtf8("columnDisplayView"));
         columnDisplayView->setGeometry(QRect(540, 30, 771, 471));
@@ -269,12 +271,20 @@ public:
         finishDayButton = new QPushButton(centralwidget);
         finishDayButton->setObjectName(QString::fromUtf8("finishDayButton"));
         finishDayButton->setGeometry(QRect(1090, 680, 161, 71));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(1090, 770, 161, 71));
+        reviewButton = new QPushButton(centralwidget);
+        reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
+        reviewButton->setGeometry(QRect(1090, 770, 161, 71));
         editButton = new QPushButton(centralwidget);
         editButton->setObjectName(QString::fromUtf8("editButton"));
         editButton->setGeometry(QRect(1090, 530, 161, 71));
+        pushButtonFood_2 = new QPushButton(centralwidget);
+        pushButtonFood_2->setObjectName(QString::fromUtf8("pushButtonFood_2"));
+        pushButtonFood_2->setGeometry(QRect(1450, 50, 91, 41));
+        pushButtonFood_2->setIcon(icon);
+        pushButtonFood_3 = new QPushButton(centralwidget);
+        pushButtonFood_3->setObjectName(QString::fromUtf8("pushButtonFood_3"));
+        pushButtonFood_3->setGeometry(QRect(1550, 50, 91, 41));
+        pushButtonFood_3->setIcon(icon);
         MainWindow->setCentralWidget(centralwidget);
         columnView_6->raise();
         columnView->raise();
@@ -311,8 +321,10 @@ public:
         label_3->raise();
         tongTienCuoiLabel->raise();
         finishDayButton->raise();
-        pushButton_2->raise();
+        reviewButton->raise();
         editButton->raise();
+        pushButtonFood_2->raise();
+        pushButtonFood_3->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
@@ -335,7 +347,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Trong nh\303\240", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Ngo\303\240i s\303\242n", nullptr));
         pushButtonFood->setText(QCoreApplication::translate("MainWindow", "\304\220\341\273\223 \304\203n", nullptr));
-        pushButtonDrink->setText(QCoreApplication::translate("MainWindow", "\304\220\341\273\223 u\341\273\221ng", nullptr));
+        pushButtonDrink->setText(QCoreApplication::translate("MainWindow", "C\303\240 ph\303\252", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "T\303\252n kh\303\241ch h\303\240ng", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Ti\341\273\201n m\341\272\267t", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Th\341\272\273 t\303\255n d\341\273\245ng", nullptr));
@@ -370,8 +382,10 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "10%", nullptr));
         tongTienCuoiLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         finishDayButton->setText(QCoreApplication::translate("MainWindow", "K\341\272\277t th\303\272c ng\303\240y l\303\240m", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng quan", nullptr));
+        reviewButton->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng quan", nullptr));
         editButton->setText(QCoreApplication::translate("MainWindow", "\304\220i\341\273\201u ch\341\273\211nh", nullptr));
+        pushButtonFood_2->setText(QCoreApplication::translate("MainWindow", "N\306\260\341\273\233c ng\341\273\215t", nullptr));
+        pushButtonFood_3->setText(QCoreApplication::translate("MainWindow", "Tr\303\240", nullptr));
     } // retranslateUi
 
 };

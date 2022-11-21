@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[337];
+    QByteArrayData data[21];
+    char stringdata0[373];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,10 +47,12 @@ QT_MOC_LITERAL(11, 214, 6), // "Update"
 QT_MOC_LITERAL(12, 221, 25), // "on_pushButtonFood_clicked"
 QT_MOC_LITERAL(13, 247, 26), // "on_pushButtonDrink_clicked"
 QT_MOC_LITERAL(14, 274, 21), // "on_editButton_clicked"
-QT_MOC_LITERAL(15, 296, 13), // "deleteMonHang"
-QT_MOC_LITERAL(16, 310, 6), // "string"
-QT_MOC_LITERAL(17, 317, 10), // "addMonHang"
-QT_MOC_LITERAL(18, 328, 8) // "MonHang*"
+QT_MOC_LITERAL(15, 296, 23), // "on_reviewButton_clicked"
+QT_MOC_LITERAL(16, 320, 13), // "deleteMonHang"
+QT_MOC_LITERAL(17, 334, 6), // "string"
+QT_MOC_LITERAL(18, 341, 10), // "addMonHang"
+QT_MOC_LITERAL(19, 352, 8), // "MonHang*"
+QT_MOC_LITERAL(20, 361, 11) // "editMonHang"
 
     },
     "MainWindow\0on_traSuaChoose_toggled\0\0"
@@ -62,8 +64,9 @@ QT_MOC_LITERAL(18, 328, 8) // "MonHang*"
     "on_taoMoiButton_clicked\0Update\0"
     "on_pushButtonFood_clicked\0"
     "on_pushButtonDrink_clicked\0"
-    "on_editButton_clicked\0deleteMonHang\0"
-    "string\0addMonHang\0MonHang*"
+    "on_editButton_clicked\0on_reviewButton_clicked\0"
+    "deleteMonHang\0string\0addMonHang\0"
+    "MonHang*\0editMonHang"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,7 +76,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -81,20 +84,22 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   84,    2, 0x08 /* Private */,
-       4,    0,   87,    2, 0x08 /* Private */,
-       5,    1,   88,    2, 0x08 /* Private */,
-       6,    1,   91,    2, 0x08 /* Private */,
-       7,    0,   94,    2, 0x08 /* Private */,
-       8,    0,   95,    2, 0x08 /* Private */,
-       9,    0,   96,    2, 0x08 /* Private */,
-      10,    0,   97,    2, 0x08 /* Private */,
-      11,    0,   98,    2, 0x08 /* Private */,
-      12,    0,   99,    2, 0x08 /* Private */,
-      13,    0,  100,    2, 0x08 /* Private */,
-      14,    0,  101,    2, 0x08 /* Private */,
-      15,    1,  102,    2, 0x0a /* Public */,
-      17,    1,  105,    2, 0x0a /* Public */,
+       1,    1,   94,    2, 0x08 /* Private */,
+       4,    0,   97,    2, 0x08 /* Private */,
+       5,    1,   98,    2, 0x08 /* Private */,
+       6,    1,  101,    2, 0x08 /* Private */,
+       7,    0,  104,    2, 0x08 /* Private */,
+       8,    0,  105,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    0,  107,    2, 0x08 /* Private */,
+      11,    0,  108,    2, 0x08 /* Private */,
+      12,    0,  109,    2, 0x08 /* Private */,
+      13,    0,  110,    2, 0x08 /* Private */,
+      14,    0,  111,    2, 0x08 /* Private */,
+      15,    0,  112,    2, 0x08 /* Private */,
+      16,    1,  113,    2, 0x0a /* Public */,
+      18,    1,  116,    2, 0x0a /* Public */,
+      20,    2,  119,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Bool,    3,
@@ -109,8 +114,10 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 16,    2,
-    QMetaType::Void, 0x80000000 | 18,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 17,    2,
+    QMetaType::Void, 0x80000000 | 19,    2,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 19,    2,    2,
 
        0        // eod
 };
@@ -133,8 +140,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->on_pushButtonFood_clicked(); break;
         case 10: _t->on_pushButtonDrink_clicked(); break;
         case 11: _t->on_editButton_clicked(); break;
-        case 12: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
-        case 13: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
+        case 12: _t->on_reviewButton_clicked(); break;
+        case 13: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
+        case 14: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
+        case 15: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -169,13 +178,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 16;
     }
     return _id;
 }

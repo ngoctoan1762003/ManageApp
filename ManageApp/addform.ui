@@ -127,6 +127,11 @@
           <string>Xien</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>Dia</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item>

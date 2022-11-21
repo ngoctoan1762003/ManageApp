@@ -85,9 +85,9 @@
    <widget class="QPushButton" name="pushButtonFood">
     <property name="geometry">
      <rect>
-      <x>1380</x>
+      <x>1350</x>
       <y>50</y>
-      <width>161</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -102,14 +102,14 @@
    <widget class="QPushButton" name="pushButtonDrink">
     <property name="geometry">
      <rect>
-      <x>1570</x>
+      <x>1650</x>
       <y>50</y>
-      <width>171</width>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Đồ uống</string>
+     <string>Cà phê</string>
     </property>
    </widget>
    <widget class="QColumnView" name="columnDisplayView">
@@ -637,7 +637,7 @@ background-color: transparent;
      <string>Kết thúc ngày làm</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="reviewButton">
     <property name="geometry">
      <rect>
       <x>1090</x>
@@ -661,6 +661,40 @@ background-color: transparent;
     </property>
     <property name="text">
      <string>Điều chỉnh</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonFood_2">
+    <property name="geometry">
+     <rect>
+      <x>1450</x>
+      <y>50</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nước ngọt</string>
+    </property>
+    <property name="icon">
+     <iconset theme="phone">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonFood_3">
+    <property name="geometry">
+     <rect>
+      <x>1550</x>
+      <y>50</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trà</string>
+    </property>
+    <property name="icon">
+     <iconset theme="phone">
+      <normaloff>.</normaloff>.</iconset>
     </property>
    </widget>
    <zorder>columnView_6</zorder>
@@ -698,8 +732,10 @@ background-color: transparent;
    <zorder>label_3</zorder>
    <zorder>tongTienCuoiLabel</zorder>
    <zorder>finishDayButton</zorder>
-   <zorder>pushButton_2</zorder>
+   <zorder>reviewButton</zorder>
    <zorder>editButton</zorder>
+   <zorder>pushButtonFood_2</zorder>
+   <zorder>pushButtonFood_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

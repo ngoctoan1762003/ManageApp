@@ -206,7 +206,10 @@ void MainWindow::on_thanhToanButton_clicked()
     *nodeSave->value=saveObject;
     qDebug()<<nodeSave->value->GetSaveTongTien();
     saveDay.saveObjectArr.AddTail(nodeSave);
+
     sumDay+=sum;
+    tongDoanhThu+=sum;
+    tongSoHD++;
 
     tenHangChon.clear();
     giaHangChon.clear();
@@ -262,7 +265,7 @@ void MainWindow::on_minusButton_clicked()
 
 void MainWindow::on_finishDayButton_clicked()
 {
-    count++;
+    //count++;
     ofstream outfile;
     outfile.open("./SaleData.txt", std::ios::app);
     manager.addSaveDay=new Node<SaveDay>;
@@ -270,7 +273,7 @@ void MainWindow::on_finishDayButton_clicked()
     manager.addSaveDay->value=new SaveDay;
     *manager.addSaveDay->value=saveDay;
     manager.saveDayArr.AddTail(manager.addSaveDay);
-    outfile<<"-----Ngay "<<count<<"-----"<<endl<<endl;
+    //outfile<<"-----Ngay "<<count<<"-----"<<endl<<endl;
     outfile<<"So Luong Hoa Don: "<<saveDay.saveObjectArr.GetSize()<<endl<<endl;
     for(int i=0; i<saveDay.saveObjectArr.GetSize(); i++){
         outfile<<"Hóa Đơn Thứ "<<i+1<<endl;
@@ -291,9 +294,10 @@ void MainWindow::on_finishDayButton_clicked()
         //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
     int soHoaDon=saveDay.saveObjectArr.GetSize();
     //qDebug()<<soHoaDon;
-    tongKet->Display(soHoaDon, sumDay, count);
+    tongKet->Display(soHoaDon, sumDay);
     //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 
+    soNgay++;
     saveDay.saveObjectArr.clear();
     sumDay=0;
     outfile.close();
@@ -330,6 +334,7 @@ void MainWindow::on_editButton_clicked()
     editForm = new EditForm(this);
     QObject::connect(editForm, SIGNAL(newMonHang(MonHang*)), this, SLOT(addMonHang(MonHang*)));
     QObject::connect(editForm, SIGNAL(deleteMonHang(string)), this, SLOT(deleteMonHang(string)));
+    QObject::connect(editForm, SIGNAL(editMonHang(int,MonHang*)), this, SLOT(editMonHang(int,MonHang*)));
     editForm->show();
     LinkedList<MonHang>* temp = &manager.monHang;
     editForm->Display(manager.monHang.GetSize(), temp);
@@ -352,4 +357,19 @@ void MainWindow::deleteMonHang(string name){
     manager.monHang.RemoveAfterIndex(index-1);
 }
 
+void MainWindow::editMonHang(int index, MonHang* mh){
+    MonHang* newMH=manager.monHang.GetNode(index)->value;
+    newMH->setTen(mh->getTen());
+    newMH->setGia(mh->getGia());
+    newMH->setDonViTinh(mh->getDonViTinh());
+    newMH->setLoaiHang(mh->getLoaiHang());
+}
+
+
+void MainWindow::on_reviewButton_clicked()
+{
+    Review* review=new Review(this);
+    review->show();
+    review->Display(QString::fromStdString(to_string(soNgay)), QString::fromStdString(to_string(tongSoHD)),QString::fromStdString(to_string(tongDoanhThu)));
+}
 
