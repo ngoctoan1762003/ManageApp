@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTableWidget>
+#include <QListWidget>
 #include <vector>
 #include "monhang.h"
 #include "hoadonwindow.h"
@@ -41,10 +42,10 @@ class MainWindow : public QMainWindow
     float finalsum=0;
     //QTableWidget table= ui->hoaDon;
     MonHang *monHangChon;
-    MonHang *traSua = new MonHang;
+    /*MonHang *traSua = new MonHang;
     MonHang *traTac = new MonHang;
     MonHang *traDao = new MonHang;
-    MonHang *xucXich= new MonHang;
+    MonHang *xucXich= new MonHang;*/
 
     SaveDay saveDay;
     Manager manager;
@@ -58,13 +59,13 @@ public:
 
 private slots:
 
-    void on_traSuaChoose_toggled(bool checked);
+    //void on_traSuaChoose_toggled(bool checked);
 
     void on_addButton_clicked();
 
-    void on_traTacChoose_toggled(bool checked);
+    //void on_traTacChoose_toggled(bool checked);
 
-    void on_traDaoChoose_toggled(bool checked);
+    //void on_traDaoChoose_toggled(bool checked);
 
     void on_thanhToanButton_clicked();
 
@@ -76,6 +77,8 @@ private slots:
 
     void Update();
 
+    void UpdateMH();
+
     void on_pushButtonFood_clicked();
 
     void on_pushButtonDrink_clicked();
@@ -84,13 +87,25 @@ private slots:
 
     void on_reviewButton_clicked();
 
+    void on_pushButtonGasDrink_clicked();
+
+    void on_pushButtonCoffee_clicked();
+
+    void on_traList_itemClicked(QListWidgetItem *item);
+
+    void on_nuocNgotList_itemClicked(QListWidgetItem *item);
+
+    void on_caPheList_itemClicked(QListWidgetItem *item);
+
+    void on_doAnList_itemClicked(QListWidgetItem *item);
+
 public slots:
 
     void deleteMonHang(string);
 
     void addMonHang(MonHang*);
 
-    void editMonHang(int, MonHang*);
+    void editMonHang(int,MonHang*);
 
 private:
     Ui::MainWindow *ui;

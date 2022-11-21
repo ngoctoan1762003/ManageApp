@@ -85,7 +85,7 @@
    <widget class="QPushButton" name="pushButtonFood">
     <property name="geometry">
      <rect>
-      <x>1350</x>
+      <x>1650</x>
       <y>50</y>
       <width>91</width>
       <height>41</height>
@@ -102,14 +102,14 @@
    <widget class="QPushButton" name="pushButtonDrink">
     <property name="geometry">
      <rect>
-      <x>1650</x>
+      <x>1350</x>
       <y>50</y>
       <width>91</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cà phê</string>
+     <string>Trà</string>
     </property>
    </widget>
    <widget class="QColumnView" name="columnDisplayView">
@@ -387,154 +387,53 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label_18">
+     <widget class="QListWidget" name="traList">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>101</width>
-        <height>91</height>
+        <x>15</x>
+        <y>21</y>
+        <width>371</width>
+        <height>661</height>
        </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../../Download/5.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="traSuaChoose">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>120</width>
-        <height>120</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>120</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#traSuaChoose{
-background-color: transparent;
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="traTacChoose">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>20</y>
-        <width>120</width>
-        <height>120</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>120</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#traTacChoose{
-background-color: transparent;
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="traDaoChoose">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>20</y>
-        <width>120</width>
-        <height>120</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>120</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#traSuaChoose{
-background-color: transparent;
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="traSuaChoose_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>150</y>
-        <width>120</width>
-        <height>120</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>120</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#traSuaChoose{
-background-color: transparent;
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="page_2"/>
+    <widget class="QWidget" name="page_3">
+     <widget class="QListWidget" name="nuocNgotList">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>21</y>
+        <width>371</width>
+        <height>661</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QListWidget" name="caPheList">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>21</y>
+        <width>371</width>
+        <height>661</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QListWidget" name="doAnList">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>21</y>
+        <width>371</width>
+        <height>661</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QPushButton" name="addButton">
     <property name="geometry">
@@ -663,7 +562,7 @@ background-color: transparent;
      <string>Điều chỉnh</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonFood_2">
+   <widget class="QPushButton" name="pushButtonGasDrink">
     <property name="geometry">
      <rect>
       <x>1450</x>
@@ -680,7 +579,7 @@ background-color: transparent;
       <normaloff>.</normaloff>.</iconset>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonFood_3">
+   <widget class="QPushButton" name="pushButtonCoffee">
     <property name="geometry">
      <rect>
       <x>1550</x>
@@ -690,19 +589,19 @@ background-color: transparent;
      </rect>
     </property>
     <property name="text">
-     <string>Trà</string>
+     <string>Cà phê</string>
     </property>
     <property name="icon">
      <iconset theme="phone">
       <normaloff>.</normaloff>.</iconset>
     </property>
    </widget>
+   <zorder>columnChooseView</zorder>
    <zorder>columnView_6</zorder>
    <zorder>columnView</zorder>
    <zorder>label</zorder>
    <zorder>columnView_2</zorder>
    <zorder>label_2</zorder>
-   <zorder>columnChooseView</zorder>
    <zorder>pushButtonFood</zorder>
    <zorder>pushButtonDrink</zorder>
    <zorder>columnDisplayView</zorder>
@@ -734,8 +633,8 @@ background-color: transparent;
    <zorder>finishDayButton</zorder>
    <zorder>reviewButton</zorder>
    <zorder>editButton</zorder>
-   <zorder>pushButtonFood_2</zorder>
-   <zorder>pushButtonFood_3</zorder>
+   <zorder>pushButtonGasDrink</zorder>
+   <zorder>pushButtonCoffee</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

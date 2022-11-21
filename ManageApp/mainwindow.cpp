@@ -13,9 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->minusButton->hide();
     ui->addButton->hide();
 
+    UpdateMH();
+
     tenHangChon.CreateList();
     soLuong.CreateList();
-    QPixmap *pixmap;
+    /*QPixmap *pixmap;
     pixmap=new QPixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
     QIcon *ButtonIcon;
     ButtonIcon= new QIcon(*pixmap);
@@ -35,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     traDao=manager.GetMonHang("TraDao");
     xucXich=manager.GetMonHang("XucXich");
     //qDebug()<<manager.monHang.GetNode(0)->value->getTen();
-        //qDebug()<<manager.monHang.GetNode(3)->value->getTen();
+        //qDebug()<<manager.monHang.GetNode(3)->value->getTen();*/
 }
 
 MainWindow::~MainWindow()
@@ -43,7 +45,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_traSuaChoose_toggled(bool checked)
+/*void MainWindow::on_traSuaChoose_toggled(bool checked)
 {
     if(checked){
         monHangChon=manager.GetMonHang("TraSua");
@@ -95,7 +97,7 @@ void MainWindow::on_traDaoChoose_toggled(bool checked)
         QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
         ui->traDaoChoose->setIconSize(pixmap.rect().size()/2);
     }
-}
+}*/
 
 void MainWindow::Update(){
     ui->tongTienLabel->setText(QString::fromStdString(to_string(sum)));
@@ -319,9 +321,18 @@ void MainWindow::on_taoMoiButton_clicked()
 
 void MainWindow::on_pushButtonFood_clicked()
 {
-    ui->stackedMenu->setCurrentIndex(1);
+    ui->stackedMenu->setCurrentIndex(3);
 }
 
+void MainWindow::on_pushButtonCoffee_clicked()
+{
+    ui->stackedMenu->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButtonGasDrink_clicked()
+{
+    ui->stackedMenu->setCurrentIndex(1);
+}
 
 void MainWindow::on_pushButtonDrink_clicked()
 {
@@ -342,6 +353,7 @@ void MainWindow::on_editButton_clicked()
 
 void MainWindow::addMonHang(MonHang* mh){
     manager.addMonHangToArr(mh);
+    UpdateMH();
 }
 
 void MainWindow::deleteMonHang(string name){
@@ -355,6 +367,7 @@ void MainWindow::deleteMonHang(string name){
     qDebug()<<QString::fromStdString(name);
     qDebug()<<index;
     manager.monHang.RemoveAfterIndex(index-1);
+    UpdateMH();
 }
 
 void MainWindow::editMonHang(int index, MonHang* mh){
@@ -363,6 +376,7 @@ void MainWindow::editMonHang(int index, MonHang* mh){
     newMH->setGia(mh->getGia());
     newMH->setDonViTinh(mh->getDonViTinh());
     newMH->setLoaiHang(mh->getLoaiHang());
+    UpdateMH();
 }
 
 
@@ -371,5 +385,59 @@ void MainWindow::on_reviewButton_clicked()
     Review* review=new Review(this);
     review->show();
     review->Display(QString::fromStdString(to_string(soNgay)), QString::fromStdString(to_string(tongSoHD)),QString::fromStdString(to_string(tongDoanhThu)));
+}
+
+void MainWindow::UpdateMH(){
+    ui->traList->clear();
+    ui->nuocNgotList->clear();
+    ui->caPheList->clear();
+    ui->doAnList->clear();
+    for(int i=0; i<manager.monHang.GetSize(); i++){
+        if(manager.monHang.GetNode(i)->value->getLoaiHang()=="Tra"){
+            ui->traList->addItem(manager.monHang.GetNode(i)->value->getTen());
+        }
+        if(manager.monHang.GetNode(i)->value->getLoaiHang()=="NuocNgot"){
+            ui->nuocNgotList->addItem(manager.monHang.GetNode(i)->value->getTen());
+        }
+        if(manager.monHang.GetNode(i)->value->getLoaiHang()=="CaPhe"){
+            ui->caPheList->addItem(manager.monHang.GetNode(i)->value->getTen());
+        }
+        if(manager.monHang.GetNode(i)->value->getLoaiHang()=="DoAn"){
+            ui->doAnList->addItem(manager.monHang.GetNode(i)->value->getTen());
+        }
+    }
+}
+
+
+
+void MainWindow::on_traList_itemClicked(QListWidgetItem *item)
+{
+    monHangChon=manager.GetMonHang(item->text().toStdString());
+    ui->minusButton->show();
+    ui->addButton->show();
+}
+
+
+void MainWindow::on_nuocNgotList_itemClicked(QListWidgetItem *item)
+{
+    monHangChon=manager.GetMonHang(item->text().toStdString());
+    ui->minusButton->show();
+    ui->addButton->show();
+}
+
+
+void MainWindow::on_caPheList_itemClicked(QListWidgetItem *item)
+{
+    monHangChon=manager.GetMonHang(item->text().toStdString());
+    ui->minusButton->show();
+    ui->addButton->show();
+}
+
+
+void MainWindow::on_doAnList_itemClicked(QListWidgetItem *item)
+{
+    monHangChon=manager.GetMonHang(item->text().toStdString());
+    ui->minusButton->show();
+    ui->addButton->show();
 }
 

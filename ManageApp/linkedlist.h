@@ -43,14 +43,19 @@ public:
     }
     void RemoveAfterIndex(int index){
         Node<TValue>* node=GetNode(index);
-            if(node!=NULL){
-                Node<TValue>* p=node->next;
-                if(p!=NULL){
-                    if(tail==p) tail=node;
-                    node->next=p->next;
-                    delete p;
-                }
+        if(node!=NULL){
+            Node<TValue>* p=node->next;
+            if(p!=NULL){
+                if(tail==p) tail=node;
+                node->next=p->next;
+                delete p;
             }
+        }
+        if(index==-1){
+            Node<TValue>* p=head;
+            head=head->next;
+            delete p;
+        }
     }
     int GetSize(){
         int count = 0;
