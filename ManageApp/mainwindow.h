@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTableWidget>
 #include <QListWidget>
+#include <QDateTime>
 #include <vector>
 #include "monhang.h"
 #include "hoadonwindow.h"

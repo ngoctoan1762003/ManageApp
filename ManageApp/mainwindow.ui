@@ -268,12 +268,12 @@
      <rect>
       <x>551</x>
       <y>653</y>
-      <width>37</width>
+      <width>221</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>VAT</string>
+     <string>VAT (đã bao gồm)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_15">
@@ -596,6 +596,36 @@
       <normaloff>.</normaloff>.</iconset>
     </property>
    </widget>
+   <widget class="QListWidget" name="banTrongNhaList">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>481</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="lau2BanList">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>481</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="ngoaiSanBanList">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>481</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>columnChooseView</zorder>
    <zorder>columnView_6</zorder>
    <zorder>columnView</zorder>
@@ -635,6 +665,9 @@
    <zorder>editButton</zorder>
    <zorder>pushButtonGasDrink</zorder>
    <zorder>pushButtonCoffee</zorder>
+   <zorder>banTrongNhaList</zorder>
+   <zorder>lau2BanList</zorder>
+   <zorder>ngoaiSanBanList</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

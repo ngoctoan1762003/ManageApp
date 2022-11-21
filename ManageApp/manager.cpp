@@ -39,6 +39,24 @@ void Manager::loadMonHang(){
         monHang.AddTail(addNodeMonHang);
     }
 }
+void Manager::saveMonHang(){
+    ofstream outfile("./MonHangInput.txt", std::ios::ate);
+    outfile<<monHang.GetSize();
+    outfile<<endl;
+    for(int i=0; i<monHang.GetSize(); i++){
+        MonHang* temp = monHang.GetNode(i)->value;
+        outfile<<temp->getMa();
+        outfile<<endl;
+        outfile<<temp->getTen().toStdString();
+        outfile<<endl;
+        outfile<<temp->getGia();
+        outfile<<endl;
+        outfile<<temp->getDonViTinh();
+        outfile<<endl;
+        outfile<<temp->getLoaiHang();
+        outfile<<endl;
+    }
+}
 void Manager::addMonHangToArr(MonHang* mh){
     size++;
     addNodeMonHang=new Node<MonHang>;
@@ -51,13 +69,12 @@ void Manager::addMonHangToArr(MonHang* mh){
     addNodeMonHang->value->setLoaiHang(mh->getLoaiHang());
 
     monHang.AddTail(addNodeMonHang);
+
+    saveMonHang();
 }
 MonHang* Manager::GetMonHang(string name){
-    //qDebug()<<this->size;
     for(int i=0; i<this->size; i++){
-
         if(name==monHang.GetNode(i)->value->getTen().toStdString()) {
-                //qDebug()<<"oke";
             return monHang.GetNode(i)->value;
         }
     }

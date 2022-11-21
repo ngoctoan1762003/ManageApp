@@ -17,8 +17,10 @@ public:
     Node<MonHang>* addNodeMonHang;
     MonHang* addMonHang;
     Node<SaveDay>* addSaveDay=new Node<SaveDay>;
+
     Manager();
     void loadMonHang();
+    void saveMonHang();
     void addMonHangToArr(MonHang*);
     MonHang* GetMonHang(string name);
     //Manager *manager;

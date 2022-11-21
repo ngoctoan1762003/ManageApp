@@ -99,9 +99,20 @@ void MainWindow::on_traDaoChoose_toggled(bool checked)
     }
 }*/
 
+QString changeQString(QString in, int sizeNeed){
+    QString newString=in;
+    for(int i=0; i<sizeNeed; i++){
+        if(i>in.size()){
+            newString+=" ";
+        }
+    }
+    return newString;
+}
+
+
 void MainWindow::Update(){
     ui->tongTienLabel->setText(QString::fromStdString(to_string(sum)));
-    finalsum=sum*(1+0.1);
+    finalsum=sum*(1);
     ui->tongTienCuoiLabel->setText(QString::fromStdString(to_string((int)finalsum)));
 }
 
@@ -275,19 +286,35 @@ void MainWindow::on_finishDayButton_clicked()
     manager.addSaveDay->value=new SaveDay;
     *manager.addSaveDay->value=saveDay;
     manager.saveDayArr.AddTail(manager.addSaveDay);
-    //outfile<<"-----Ngay "<<count<<"-----"<<endl<<endl;
+
+    QDateTime date = QDateTime::currentDateTime();
+    QString formattedTime = date.toString("dd/MM/yyyy");
+    outfile<<"-----Ngay "<<formattedTime.toStdString()<<"-----"<<endl<<endl;
+    outfile<<"Tong Doanh Thu: "<<sumDay<<endl<<endl;
     outfile<<"So Luong Hoa Don: "<<saveDay.saveObjectArr.GetSize()<<endl<<endl;
     for(int i=0; i<saveDay.saveObjectArr.GetSize(); i++){
         outfile<<"Hóa Đơn Thứ "<<i+1<<endl;
         outfile<<"Số Lượng Hàng: "<<saveDay.saveObjectArr[i].value->GetSaveSoLuongHang()<<endl;
-        qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang;
+        //qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang;
+
+        outfile<<"Ten\t\t\t\t";
+        outfile<<"SL\t";
+        outfile<<"Gia\t\t";
+        outfile<<"Don Vi\t\t";
+        outfile<<"Tong";
+        outfile<<endl;
+
         for(int j=0; j<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang; j++){
-            qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen();
-            qDebug()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value;
-            outfile<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen().toStdString()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value<<endl;
+            //qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen();
+            //qDebug()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value;
+            outfile<<changeQString(saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen(),25).toStdString()<<"\t"
+                  <<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value<<"\t"
+                 <<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getGia()<<"\t\t"
+                <<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getDonViTinh()<<"\t\t"
+               <<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getGia()*(*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value)<<endl;
 
         }
-        outfile<<endl;
+        outfile<<"Tong Tien:\t\t\t\t\t\t\t\t"<<saveDay.saveObjectArr.GetNode(i)->value->saveTongTien<<endl<<endl;
     }
 
     tongKet=new TongKet(this);
@@ -352,6 +379,7 @@ void MainWindow::on_editButton_clicked()
 }
 
 void MainWindow::addMonHang(MonHang* mh){
+    mh->setMa(manager.monHang.GetSize()+1);
     manager.addMonHangToArr(mh);
     UpdateMH();
 }
@@ -368,6 +396,7 @@ void MainWindow::deleteMonHang(string name){
     qDebug()<<index;
     manager.monHang.RemoveAfterIndex(index-1);
     UpdateMH();
+    manager.saveMonHang();
 }
 
 void MainWindow::editMonHang(int index, MonHang* mh){
@@ -377,6 +406,7 @@ void MainWindow::editMonHang(int index, MonHang* mh){
     newMH->setDonViTinh(mh->getDonViTinh());
     newMH->setLoaiHang(mh->getLoaiHang());
     UpdateMH();
+    manager.saveMonHang();
 }
 
 

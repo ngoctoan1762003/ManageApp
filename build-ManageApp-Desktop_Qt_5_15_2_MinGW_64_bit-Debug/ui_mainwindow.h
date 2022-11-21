@@ -80,6 +80,9 @@ public:
     QPushButton *editButton;
     QPushButton *pushButtonGasDrink;
     QPushButton *pushButtonCoffee;
+    QListWidget *banTrongNhaList;
+    QListWidget *lau2BanList;
+    QListWidget *ngoaiSanBanList;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -165,7 +168,7 @@ public:
         label_13->setGeometry(QRect(551, 593, 381, 31));
         label_14 = new QLabel(centralwidget);
         label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(551, 653, 37, 21));
+        label_14->setGeometry(QRect(551, 653, 221, 21));
         label_15 = new QLabel(centralwidget);
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setGeometry(QRect(551, 703, 271, 31));
@@ -263,6 +266,15 @@ public:
         pushButtonCoffee->setObjectName(QString::fromUtf8("pushButtonCoffee"));
         pushButtonCoffee->setGeometry(QRect(1550, 50, 91, 41));
         pushButtonCoffee->setIcon(icon);
+        banTrongNhaList = new QListWidget(centralwidget);
+        banTrongNhaList->setObjectName(QString::fromUtf8("banTrongNhaList"));
+        banTrongNhaList->setGeometry(QRect(30, 60, 481, 101));
+        lau2BanList = new QListWidget(centralwidget);
+        lau2BanList->setObjectName(QString::fromUtf8("lau2BanList"));
+        lau2BanList->setGeometry(QRect(30, 220, 481, 111));
+        ngoaiSanBanList = new QListWidget(centralwidget);
+        ngoaiSanBanList->setObjectName(QString::fromUtf8("ngoaiSanBanList"));
+        ngoaiSanBanList->setGeometry(QRect(30, 390, 481, 101));
         MainWindow->setCentralWidget(centralwidget);
         columnChooseView->raise();
         columnView_6->raise();
@@ -303,6 +315,9 @@ public:
         editButton->raise();
         pushButtonGasDrink->raise();
         pushButtonCoffee->raise();
+        banTrongNhaList->raise();
+        lau2BanList->raise();
+        ngoaiSanBanList->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
@@ -336,7 +351,7 @@ public:
         label_11->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng th\303\240nh ti\341\273\201n", nullptr));
         tongTienLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_13->setText(QCoreApplication::translate("MainWindow", "Chi\341\272\277t kh\341\272\245u", nullptr));
-        label_14->setText(QCoreApplication::translate("MainWindow", "VAT", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "VAT (\304\221\303\243 bao g\341\273\223m)", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng c\341\273\231ng", nullptr));
         thanhToanButton->setText(QCoreApplication::translate("MainWindow", "Thanh to\303\241n", nullptr));
         taoMoiButton->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o m\341\273\233i", nullptr));
