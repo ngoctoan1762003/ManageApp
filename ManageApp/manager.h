@@ -33,6 +33,7 @@ public:
     void loadTaiKhoan();
     void loadMonHang();
     void saveMonHang();
+    void saveBan();
     void addMonHangToArr(MonHang*);
     MonHang* GetMonHang(string name);
     Ban* GetBan(int ma);

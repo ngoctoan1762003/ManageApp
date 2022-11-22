@@ -492,7 +492,11 @@ void MainWindow::on_action_ng_xu_t_triggered()
 void MainWindow::on_actionB_n_triggered()
 {
     editBanForm=new EditBanForm(this);
+    QObject::connect(editBanForm, SIGNAL(AddBanToArr(int,QString)), this, SLOT(AddBanToArr(int,QString)));
+    QObject::connect(editBanForm, SIGNAL(DeleteBan(int)), this, SLOT(DeleteBanToArr(int)));
     editBanForm->show();
+    LinkedList<Ban>* temp=&manager.ban;
+    editBanForm->Display(temp);
 }
 
 
@@ -519,5 +523,29 @@ void MainWindow::setPermit(int i){
         ui->actionM_t_h_ng->setEnabled(false);
         ui->actionT_i_kho_n->setEnabled(false);
     }
+}
+
+void MainWindow::AddBanToArr(int ma, QString viTri){
+    Node<Ban>* ban=new Node<Ban>;
+    ban->CreateNode();
+    ban->value=new Ban;
+    ban->value->setMa(ma);
+    ban->value->setViTri(viTri);
+    manager.ban.AddTail(ban);
+    UpdateBan();
+    manager.saveBan();
+}
+
+void MainWindow::DeleteBanToArr(int ma){
+    int index;
+    for(int i=0; i<manager.ban.GetSize(); i++){
+        if(manager.ban.GetNode(i)->value->getMa()==ma){
+            index=i;
+            break;
+        }
+    }
+    manager.ban.RemoveAfterIndex(index-1);
+    UpdateBan();
+    manager.saveBan();
 }
 

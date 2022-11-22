@@ -129,6 +129,10 @@ public slots:
 
     void setPermit(int);
 
+    void AddBanToArr(int, QString);
+
+    void DeleteBanToArr(int);
+
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;

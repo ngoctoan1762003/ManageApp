@@ -1,4 +1,5 @@
 release/SaveDay.o
+release/addbanform.o
 release/addform.o
 release/ban.o
 release/editbanform.o
@@ -15,6 +16,7 @@ release/save.o
 release/taikhoan.o
 release/tongket.o
 release/qrc_Resource.o
+release/moc_addbanform.o
 release/moc_addform.o
 release/moc_editbanform.o
 release/moc_editform.o

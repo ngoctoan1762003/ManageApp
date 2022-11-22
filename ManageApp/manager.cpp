@@ -59,6 +59,19 @@ void Manager::saveMonHang(){
     }
     outfile.close();
 }
+void Manager::saveBan(){
+    ofstream outfile("./BanInput.txt", std::ios::ate);
+    outfile<<ban.GetSize();
+    outfile<<endl;
+    for(int i=0; i<ban.GetSize(); i++){
+        Ban* temp = ban.GetNode(i)->value;
+        outfile<<temp->getMa();
+        outfile<<endl;
+        outfile<<temp->getViTri().toStdString();
+        outfile<<endl;
+    }
+    outfile.close();
+}
 void Manager::loadBan(){
     ifstream infile("./BanInput.txt", std::ios::in);
 

@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     SaveDay.cpp \
+    addbanform.cpp \
     addform.cpp \
     ban.cpp \
     editbanform.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 HEADERS += \
     SaveDay.h \
+    addbanform.h \
     addform.h \
     ban.h \
     editbanform.h \
@@ -46,6 +48,7 @@ HEADERS += \
     tongket.h
 
 FORMS += \
+    addbanform.ui \
     addform.ui \
     editbanform.ui \
     editform.ui \
