@@ -85,6 +85,45 @@ void Manager::loadBan(){
     }
     infile.close();
 }
+void Manager::loadTaiKhoan(){
+    ifstream infile("./TaiKhoanQLy.txt", std::ios::in);
+    int size;
+    string tk;
+    string mk;
+    infile>>size;
+    for(int i=0; i<size; i++){
+        addTaiKhoan=new TaiKhoan;
+        infile>>tk;
+        addTaiKhoan->setTaiKhoan(QString::fromStdString(tk));
+        infile>>mk;
+        addTaiKhoan->setMatKhau(QString::fromStdString(mk));
+
+        addNodeTaiKhoan=new Node<TaiKhoan>;
+        addNodeTaiKhoan->CreateNode();
+        addNodeTaiKhoan->value=new TaiKhoan;
+        *addNodeTaiKhoan->value=*addTaiKhoan;
+
+        employer.AddTail(addNodeTaiKhoan);
+    }
+    infile.close();
+    infile.open("./TaiKhoanNhanVien.txt", std::ios::in);
+    infile>>size;
+    for(int i=0; i<size; i++){
+        addTaiKhoan=new TaiKhoan;
+        infile>>tk;
+        addTaiKhoan->setTaiKhoan(QString::fromStdString(tk));
+        infile>>mk;
+        addTaiKhoan->setMatKhau(QString::fromStdString(mk));
+
+        addNodeTaiKhoan=new Node<TaiKhoan>;
+        addNodeTaiKhoan->CreateNode();
+        addNodeTaiKhoan->value=new TaiKhoan;
+        *addNodeTaiKhoan->value=*addTaiKhoan;
+
+        employee.AddTail(addNodeTaiKhoan);
+    }
+    infile.close();
+}
 void Manager::addMonHangToArr(MonHang* mh){
     size++;
     addNodeMonHang=new Node<MonHang>;
@@ -115,3 +154,4 @@ Ban* Manager::GetBan(int ma){
     }
     return NULL;
 }
+

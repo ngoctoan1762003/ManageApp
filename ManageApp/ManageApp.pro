@@ -12,8 +12,10 @@ SOURCES += \
     SaveDay.cpp \
     addform.cpp \
     ban.cpp \
+    editbanform.cpp \
     editform.cpp \
     hoadonwindow.cpp \
+    loginform.cpp \
     main.cpp \
     mainwindow.cpp \
     manager.cpp \
@@ -21,15 +23,18 @@ SOURCES += \
     resetprop.cpp \
     review.cpp \
     save.cpp \
+    taikhoan.cpp \
     tongket.cpp
 
 HEADERS += \
     SaveDay.h \
     addform.h \
     ban.h \
+    editbanform.h \
     editform.h \
     hoadonwindow.h \
     linkedlist.h \
+    loginform.h \
     mainwindow.h \
     manager.h \
     monhang.h \
@@ -37,12 +42,15 @@ HEADERS += \
     resetprop.h \
     review.h \
     save.h \
+    taikhoan.h \
     tongket.h
 
 FORMS += \
     addform.ui \
+    editbanform.ui \
     editform.ui \
     hoadonwindow.ui \
+    loginform.ui \
     mainwindow.ui \
     resetprop.ui \
     review.ui \

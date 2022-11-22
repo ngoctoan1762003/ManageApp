@@ -1,8 +1,10 @@
 release/SaveDay.o
 release/addform.o
 release/ban.o
+release/editbanform.o
 release/editform.o
 release/hoadonwindow.o
+release/loginform.o
 release/main.o
 release/mainwindow.o
 release/manager.o
@@ -10,11 +12,14 @@ release/monhang.o
 release/resetprop.o
 release/review.o
 release/save.o
+release/taikhoan.o
 release/tongket.o
 release/qrc_Resource.o
 release/moc_addform.o
+release/moc_editbanform.o
 release/moc_editform.o
 release/moc_hoadonwindow.o
+release/moc_loginform.o
 release/moc_mainwindow.o
 release/moc_resetprop.o
 release/moc_review.o

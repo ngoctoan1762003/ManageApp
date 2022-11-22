@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Màn hình chính");
     manager.loadMonHang();
     manager.loadBan();
 
@@ -19,87 +20,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     tenHangChon.CreateList();
     soLuong.CreateList();
-    /*QPixmap *pixmap;
-    pixmap=new QPixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
-    QIcon *ButtonIcon;
-    ButtonIcon= new QIcon(*pixmap);
-    ui->traSuaChoose->setIcon(*ButtonIcon);
-    ui->traSuaChoose->setIconSize(pixmap->rect().size()/2);
-    ui->traSuaChoose->setCheckable(true);
-    pixmap=new QPixmap("D:/ManageApp/ManageApp/Image/tratac.png");
-    ButtonIcon= new QIcon(*pixmap);
-    ui->traTacChoose->setIcon(*ButtonIcon);
-    ui->traTacChoose->setIconSize(pixmap->rect().size()/8);
-    ui->traTacChoose->setCheckable(true);
-    ui->traDaoChoose->setCheckable(true);
-    //ui->traSuaChoose->setIconSize(pixmap.rect().size());
-
-    traSua=manager.GetMonHang("TraSua");
-    traTac=manager.GetMonHang("TraTac");
-    traDao=manager.GetMonHang("TraDao");
-    xucXich=manager.GetMonHang("XucXich");
-    //qDebug()<<manager.monHang.GetNode(0)->value->getTen();
-        //qDebug()<<manager.monHang.GetNode(3)->value->getTen();*/
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-/*void MainWindow::on_traSuaChoose_toggled(bool checked)
-{
-    if(checked){
-        monHangChon=manager.GetMonHang("TraSua");
-        ui->minusButton->show();
-        ui->addButton->show();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
-        ui->traSuaChoose->setIconSize(pixmap.rect().size()/1.5);
-    }
-    else{
-        monHangChon=NULL;
-        ui->minusButton->hide();
-        ui->addButton->hide();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
-        ui->traSuaChoose->setIconSize(pixmap.rect().size()/2);
-    }
-}
-
-void MainWindow::on_traTacChoose_toggled(bool checked)
-{
-    if(checked){
-        monHangChon=manager.GetMonHang("TraTac");
-        ui->minusButton->show();
-        ui->addButton->show();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/tratac.png");
-        ui->traTacChoose->setIconSize(pixmap.rect().size()/6);
-    }
-    else{
-        monHangChon=NULL;
-        ui->minusButton->hide();
-        ui->addButton->hide();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/tratac.png");
-        ui->traTacChoose->setIconSize(pixmap.rect().size()/8);
-    }
-}
-
-void MainWindow::on_traDaoChoose_toggled(bool checked)
-{
-    if(checked){
-        monHangChon=manager.GetMonHang("TraDao");
-        ui->minusButton->show();
-        ui->addButton->show();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
-        ui->traDaoChoose->setIconSize(pixmap.rect().size()/1.5);
-    }
-    else{
-        monHangChon=NULL;
-        ui->minusButton->hide();
-        ui->addButton->hide();
-        QPixmap pixmap("D:/ManageApp/ManageApp/Image/trasua.jfif");
-        ui->traDaoChoose->setIconSize(pixmap.rect().size()/2);
-    }
-}*/
 
 QString changeQString(QString in, int sizeNeed){
     QString newString=in;
@@ -200,11 +126,18 @@ void MainWindow::on_addButton_clicked()
 
 void MainWindow::on_thanhToanButton_clicked()
 {
-    if(banChon!=NULL && banChon->getState()==true){
-        QMessageBox::about(this, "Lỗi", "Bàn đang chọn đang phục vụ khách");
-        return;
+
+    if(banChon!=NULL){
+        if(banChon->getState()==true){
+            QMessageBox::about(this, "Lỗi", "Bàn đang chọn đang phục vụ khách");
+            return;
+        }
     }
 
+    if(ui->hoaDon->rowCount()==0){
+        QMessageBox::about(this, "Lỗi", "Chưa chọn hàng");
+        return;
+    }
     hoaDonWindow=new HoaDonWindow(this);
     hoaDonWindow->resize(650,500+ui->hoaDon->rowCount()*20);
     hoaDonWindow->show();
@@ -543,6 +476,48 @@ void MainWindow::on_traBanButton_clicked()
     if(banChon!=NULL){
         banChon->setState(false);
         UpdateBan();
+    }
+}
+
+
+void MainWindow::on_action_ng_xu_t_triggered()
+{
+    LogInForm* logInForm=new LogInForm;
+    logInForm->resize(600,350);
+    logInForm->show();
+    this->close();
+}
+
+
+void MainWindow::on_actionB_n_triggered()
+{
+    editBanForm=new EditBanForm(this);
+    editBanForm->show();
+}
+
+
+void MainWindow::on_actionM_t_h_ng_triggered()
+{
+    editForm = new EditForm(this);
+    QObject::connect(editForm, SIGNAL(newMonHang(MonHang*)), this, SLOT(addMonHang(MonHang*)));
+    QObject::connect(editForm, SIGNAL(deleteMonHang(string)), this, SLOT(deleteMonHang(string)));
+    QObject::connect(editForm, SIGNAL(editMonHang(int,MonHang*)), this, SLOT(editMonHang(int,MonHang*)));
+    editForm->show();
+    LinkedList<MonHang>* temp = &manager.monHang;
+    editForm->Display(manager.monHang.GetSize(), temp);
+}
+
+
+void MainWindow::on_actionT_i_kho_n_triggered()
+{
+
+}
+
+void MainWindow::setPermit(int i){
+    if(i==1){
+        ui->actionB_n->setEnabled(false);
+        ui->actionM_t_h_ng->setEnabled(false);
+        ui->actionT_i_kho_n->setEnabled(false);
     }
 }
 

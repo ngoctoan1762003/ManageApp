@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QColumnView>
 #include <QtWidgets/QComboBox>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
@@ -32,6 +34,10 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionB_n;
+    QAction *actionM_t_h_ng;
+    QAction *actionT_i_kho_n;
+    QAction *action_ng_xu_t;
     QWidget *centralwidget;
     QColumnView *columnView;
     QLabel *label;
@@ -89,6 +95,8 @@ public:
     QPushButton *chonBanButton;
     QLabel *banChooseLabel;
     QMenuBar *menubar;
+    QMenu *menuLog_out;
+    QMenu *menu_i_u_ch_nh;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -102,6 +110,14 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1800, 900));
+        actionB_n = new QAction(MainWindow);
+        actionB_n->setObjectName(QString::fromUtf8("actionB_n"));
+        actionM_t_h_ng = new QAction(MainWindow);
+        actionM_t_h_ng->setObjectName(QString::fromUtf8("actionM_t_h_ng"));
+        actionT_i_kho_n = new QAction(MainWindow);
+        actionT_i_kho_n->setObjectName(QString::fromUtf8("actionT_i_kho_n"));
+        action_ng_xu_t = new QAction(MainWindow);
+        action_ng_xu_t->setObjectName(QString::fromUtf8("action_ng_xu_t"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         columnView = new QColumnView(centralwidget);
@@ -354,10 +370,21 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
+        menuLog_out = new QMenu(menubar);
+        menuLog_out->setObjectName(QString::fromUtf8("menuLog_out"));
+        menu_i_u_ch_nh = new QMenu(menubar);
+        menu_i_u_ch_nh->setObjectName(QString::fromUtf8("menu_i_u_ch_nh"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
+
+        menubar->addAction(menuLog_out->menuAction());
+        menubar->addAction(menu_i_u_ch_nh->menuAction());
+        menuLog_out->addAction(action_ng_xu_t);
+        menu_i_u_ch_nh->addAction(actionB_n);
+        menu_i_u_ch_nh->addAction(actionM_t_h_ng);
+        menu_i_u_ch_nh->addAction(actionT_i_kho_n);
 
         retranslateUi(MainWindow);
 
@@ -370,6 +397,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionB_n->setText(QCoreApplication::translate("MainWindow", "B\303\240n", nullptr));
+        actionM_t_h_ng->setText(QCoreApplication::translate("MainWindow", "M\341\272\267t h\303\240ng", nullptr));
+        actionT_i_kho_n->setText(QCoreApplication::translate("MainWindow", "T\303\240i kho\341\272\243n", nullptr));
+        action_ng_xu_t->setText(QCoreApplication::translate("MainWindow", "\304\220\304\203ng xu\341\272\245t", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Trong nh\303\240", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Ngo\303\240i s\303\242n", nullptr));
         pushButtonFood->setText(QCoreApplication::translate("MainWindow", "\304\220\341\273\223 \304\203n", nullptr));
@@ -412,6 +443,8 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "B\303\240n", nullptr));
         chonBanButton->setText(QCoreApplication::translate("MainWindow", "Ch\341\273\215n b\303\240n", nullptr));
         banChooseLabel->setText(QString());
+        menuLog_out->setTitle(QCoreApplication::translate("MainWindow", "T\303\240i kho\341\272\243n", nullptr));
+        menu_i_u_ch_nh->setTitle(QCoreApplication::translate("MainWindow", "Qu\341\272\243n l\303\275", nullptr));
     } // retranslateUi
 
 };

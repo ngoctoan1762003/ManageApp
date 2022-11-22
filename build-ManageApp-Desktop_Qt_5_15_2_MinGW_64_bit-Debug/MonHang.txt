@@ -1,6 +1,0 @@
-Món hàng 1:
-	Mã hàng:
-	Tên hàng:
-	Giá:
-	Đơn vị tính:
-	Loại hàng:

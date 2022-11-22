@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
 #include <QTableWidget>
 #include <QListWidget>
 #include <QDateTime>
@@ -16,6 +17,8 @@
 #include "linkedlist.h"
 #include "editform.h"
 #include "review.h"
+#include "loginform.h"
+#include "editbanform.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,12 +46,9 @@ class MainWindow : public QMainWindow
     int sumDay=0;
     float finalsum=0;
     //QTableWidget table= ui->hoaDon;
-    Ban *banChon;
-    MonHang *monHangChon;
-    /*MonHang *traSua = new MonHang;
-    MonHang *traTac = new MonHang;
-    MonHang *traDao = new MonHang;
-    MonHang *xucXich= new MonHang;*/
+    Ban *banChon = NULL;
+    MonHang *monHangChon = NULL;
+
 
     SaveDay saveDay;
     Manager manager;
@@ -62,13 +62,7 @@ public:
 
 private slots:
 
-    //void on_traSuaChoose_toggled(bool checked);
-
     void on_addButton_clicked();
-
-    //void on_traTacChoose_toggled(bool checked);
-
-    //void on_traDaoChoose_toggled(bool checked);
 
     void on_thanhToanButton_clicked();
 
@@ -117,6 +111,14 @@ private slots:
 
     void on_traBanButton_clicked();
 
+    void on_action_ng_xu_t_triggered();
+
+    void on_actionB_n_triggered();
+
+    void on_actionM_t_h_ng_triggered();
+
+    void on_actionT_i_kho_n_triggered();
+
 public slots:
 
     void deleteMonHang(string);
@@ -125,11 +127,14 @@ public slots:
 
     void editMonHang(int,MonHang*);
 
+    void setPermit(int);
+
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;
     TongKet *tongKet;
     EditForm *editForm;
+    EditBanForm *editBanForm;
 };
 
 #endif // MAINWINDOW_H

@@ -1,4 +1,4 @@
-12
+13
 1
 TraSua
 20000
@@ -55,6 +55,11 @@ CaPheDen
 Ly
 CaPhe
 12
+CaPheSaiGon
+20000
+Ly
+CaPhe
+13
 CaPheSua
 18000
 Ly

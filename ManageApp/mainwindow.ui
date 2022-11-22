@@ -768,8 +768,44 @@
      <height>17</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuLog_out">
+    <property name="title">
+     <string>Tài khoản</string>
+    </property>
+    <addaction name="action_ng_xu_t"/>
+   </widget>
+   <widget class="QMenu" name="menu_i_u_ch_nh">
+    <property name="title">
+     <string>Quản lý</string>
+    </property>
+    <addaction name="actionB_n"/>
+    <addaction name="actionM_t_h_ng"/>
+    <addaction name="actionT_i_kho_n"/>
+   </widget>
+   <addaction name="menuLog_out"/>
+   <addaction name="menu_i_u_ch_nh"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionB_n">
+   <property name="text">
+    <string>Bàn</string>
+   </property>
+  </action>
+  <action name="actionM_t_h_ng">
+   <property name="text">
+    <string>Mặt hàng</string>
+   </property>
+  </action>
+  <action name="actionT_i_kho_n">
+   <property name="text">
+    <string>Tài khoản</string>
+   </property>
+  </action>
+  <action name="action_ng_xu_t">
+   <property name="text">
+    <string>Đăng xuất</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
