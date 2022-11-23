@@ -151,7 +151,7 @@ void MainWindow::on_thanhToanButton_clicked()
     QString maBan;
     if(banChon==NULL) maBan="Không";
     else maBan=ui->banChooseLabel->text();
-    hoaDonWindow->Display(maBan, ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
+    hoaDonWindow->Display(count, maBan, ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
 
     //qDebug()<<soLuong.size();
 
@@ -163,6 +163,31 @@ void MainWindow::on_thanhToanButton_clicked()
     *nodeSave->value=saveObject;
     qDebug()<<nodeSave->value->GetSaveTongTien();
     saveDay.saveObjectArr.AddTail(nodeSave);
+
+    if(ui->tenLine->text().isEmpty()==false){
+        int i=0;
+        for(i=0; i<manager.client.GetSize(); i++){
+            KhachHang* khachHang = manager.client.GetNode(i)->value;
+            if(khachHang->getTen()==ui->tenLine->text()){
+                khachHang->addTongHD();
+                khachHang->addTongTien(sum);
+                khachHang->setDiem(khachHang->getDiem()+sum/10);
+                i=-1;
+                break;
+            }
+        }
+        if(i==manager.client.GetSize()){
+            nodeKhachHang=new Node<KhachHang>;
+            nodeKhachHang->CreateNode();
+            nodeKhachHang->value=new KhachHang;
+            nodeKhachHang->value->setTen(ui->tenLine->text());
+            nodeKhachHang->value->setDiem(sum/10);
+            nodeKhachHang->value->addTongHD();
+            nodeKhachHang->value->addTongTien(sum);
+            manager.client.AddTail(nodeKhachHang);
+        }
+        manager.saveKhachHang();
+    }
 
     sumDay+=sum;
     tongDoanhThu+=sum;
@@ -238,6 +263,7 @@ void MainWindow::on_finishDayButton_clicked()
     manager.saveDayArr.AddTail(manager.addSaveDay);
 
     QDateTime date = QDateTime::currentDateTime();
+    date.setDate(date.date().addDays(count));
     QString formattedTime = date.toString("dd/MM/yyyy");
     outfile<<"-----Ngay "<<formattedTime.toStdString()<<"-----"<<endl<<endl;
     outfile<<"Tong Doanh Thu: "<<sumDay<<endl<<endl;
@@ -279,6 +305,7 @@ void MainWindow::on_finishDayButton_clicked()
     soNgay++;
     saveDay.saveObjectArr.clear();
     sumDay=0;
+    count++;
     outfile.close();
 }
 
@@ -364,7 +391,8 @@ void MainWindow::on_reviewButton_clicked()
 {
     Review* review=new Review(this);
     review->show();
-    review->Display(QString::fromStdString(to_string(soNgay)), QString::fromStdString(to_string(tongSoHD)),QString::fromStdString(to_string(tongDoanhThu)));
+    LinkedList<KhachHang>* temp=&manager.client;
+    review->Display(QString::fromStdString(to_string(soNgay)), QString::fromStdString(to_string(tongSoHD)),QString::fromStdString(to_string(tongDoanhThu)), temp);
 }
 
 void MainWindow::UpdateMH(){

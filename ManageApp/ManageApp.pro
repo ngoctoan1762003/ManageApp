@@ -16,6 +16,7 @@ SOURCES += \
     editbanform.cpp \
     editform.cpp \
     hoadonwindow.cpp \
+    khachhang.cpp \
     loginform.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     editbanform.h \
     editform.h \
     hoadonwindow.h \
+    khachhang.h \
     linkedlist.h \
     loginform.h \
     mainwindow.h \

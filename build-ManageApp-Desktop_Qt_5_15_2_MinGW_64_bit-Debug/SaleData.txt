@@ -1,0 +1,20 @@
+-----Ngay 23/11/2022-----
+
+Tong Doanh Thu: 200000
+
+So Luong Hoa Don: 2
+
+Hóa Đơn Thứ 1
+Số Lượng Hàng: 2
+Ten				SL	Gia		Don Vi		Tong
+TraTac                  	2	18000		Ly		36000
+TraChanh                	1	20000		Ly		20000
+Tong Tien:								56000
+
+Hóa Đơn Thứ 2
+Số Lượng Hàng: 2
+Ten				SL	Gia		Don Vi		Tong
+TraTac                  	5	18000		Ly		90000
+CaPheSua                	3	18000		Ly		54000
+Tong Tien:								144000
+

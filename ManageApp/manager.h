@@ -6,6 +6,7 @@
 #include "linkedlist.h"
 #include "ban.h"
 #include "taikhoan.h"
+#include "khachhang.h"
 #include <fstream>
 
 class Manager
@@ -15,6 +16,8 @@ class Manager
 public:
     LinkedList<TaiKhoan> employer;
     LinkedList<TaiKhoan> employee;
+
+    LinkedList<KhachHang> client;
 
     static int tongDoanhThu;
     LinkedList<SaveDay> saveDayArr;
@@ -34,6 +37,7 @@ public:
     void loadMonHang();
     void saveMonHang();
     void saveBan();
+    void saveKhachHang();
     void addMonHangToArr(MonHang*);
     MonHang* GetMonHang(string name);
     Ban* GetBan(int ma);

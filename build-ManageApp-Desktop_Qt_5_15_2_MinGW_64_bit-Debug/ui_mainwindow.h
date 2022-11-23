@@ -18,6 +18,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -26,7 +27,6 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -49,7 +49,6 @@ public:
     QColumnView *columnDisplayView;
     QColumnView *columnPaymentView;
     QLabel *label_7;
-    QTextEdit *textEdit;
     QComboBox *comboBox;
     QLabel *label_8;
     QLabel *label_9;
@@ -64,8 +63,6 @@ public:
     QPushButton *thanhToanButton;
     QPushButton *taoMoiButton;
     QLabel *label_16;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEdit_3;
     QLabel *label_17;
     QStackedWidget *stackedMenu;
     QWidget *page;
@@ -83,7 +80,6 @@ public:
     QLabel *tongTienCuoiLabel;
     QPushButton *finishDayButton;
     QPushButton *reviewButton;
-    QPushButton *editButton;
     QPushButton *pushButtonGasDrink;
     QPushButton *pushButtonCoffee;
     QListWidget *banTrongNhaList;
@@ -94,6 +90,9 @@ public:
     QLabel *label_4;
     QPushButton *chonBanButton;
     QLabel *banChooseLabel;
+    QLineEdit *tenLine;
+    QLineEdit *voucherLine;
+    QLineEdit *noteLine;
     QMenuBar *menubar;
     QMenu *menuLog_out;
     QMenu *menu_i_u_ch_nh;
@@ -160,9 +159,6 @@ public:
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(30, 550, 231, 31));
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-        textEdit->setGeometry(QRect(270, 550, 191, 31));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -210,12 +206,6 @@ public:
         label_16 = new QLabel(centralwidget);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setGeometry(QRect(30, 700, 221, 16));
-        textEdit_2 = new QTextEdit(centralwidget);
-        textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
-        textEdit_2->setGeometry(QRect(270, 700, 191, 101));
-        textEdit_3 = new QTextEdit(centralwidget);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setGeometry(QRect(270, 600, 191, 31));
         label_17 = new QLabel(centralwidget);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(30, 600, 231, 31));
@@ -279,9 +269,6 @@ public:
         reviewButton = new QPushButton(centralwidget);
         reviewButton->setObjectName(QString::fromUtf8("reviewButton"));
         reviewButton->setGeometry(QRect(1090, 770, 161, 71));
-        editButton = new QPushButton(centralwidget);
-        editButton->setObjectName(QString::fromUtf8("editButton"));
-        editButton->setGeometry(QRect(1090, 530, 161, 71));
         pushButtonGasDrink = new QPushButton(centralwidget);
         pushButtonGasDrink->setObjectName(QString::fromUtf8("pushButtonGasDrink"));
         pushButtonGasDrink->setGeometry(QRect(1450, 50, 91, 41));
@@ -319,6 +306,15 @@ public:
         banChooseLabel->setObjectName(QString::fromUtf8("banChooseLabel"));
         banChooseLabel->setGeometry(QRect(440, 66, 71, 21));
         banChooseLabel->setAlignment(Qt::AlignCenter);
+        tenLine = new QLineEdit(centralwidget);
+        tenLine->setObjectName(QString::fromUtf8("tenLine"));
+        tenLine->setGeometry(QRect(270, 550, 191, 31));
+        voucherLine = new QLineEdit(centralwidget);
+        voucherLine->setObjectName(QString::fromUtf8("voucherLine"));
+        voucherLine->setGeometry(QRect(270, 600, 191, 31));
+        noteLine = new QLineEdit(centralwidget);
+        noteLine->setObjectName(QString::fromUtf8("noteLine"));
+        noteLine->setGeometry(QRect(270, 710, 191, 101));
         MainWindow->setCentralWidget(centralwidget);
         columnChooseView->raise();
         columnView_6->raise();
@@ -331,7 +327,6 @@ public:
         columnDisplayView->raise();
         columnPaymentView->raise();
         label_7->raise();
-        textEdit->raise();
         comboBox->raise();
         label_8->raise();
         label_9->raise();
@@ -345,8 +340,6 @@ public:
         thanhToanButton->raise();
         taoMoiButton->raise();
         label_16->raise();
-        textEdit_2->raise();
-        textEdit_3->raise();
         label_17->raise();
         stackedMenu->raise();
         addButton->raise();
@@ -356,7 +349,6 @@ public:
         tongTienCuoiLabel->raise();
         finishDayButton->raise();
         reviewButton->raise();
-        editButton->raise();
         pushButtonGasDrink->raise();
         pushButtonCoffee->raise();
         banTrongNhaList->raise();
@@ -367,6 +359,9 @@ public:
         label_4->raise();
         chonBanButton->raise();
         banChooseLabel->raise();
+        tenLine->raise();
+        voucherLine->raise();
+        noteLine->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1800, 17));
@@ -435,7 +430,6 @@ public:
         tongTienCuoiLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         finishDayButton->setText(QCoreApplication::translate("MainWindow", "K\341\272\277t th\303\272c ng\303\240y l\303\240m", nullptr));
         reviewButton->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng quan", nullptr));
-        editButton->setText(QCoreApplication::translate("MainWindow", "\304\220i\341\273\201u ch\341\273\211nh", nullptr));
         pushButtonGasDrink->setText(QCoreApplication::translate("MainWindow", "N\306\260\341\273\233c ng\341\273\215t", nullptr));
         pushButtonCoffee->setText(QCoreApplication::translate("MainWindow", "C\303\240 ph\303\252", nullptr));
         huyChonBanButton->setText(QCoreApplication::translate("MainWindow", "H\341\273\247y ch\341\273\215n", nullptr));

@@ -5,6 +5,7 @@ debug/ban.o
 debug/editbanform.o
 debug/editform.o
 debug/hoadonwindow.o
+debug/khachhang.o
 debug/loginform.o
 debug/main.o
 debug/mainwindow.o

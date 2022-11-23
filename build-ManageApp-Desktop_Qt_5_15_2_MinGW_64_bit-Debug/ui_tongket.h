@@ -23,7 +23,7 @@ class Ui_TongKet
 {
 public:
     QLabel *ngayLabel;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label;
@@ -36,25 +36,25 @@ public:
     {
         if (TongKet->objectName().isEmpty())
             TongKet->setObjectName(QString::fromUtf8("TongKet"));
-        TongKet->resize(431, 300);
+        TongKet->resize(607, 308);
         ngayLabel = new QLabel(TongKet);
         ngayLabel->setObjectName(QString::fromUtf8("ngayLabel"));
         ngayLabel->setGeometry(QRect(280, 20, 111, 31));
         ngayLabel->setAlignment(Qt::AlignCenter);
-        widget = new QWidget(TongKet);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(230, 60, 281, 91));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(TongKet);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(230, 60, 281, 91));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         verticalLayout->addWidget(label);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout->addWidget(label_2);
@@ -64,12 +64,12 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        soHoaDonLabel = new QLabel(widget);
+        soHoaDonLabel = new QLabel(layoutWidget);
         soHoaDonLabel->setObjectName(QString::fromUtf8("soHoaDonLabel"));
 
         verticalLayout_2->addWidget(soHoaDonLabel);
 
-        doanhThuLabel = new QLabel(widget);
+        doanhThuLabel = new QLabel(layoutWidget);
         doanhThuLabel->setObjectName(QString::fromUtf8("doanhThuLabel"));
 
         verticalLayout_2->addWidget(doanhThuLabel);

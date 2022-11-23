@@ -9,6 +9,7 @@ TongKet::TongKet(QWidget *parent) :
     ui(new Ui::TongKet)
 {
     ui->setupUi(this);
+    setWindowTitle("Tổng quan");
 }
 
 TongKet::~TongKet()

@@ -41,7 +41,9 @@ class MainWindow : public QMainWindow
     Node<int>* nodegia=new Node<int>;
     Node<MonHang>* node=new Node<MonHang>;
     Node<Save>* nodeSave=new Node<Save>;
+    Node<KhachHang>* nodeKhachHang=new Node<KhachHang>;
 
+    int count=0;
     int sum=0;
     int sumDay=0;
     float finalsum=0;

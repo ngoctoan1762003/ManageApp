@@ -72,6 +72,19 @@ void Manager::saveBan(){
     }
     outfile.close();
 }
+void Manager::saveKhachHang(){
+    ofstream outfile("./KhachHangInput.txt", std::ios::ate);
+    outfile<<client.GetSize();
+    outfile<<endl;
+    for(int i=0; i<client.GetSize(); i++){
+        KhachHang* temp = client.GetNode(i)->value;
+        outfile<<temp->getTen().toStdString();
+        outfile<<endl;
+        outfile<<temp->getDiem();
+        outfile<<endl;
+    }
+    outfile.close();
+}
 void Manager::loadBan(){
     ifstream infile("./BanInput.txt", std::ios::in);
 

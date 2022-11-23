@@ -151,16 +151,6 @@
      <string>Tên khách hàng</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>550</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
@@ -348,26 +338,6 @@
     </property>
     <property name="text">
      <string>Ghi chú</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>700</y>
-      <width>191</width>
-      <height>101</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>600</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="label_17">
@@ -558,19 +528,6 @@
      <string>Tổng quan</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="editButton">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>530</y>
-      <width>161</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Điều chỉnh</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonGasDrink">
     <property name="geometry">
      <rect>
@@ -711,6 +668,36 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QLineEdit" name="tenLine">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>550</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="voucherLine">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>600</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="noteLine">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>710</y>
+      <width>191</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>columnChooseView</zorder>
    <zorder>columnView_6</zorder>
    <zorder>columnView</zorder>
@@ -722,7 +709,6 @@
    <zorder>columnDisplayView</zorder>
    <zorder>columnPaymentView</zorder>
    <zorder>label_7</zorder>
-   <zorder>textEdit</zorder>
    <zorder>comboBox</zorder>
    <zorder>label_8</zorder>
    <zorder>label_9</zorder>
@@ -736,8 +722,6 @@
    <zorder>thanhToanButton</zorder>
    <zorder>taoMoiButton</zorder>
    <zorder>label_16</zorder>
-   <zorder>textEdit_2</zorder>
-   <zorder>textEdit_3</zorder>
    <zorder>label_17</zorder>
    <zorder>stackedMenu</zorder>
    <zorder>addButton</zorder>
@@ -747,7 +731,6 @@
    <zorder>tongTienCuoiLabel</zorder>
    <zorder>finishDayButton</zorder>
    <zorder>reviewButton</zorder>
-   <zorder>editButton</zorder>
    <zorder>pushButtonGasDrink</zorder>
    <zorder>pushButtonCoffee</zorder>
    <zorder>banTrongNhaList</zorder>
@@ -758,6 +741,9 @@
    <zorder>label_4</zorder>
    <zorder>chonBanButton</zorder>
    <zorder>banChooseLabel</zorder>
+   <zorder>tenLine</zorder>
+   <zorder>voucherLine</zorder>
+   <zorder>noteLine</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

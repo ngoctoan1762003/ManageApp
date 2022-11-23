@@ -5,6 +5,7 @@ release/ban.o
 release/editbanform.o
 release/editform.o
 release/hoadonwindow.o
+release/khachhang.o
 release/loginform.o
 release/main.o
 release/mainwindow.o

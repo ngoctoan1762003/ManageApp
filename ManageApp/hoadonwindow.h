@@ -21,7 +21,7 @@ class HoaDonWindow : public QDialog
 public:
     explicit HoaDonWindow(QWidget *parent = nullptr);
     ~HoaDonWindow();
-    void Display(QString, int, LinkedList<int>*&, LinkedList<MonHang>*&, LinkedList<int>*&);
+    void Display(int, QString, int, LinkedList<int>*&, LinkedList<MonHang>*&, LinkedList<int>*&);
 
 private slots:
 

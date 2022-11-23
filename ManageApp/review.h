@@ -1,6 +1,8 @@
 #ifndef REVIEW_H
 #define REVIEW_H
 
+#include "khachhang.h"
+#include "linkedlist.h"
 #include <QDialog>
 
 namespace Ui {
@@ -14,7 +16,12 @@ class Review : public QDialog
 public:
     explicit Review(QWidget *parent = nullptr);
     ~Review();
-    void Display(QString, QString, QString);
+    void Display(QString, QString, QString, LinkedList<KhachHang>*&);
+
+private slots:
+    void on_statusButton_clicked();
+
+    void on_clientButton_clicked();
 
 private:
     Ui::Review *ui;

@@ -7,6 +7,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    ofstream outfile("./SaleData.txt", std::ios::ate);
+    //outfile<<"Hello";
+    outfile.close();
     //MainWindow w;
     LogInForm logInForm;
 
