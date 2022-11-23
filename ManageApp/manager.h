@@ -19,10 +19,14 @@ public:
 
     LinkedList<KhachHang> client;
 
+    LinkedList<QString> maGiamGia;
+
     static int tongDoanhThu;
     LinkedList<SaveDay> saveDayArr;
     LinkedList<MonHang> monHang;
     LinkedList<Ban> ban;
+    QString *addMa;
+    Node<QString>* addNodeMa;
     Node<MonHang>* addNodeMonHang;
     MonHang* addMonHang;
     Node<Ban>* addNodeBan;
@@ -34,6 +38,7 @@ public:
     Manager();
     void loadBan();
     void loadTaiKhoan();
+    void loadMaGiamGia();
     void loadMonHang();
     void saveMonHang();
     void saveBan();

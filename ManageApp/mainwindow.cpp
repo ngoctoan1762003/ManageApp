@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Màn hình chính");
     manager.loadMonHang();
     manager.loadBan();
+    manager.loadMaGiamGia();
 
     ui->minusButton->hide();
     ui->addButton->hide();
@@ -40,7 +41,7 @@ QString changeQString(QString in, int sizeNeed){
 
 void MainWindow::Update(){
     ui->tongTienLabel->setText(QString::fromStdString(to_string(sum)));
-    finalsum=sum*(1);
+    finalsum=sum-sum*chietKhau/100-giamGia;
     ui->tongTienCuoiLabel->setText(QString::fromStdString(to_string((int)finalsum)));
 }
 
@@ -138,9 +139,7 @@ void MainWindow::on_thanhToanButton_clicked()
         QMessageBox::about(this, "Lỗi", "Chưa chọn hàng");
         return;
     }
-    hoaDonWindow=new HoaDonWindow(this);
-    hoaDonWindow->resize(650,500+ui->hoaDon->rowCount()*20);
-    hoaDonWindow->show();
+
     tempsl=new LinkedList<int>;
     tempgia=new LinkedList<int>;
     tempmh=new LinkedList<MonHang>;
@@ -151,12 +150,73 @@ void MainWindow::on_thanhToanButton_clicked()
     QString maBan;
     if(banChon==NULL) maBan="Không";
     else maBan=ui->banChooseLabel->text();
-    hoaDonWindow->Display(count, maBan, ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
 
-    //qDebug()<<soLuong.size();
+    if(sum>=mocChietKhau){
+        chietKhau=5;
+    }
+
+
+    if(ui->tenLine->text().isEmpty()==false){
+        int i=0;
+        bool isAvailable=false;
+        for(i=0; i<manager.client.GetSize(); i++){
+            KhachHang* khachHang = manager.client.GetNode(i)->value;
+            if(khachHang->getTen()==ui->tenLine->text()){
+                khachHang->addTongHD();
+                khachHang->addTongTien(sum);
+                khachHang->setDiem(khachHang->getDiem()+sum/1000);
+                isAvailable=true;
+                if(khachHang->getDiem()>=diemTieuChuan){
+                    giamGia+=20000;
+                    khachHang->setDiem(khachHang->getDiem()-diemTieuChuan);
+                }
+                break;
+            }
+        }
+        if(isAvailable==false){
+            nodeKhachHang=new Node<KhachHang>;
+            nodeKhachHang->CreateNode();
+            nodeKhachHang->value=new KhachHang;
+            nodeKhachHang->value->setTen(ui->tenLine->text());
+            nodeKhachHang->value->setDiem(sum/1000);
+            nodeKhachHang->value->addTongHD();
+            nodeKhachHang->value->addTongTien(sum);
+            manager.client.AddTail(nodeKhachHang);
+            if(nodeKhachHang->value->getDiem()>=diemTieuChuan){
+                giamGia+=20000;
+                nodeKhachHang->value->setDiem(nodeKhachHang->value->getDiem()-diemTieuChuan);
+            }
+        }
+        manager.saveKhachHang();
+
+        if(ui->voucherLine->text().isEmpty()==false){
+            for(int j=0; j<manager.maGiamGia.GetSize(); j++){
+                if(manager.maGiamGia.GetNode(j)->value==ui->voucherLine->text()){
+                    if(manager.client.GetNode(i)->value->checkMa(ui->voucherLine->text())){
+                        giamGia+=20000;
+                        break;
+                    }
+                    else{
+                        QMessageBox::about(this, "Lỗi", "Quý khách đã dùng mã này");
+                    }
+                }
+            }
+        }
+    }
+
+    if(ui->noteLine->text().isEmpty()==false){
+        note=ui->noteLine->text();
+    }
+
+    Update();
+
+    hoaDonWindow=new HoaDonWindow(this);
+    hoaDonWindow->resize(650,700+ui->hoaDon->rowCount()*20);
+    hoaDonWindow->show();
+    hoaDonWindow->Display(note, giamGia, chietKhau, count, maBan, ui->hoaDon->rowCount(), tempsl, tempmh, tempgia);
 
     Save saveObject;
-    saveObject.createNewSaveObject(ui->hoaDon->rowCount(), finalsum, tempsl, tempmh);
+    saveObject.createNewSaveObject(chietKhau, giamGia, ui->hoaDon->rowCount(), finalsum, tempsl, tempmh);
     nodeSave=new Node<Save>;
     nodeSave->CreateNode();
     nodeSave->value=new Save;
@@ -164,34 +224,10 @@ void MainWindow::on_thanhToanButton_clicked()
     qDebug()<<nodeSave->value->GetSaveTongTien();
     saveDay.saveObjectArr.AddTail(nodeSave);
 
-    if(ui->tenLine->text().isEmpty()==false){
-        int i=0;
-        for(i=0; i<manager.client.GetSize(); i++){
-            KhachHang* khachHang = manager.client.GetNode(i)->value;
-            if(khachHang->getTen()==ui->tenLine->text()){
-                khachHang->addTongHD();
-                khachHang->addTongTien(sum);
-                khachHang->setDiem(khachHang->getDiem()+sum/10);
-                i=-1;
-                break;
-            }
-        }
-        if(i==manager.client.GetSize()){
-            nodeKhachHang=new Node<KhachHang>;
-            nodeKhachHang->CreateNode();
-            nodeKhachHang->value=new KhachHang;
-            nodeKhachHang->value->setTen(ui->tenLine->text());
-            nodeKhachHang->value->setDiem(sum/10);
-            nodeKhachHang->value->addTongHD();
-            nodeKhachHang->value->addTongTien(sum);
-            manager.client.AddTail(nodeKhachHang);
-        }
-        manager.saveKhachHang();
-    }
-
-    sumDay+=sum;
+    sumDay+=finalsum;
     tongDoanhThu+=sum;
     tongSoHD++;
+    chietKhau=0;
     if(banChon!=NULL){
         manager.GetBan(ui->banChooseLabel->text().toInt())->setState(true);
         UpdateBan();
@@ -204,7 +240,9 @@ void MainWindow::on_thanhToanButton_clicked()
     ui->banChooseLabel->setText("");
     banChon=NULL;
     sum=0;
+    giamGia=0;
     numberOfRow=0;
+    note="";
     Update();
 }
 
@@ -290,11 +328,13 @@ void MainWindow::on_finishDayButton_clicked()
                <<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getGia()*(*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value)<<endl;
 
         }
+        outfile<<"\nGiam Gia:\t\t\t\t\t\t\t\t"<<saveDay.saveObjectArr.GetNode(i)->value->saveGiamGia<<endl<<endl;
+        outfile<<"ChietKhau:\t\t\t\t\t\t\t\t"<<saveDay.saveObjectArr.GetNode(i)->value->saveChietKhau<<"%"<<endl<<endl;
         outfile<<"Tong Tien:\t\t\t\t\t\t\t\t"<<saveDay.saveObjectArr.GetNode(i)->value->saveTongTien<<endl<<endl;
     }
 
     tongKet=new TongKet(this);
-    tongKet->resize(650,500+ui->hoaDon->rowCount()*20);
+    tongKet->resize(650,600+ui->hoaDon->rowCount()*20);
     tongKet->show();
         //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
     int soHoaDon=saveDay.saveObjectArr.GetSize();

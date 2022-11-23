@@ -43,7 +43,12 @@ class MainWindow : public QMainWindow
     Node<Save>* nodeSave=new Node<Save>;
     Node<KhachHang>* nodeKhachHang=new Node<KhachHang>;
 
+    QString note="";
     int count=0;
+    int chietKhau=0;
+    int mocChietKhau=200000;
+    int diemTieuChuan=500;
+    int giamGia=0;
     int sum=0;
     int sumDay=0;
     float finalsum=0;
@@ -105,7 +110,6 @@ private slots:
     void on_lau2BanList_itemClicked(QListWidgetItem *item);
 
     void on_ngoaiSanBanList_itemClicked(QListWidgetItem *item);
-
 
     void on_chonBanButton_clicked();
 

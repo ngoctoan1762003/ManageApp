@@ -30,7 +30,7 @@ QString changeString(QString in, int sizeNeed){
     }
     return newString;
 }
-void HoaDonWindow::Display(int count, QString maBan, int row, LinkedList<int>*& soLuong, LinkedList<MonHang>*& ten, LinkedList<int>*& tongTien)
+void HoaDonWindow::Display(QString note, int giamGia, int chietKhau, int count, QString maBan, int row, LinkedList<int>*& soLuong, LinkedList<MonHang>*& ten, LinkedList<int>*& tongTien)
 {
 
     QString chiTiet="";
@@ -70,10 +70,17 @@ void HoaDonWindow::Display(int count, QString maBan, int row, LinkedList<int>*& 
 
     chiTiet.append("\n\nThành tiền: \t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(sum)));
+    chiTiet.append("\n\nChiết khấu: \t\t\t\t\t");
+    chiTiet.append(QString::fromStdString(to_string(chietKhau)));
+    chiTiet.append("%");
+    chiTiet.append("\n\nGiảm giá: \t\t\t\t\t");
+    chiTiet.append(QString::fromStdString(to_string(giamGia)));
     chiTiet.append("\n\nPhụ phí\t\t\t\t\t\t");
     chiTiet.append(QString::fromStdString(to_string(0)));
     chiTiet.append("\n\nTổng phải trả\t\t\t\t\t");
-    chiTiet.append(QString::fromStdString(to_string(sum)));
+    chiTiet.append(QString::fromStdString(to_string(sum-sum*chietKhau/100-giamGia)));
+    chiTiet.append("\n\nGhi chú\n");
+    chiTiet.append(note);
     chiTiet.append("\n\n\t\tXin chân thành cảm ơn quý khách\t\t");
     ui->chiTietHoaDon->setText(chiTiet);
 

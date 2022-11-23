@@ -150,6 +150,25 @@ void Manager::loadTaiKhoan(){
     }
     infile.close();
 }
+void Manager::loadMaGiamGia(){
+    ifstream infile("./MaGiamGia.txt", std::ios::in);
+    int size;
+    string ma;
+    infile>>size;
+    for(int i=0; i<size; i++){
+        addMa=new QString;
+        infile>>ma;
+        *addMa=QString::fromStdString(ma);
+
+        addNodeMa=new Node<QString>;
+        addNodeMa->CreateNode();
+        addNodeMa->value=new QString;
+        *addNodeMa->value=*addMa;
+
+        maGiamGia.AddTail(addNodeMa);
+    }
+    infile.close();
+}
 void Manager::addMonHangToArr(MonHang* mh){
     size++;
     addNodeMonHang=new Node<MonHang>;
@@ -180,4 +199,5 @@ Ban* Manager::GetBan(int ma){
     }
     return NULL;
 }
+
 

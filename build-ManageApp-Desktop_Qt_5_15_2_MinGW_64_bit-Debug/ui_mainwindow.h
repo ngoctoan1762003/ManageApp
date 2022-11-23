@@ -14,7 +14,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QColumnView>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -49,9 +48,7 @@ public:
     QColumnView *columnDisplayView;
     QColumnView *columnPaymentView;
     QLabel *label_7;
-    QComboBox *comboBox;
     QLabel *label_8;
-    QLabel *label_9;
     QLabel *label_10;
     QColumnView *columnView_6;
     QLabel *label_11;
@@ -159,17 +156,9 @@ public:
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(30, 550, 231, 31));
-        comboBox = new QComboBox(centralwidget);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(270, 650, 191, 31));
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(940, 70, 37, 21));
-        label_9 = new QLabel(centralwidget);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(30, 660, 221, 16));
         label_10 = new QLabel(centralwidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(80, 180, 271, 31));
@@ -205,7 +194,7 @@ public:
         taoMoiButton->setGeometry(QRect(581, 753, 161, 91));
         label_16 = new QLabel(centralwidget);
         label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setGeometry(QRect(30, 700, 221, 16));
+        label_16->setGeometry(QRect(30, 660, 221, 16));
         label_17 = new QLabel(centralwidget);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(30, 600, 231, 31));
@@ -314,7 +303,7 @@ public:
         voucherLine->setGeometry(QRect(270, 600, 191, 31));
         noteLine = new QLineEdit(centralwidget);
         noteLine->setObjectName(QString::fromUtf8("noteLine"));
-        noteLine->setGeometry(QRect(270, 710, 191, 101));
+        noteLine->setGeometry(QRect(270, 650, 191, 101));
         MainWindow->setCentralWidget(centralwidget);
         columnChooseView->raise();
         columnView_6->raise();
@@ -327,9 +316,7 @@ public:
         columnDisplayView->raise();
         columnPaymentView->raise();
         label_7->raise();
-        comboBox->raise();
         label_8->raise();
-        label_9->raise();
         label_10->raise();
         label_11->raise();
         tongTienLabel->raise();
@@ -401,11 +388,7 @@ public:
         pushButtonFood->setText(QCoreApplication::translate("MainWindow", "\304\220\341\273\223 \304\203n", nullptr));
         pushButtonDrink->setText(QCoreApplication::translate("MainWindow", "Tr\303\240", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "T\303\252n kh\303\241ch h\303\240ng", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Ti\341\273\201n m\341\272\267t", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Th\341\272\273 t\303\255n d\341\273\245ng", nullptr));
-
         label_8->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "Thanh to\303\241n", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "L\341\272\247u 2", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "T\341\273\225ng th\303\240nh ti\341\273\201n", nullptr));
         tongTienLabel->setText(QCoreApplication::translate("MainWindow", "0", nullptr));

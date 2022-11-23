@@ -1,6 +1,7 @@
 #ifndef KHACHHANG_H
 #define KHACHHANG_H
 
+#include "linkedlist.h"
 #include <QString>
 
 class KhachHang
@@ -11,6 +12,7 @@ private:
     int diemTichLuy;
     int tongSoHD;
     int tongTien;
+    LinkedList<QString> maDaDung;
 public:
     KhachHang();
     void setMa(int newMa);
@@ -23,6 +25,7 @@ public:
     void addTongTien(int);
     int getTongHD();
     int getTongTien();
+    bool checkMa(QString);
 };
 
 #endif // KHACHHANG_H

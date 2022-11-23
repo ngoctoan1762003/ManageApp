@@ -40,3 +40,16 @@ int KhachHang::getTongHD(){
 int KhachHang::getTongTien(){
     return tongTien;
 }
+bool KhachHang::checkMa(QString st){
+    for(int i=0; i<maDaDung.GetSize(); i++){
+        if(st==maDaDung.GetNode(i)->value) return false;
+    }
+    QString* addMaDaDung=new QString;
+    *addMaDaDung=st;
+    Node<QString>* addNodeMa= new Node<QString>;
+    addNodeMa->CreateNode();
+    addNodeMa->value=new QString;
+    *addNodeMa->value=*addMaDaDung;
+    maDaDung.AddTail(addNodeMa);
+    return true;
+}

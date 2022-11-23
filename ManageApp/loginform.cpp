@@ -19,20 +19,27 @@ LogInForm::~LogInForm()
 
 void LogInForm::on_confirmButton_clicked()
 {
-    for(int i=0; i<manager.employer.GetSize(); i++){
-        if(ui->taiKhoanLine->text()==manager.employer.GetNode(i)->value->getTaiKhoan()){
+    int i;
+    bool isValid=false;
+    for(i=0; i<manager.employer.GetSize(); i++){
+        if(ui->taiKhoanLine->text()==manager.employer.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employer.GetNode(i)->value->getMatKhau()){
             MainWindow* w = new MainWindow;
             w->resize(1800,950);
             w->show();
+            isValid=true;
             this->close();
         }
-        if(ui->taiKhoanLine->text()==manager.employee.GetNode(i)->value->getTaiKhoan()){
+    }
+    for(i=0; i<manager.employee.GetSize(); i++){
+        if(ui->taiKhoanLine->text()==manager.employee.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employee.GetNode(i)->value->getMatKhau()){
             MainWindow* w = new MainWindow;
             w->resize(1800,950);
             w->show();
             w->setPermit(1);
+            isValid=true;
             this->close();
         }
     }
+    if(isValid==false) QMessageBox::about(this, "Lỗi", "Tài khoản hoặc mật khẩu sai");
 }
 
