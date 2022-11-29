@@ -1,7 +1,7 @@
 #include "loginform.h"
+#include "qdebug.h"
 #include "ui_loginform.h"
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
 LogInForm::LogInForm(QWidget *parent) :
     QMainWindow(parent),
@@ -22,20 +22,23 @@ void LogInForm::on_confirmButton_clicked()
     int i;
     bool isValid=false;
     for(i=0; i<manager.employer.GetSize(); i++){
-        if(ui->taiKhoanLine->text()==manager.employer.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employer.GetNode(i)->value->getMatKhau()){
+        if(manager.employer.GetNode(i)->value->check(ui->taiKhoanLine->text(),ui->matKhauLine->text())){
+        //if(ui->taiKhoanLine->text()==manager.employer.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employer.GetNode(i)->value->getMatKhau()){
             MainWindow* w = new MainWindow;
             w->resize(1800,950);
             w->show();
+            w->setPermit(manager.employer.GetNode(i)->value->getRole());
             isValid=true;
             this->close();
         }
     }
     for(i=0; i<manager.employee.GetSize(); i++){
-        if(ui->taiKhoanLine->text()==manager.employee.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employee.GetNode(i)->value->getMatKhau()){
+        if(manager.employee.GetNode(i)->value->check(ui->taiKhoanLine->text(),ui->matKhauLine->text())){
+        //if(ui->taiKhoanLine->text()==manager.employee.GetNode(i)->value->getTaiKhoan() && ui->matKhauLine->text()==manager.employee.GetNode(i)->value->getMatKhau()){
             MainWindow* w = new MainWindow;
             w->resize(1800,950);
             w->show();
-            w->setPermit(1);
+            w->setPermit(manager.employee.GetNode(i)->value->getRole());
             isValid=true;
             this->close();
         }

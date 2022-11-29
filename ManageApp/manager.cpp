@@ -72,6 +72,45 @@ void Manager::saveBan(){
     }
     outfile.close();
 }
+void Manager::saveTaiKhoan(){
+    ofstream outfile("./TaiKhoanQLy.txt", std::ios::ate);
+    outfile<<employer.GetSize();
+    outfile<<endl;
+    for(int i=0; i<employer.GetSize(); i++){
+        Employer* temp = employer.GetNode(i)->value;
+        outfile<<temp->getTaiKhoan().toStdString();
+        outfile<<endl;
+        outfile<<temp->getMatKhau().toStdString();
+        outfile<<endl;
+        outfile<<temp->getTen().toStdString();
+        outfile<<endl;
+        outfile<<std::to_string(temp->getTuoi());
+        outfile<<endl;
+        outfile<<temp->getGioiTinh().toStdString();
+        outfile<<endl;
+    }
+    outfile.close();
+
+    outfile.open("./TaiKhoanNhanVien.txt", std::ios::ate);
+    outfile<<employee.GetSize();
+    outfile<<endl;
+    for(int i=0; i<employee.GetSize(); i++){
+        Employee* temp = employee.GetNode(i)->value;
+        outfile<<temp->getTaiKhoan().toStdString();
+        outfile<<endl;
+        outfile<<temp->getMatKhau().toStdString();
+        outfile<<endl;
+        outfile<<temp->getTen().toStdString();
+        outfile<<endl;
+        outfile<<std::to_string(temp->getTuoi());
+        outfile<<endl;
+        outfile<<temp->getGioiTinh().toStdString();
+        outfile<<endl;
+        outfile<<temp->getNgayVaoLam().toStdString();
+        outfile<<endl;
+    }
+    outfile.close();
+}
 void Manager::saveKhachHang(){
     ofstream outfile("./KhachHangInput.txt", std::ios::ate);
     outfile<<client.GetSize();
@@ -116,34 +155,56 @@ void Manager::loadTaiKhoan(){
     int size;
     string tk;
     string mk;
+    string ten;
+    int tuoi;
+    string gioiTinh;
+    string ngayVaoLam;
     infile>>size;
+
+    //Load employer account
     for(int i=0; i<size; i++){
-        addTaiKhoan=new TaiKhoan;
+        Employer *addTaiKhoan=new Employer;
         infile>>tk;
         addTaiKhoan->setTaiKhoan(QString::fromStdString(tk));
         infile>>mk;
         addTaiKhoan->setMatKhau(QString::fromStdString(mk));
+        infile>>ten;
+        addTaiKhoan->setTen(QString::fromStdString(ten));
+        infile>>tuoi;
+        addTaiKhoan->setTuoi(tuoi);
+        infile>>gioiTinh;
+        addTaiKhoan->setGioiTinh(QString::fromStdString(gioiTinh));
 
-        addNodeTaiKhoan=new Node<TaiKhoan>;
+        Node<Employer> *addNodeTaiKhoan=new Node<Employer>;
         addNodeTaiKhoan->CreateNode();
-        addNodeTaiKhoan->value=new TaiKhoan;
+        addNodeTaiKhoan->value=new Employer;
         *addNodeTaiKhoan->value=*addTaiKhoan;
 
         employer.AddTail(addNodeTaiKhoan);
     }
     infile.close();
+
+    //Load employee account
     infile.open("./TaiKhoanNhanVien.txt", std::ios::in);
     infile>>size;
     for(int i=0; i<size; i++){
-        addTaiKhoan=new TaiKhoan;
+        Employee *addTaiKhoan=new Employee;
         infile>>tk;
         addTaiKhoan->setTaiKhoan(QString::fromStdString(tk));
         infile>>mk;
         addTaiKhoan->setMatKhau(QString::fromStdString(mk));
+        infile>>ten;
+        addTaiKhoan->setTen(QString::fromStdString(ten));
+        infile>>tuoi;
+        addTaiKhoan->setTuoi(tuoi);
+        infile>>gioiTinh;
+        addTaiKhoan->setGioiTinh(QString::fromStdString(gioiTinh));
+        infile>>ngayVaoLam;
+        addTaiKhoan->setNgayVaoLam(QString::fromStdString(ngayVaoLam));
 
-        addNodeTaiKhoan=new Node<TaiKhoan>;
+        Node<Employee> *addNodeTaiKhoan=new Node<Employee>;
         addNodeTaiKhoan->CreateNode();
-        addNodeTaiKhoan->value=new TaiKhoan;
+        addNodeTaiKhoan->value=new Employee;
         *addNodeTaiKhoan->value=*addTaiKhoan;
 
         employee.AddTail(addNodeTaiKhoan);
@@ -199,5 +260,6 @@ Ban* Manager::GetBan(int ma){
     }
     return NULL;
 }
+
 
 

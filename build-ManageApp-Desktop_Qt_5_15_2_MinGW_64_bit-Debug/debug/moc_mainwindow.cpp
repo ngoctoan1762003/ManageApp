@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[40];
-    char stringdata0[803];
+    QByteArrayData data[42];
+    char stringdata0[813];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,34 +44,36 @@ QT_MOC_LITERAL(8, 141, 8), // "UpdateMH"
 QT_MOC_LITERAL(9, 150, 9), // "UpdateBan"
 QT_MOC_LITERAL(10, 160, 25), // "on_pushButtonFood_clicked"
 QT_MOC_LITERAL(11, 186, 26), // "on_pushButtonDrink_clicked"
-QT_MOC_LITERAL(12, 213, 21), // "on_editButton_clicked"
-QT_MOC_LITERAL(13, 235, 23), // "on_reviewButton_clicked"
-QT_MOC_LITERAL(14, 259, 29), // "on_pushButtonGasDrink_clicked"
-QT_MOC_LITERAL(15, 289, 27), // "on_pushButtonCoffee_clicked"
-QT_MOC_LITERAL(16, 317, 22), // "on_traList_itemClicked"
-QT_MOC_LITERAL(17, 340, 16), // "QListWidgetItem*"
-QT_MOC_LITERAL(18, 357, 4), // "item"
-QT_MOC_LITERAL(19, 362, 27), // "on_nuocNgotList_itemClicked"
-QT_MOC_LITERAL(20, 390, 24), // "on_caPheList_itemClicked"
-QT_MOC_LITERAL(21, 415, 23), // "on_doAnList_itemClicked"
-QT_MOC_LITERAL(22, 439, 30), // "on_banTrongNhaList_itemClicked"
-QT_MOC_LITERAL(23, 470, 26), // "on_lau2BanList_itemClicked"
-QT_MOC_LITERAL(24, 497, 30), // "on_ngoaiSanBanList_itemClicked"
-QT_MOC_LITERAL(25, 528, 24), // "on_chonBanButton_clicked"
-QT_MOC_LITERAL(26, 553, 27), // "on_huyChonBanButton_clicked"
-QT_MOC_LITERAL(27, 581, 23), // "on_traBanButton_clicked"
-QT_MOC_LITERAL(28, 605, 27), // "on_action_ng_xu_t_triggered"
-QT_MOC_LITERAL(29, 633, 22), // "on_actionB_n_triggered"
-QT_MOC_LITERAL(30, 656, 27), // "on_actionM_t_h_ng_triggered"
-QT_MOC_LITERAL(31, 684, 28), // "on_actionT_i_kho_n_triggered"
-QT_MOC_LITERAL(32, 713, 13), // "deleteMonHang"
-QT_MOC_LITERAL(33, 727, 6), // "string"
-QT_MOC_LITERAL(34, 734, 10), // "addMonHang"
-QT_MOC_LITERAL(35, 745, 8), // "MonHang*"
-QT_MOC_LITERAL(36, 754, 11), // "editMonHang"
-QT_MOC_LITERAL(37, 766, 9), // "setPermit"
-QT_MOC_LITERAL(38, 776, 11), // "AddBanToArr"
-QT_MOC_LITERAL(39, 788, 14) // "DeleteBanToArr"
+QT_MOC_LITERAL(12, 213, 23), // "on_reviewButton_clicked"
+QT_MOC_LITERAL(13, 237, 29), // "on_pushButtonGasDrink_clicked"
+QT_MOC_LITERAL(14, 267, 27), // "on_pushButtonCoffee_clicked"
+QT_MOC_LITERAL(15, 295, 22), // "on_traList_itemClicked"
+QT_MOC_LITERAL(16, 318, 16), // "QListWidgetItem*"
+QT_MOC_LITERAL(17, 335, 4), // "item"
+QT_MOC_LITERAL(18, 340, 27), // "on_nuocNgotList_itemClicked"
+QT_MOC_LITERAL(19, 368, 24), // "on_caPheList_itemClicked"
+QT_MOC_LITERAL(20, 393, 23), // "on_doAnList_itemClicked"
+QT_MOC_LITERAL(21, 417, 30), // "on_banTrongNhaList_itemClicked"
+QT_MOC_LITERAL(22, 448, 26), // "on_lau2BanList_itemClicked"
+QT_MOC_LITERAL(23, 475, 30), // "on_ngoaiSanBanList_itemClicked"
+QT_MOC_LITERAL(24, 506, 24), // "on_chonBanButton_clicked"
+QT_MOC_LITERAL(25, 531, 27), // "on_huyChonBanButton_clicked"
+QT_MOC_LITERAL(26, 559, 23), // "on_traBanButton_clicked"
+QT_MOC_LITERAL(27, 583, 27), // "on_action_ng_xu_t_triggered"
+QT_MOC_LITERAL(28, 611, 22), // "on_actionB_n_triggered"
+QT_MOC_LITERAL(29, 634, 27), // "on_actionM_t_h_ng_triggered"
+QT_MOC_LITERAL(30, 662, 28), // "on_actionT_i_kho_n_triggered"
+QT_MOC_LITERAL(31, 691, 13), // "deleteMonHang"
+QT_MOC_LITERAL(32, 705, 6), // "string"
+QT_MOC_LITERAL(33, 712, 10), // "addMonHang"
+QT_MOC_LITERAL(34, 723, 8), // "MonHang*"
+QT_MOC_LITERAL(35, 732, 11), // "editMonHang"
+QT_MOC_LITERAL(36, 744, 9), // "setPermit"
+QT_MOC_LITERAL(37, 754, 11), // "AddBanToArr"
+QT_MOC_LITERAL(38, 766, 14), // "DeleteBanToArr"
+QT_MOC_LITERAL(39, 781, 16), // "AddTaiKhoanToArr"
+QT_MOC_LITERAL(40, 798, 7), // "Person*"
+QT_MOC_LITERAL(41, 806, 6) // "person"
 
     },
     "MainWindow\0on_addButton_clicked\0\0"
@@ -81,7 +83,7 @@ QT_MOC_LITERAL(39, 788, 14) // "DeleteBanToArr"
     "on_taoMoiButton_clicked\0Update\0UpdateMH\0"
     "UpdateBan\0on_pushButtonFood_clicked\0"
     "on_pushButtonDrink_clicked\0"
-    "on_editButton_clicked\0on_reviewButton_clicked\0"
+    "on_reviewButton_clicked\0"
     "on_pushButtonGasDrink_clicked\0"
     "on_pushButtonCoffee_clicked\0"
     "on_traList_itemClicked\0QListWidgetItem*\0"
@@ -99,7 +101,8 @@ QT_MOC_LITERAL(39, 788, 14) // "DeleteBanToArr"
     "on_actionM_t_h_ng_triggered\0"
     "on_actionT_i_kho_n_triggered\0deleteMonHang\0"
     "string\0addMonHang\0MonHang*\0editMonHang\0"
-    "setPermit\0AddBanToArr\0DeleteBanToArr"
+    "setPermit\0AddBanToArr\0DeleteBanToArr\0"
+    "AddTaiKhoanToArr\0Person*\0person"
 };
 #undef QT_MOC_LITERAL
 
@@ -130,27 +133,27 @@ static const uint qt_meta_data_MainWindow[] = {
       12,    0,  194,    2, 0x08 /* Private */,
       13,    0,  195,    2, 0x08 /* Private */,
       14,    0,  196,    2, 0x08 /* Private */,
-      15,    0,  197,    2, 0x08 /* Private */,
-      16,    1,  198,    2, 0x08 /* Private */,
-      19,    1,  201,    2, 0x08 /* Private */,
-      20,    1,  204,    2, 0x08 /* Private */,
-      21,    1,  207,    2, 0x08 /* Private */,
-      22,    1,  210,    2, 0x08 /* Private */,
-      23,    1,  213,    2, 0x08 /* Private */,
-      24,    1,  216,    2, 0x08 /* Private */,
+      15,    1,  197,    2, 0x08 /* Private */,
+      18,    1,  200,    2, 0x08 /* Private */,
+      19,    1,  203,    2, 0x08 /* Private */,
+      20,    1,  206,    2, 0x08 /* Private */,
+      21,    1,  209,    2, 0x08 /* Private */,
+      22,    1,  212,    2, 0x08 /* Private */,
+      23,    1,  215,    2, 0x08 /* Private */,
+      24,    0,  218,    2, 0x08 /* Private */,
       25,    0,  219,    2, 0x08 /* Private */,
       26,    0,  220,    2, 0x08 /* Private */,
       27,    0,  221,    2, 0x08 /* Private */,
       28,    0,  222,    2, 0x08 /* Private */,
       29,    0,  223,    2, 0x08 /* Private */,
       30,    0,  224,    2, 0x08 /* Private */,
-      31,    0,  225,    2, 0x08 /* Private */,
-      32,    1,  226,    2, 0x0a /* Public */,
-      34,    1,  229,    2, 0x0a /* Public */,
-      36,    2,  232,    2, 0x0a /* Public */,
-      37,    1,  237,    2, 0x0a /* Public */,
-      38,    2,  240,    2, 0x0a /* Public */,
-      39,    1,  245,    2, 0x0a /* Public */,
+      31,    1,  225,    2, 0x0a /* Public */,
+      33,    1,  228,    2, 0x0a /* Public */,
+      35,    2,  231,    2, 0x0a /* Public */,
+      36,    1,  236,    2, 0x0a /* Public */,
+      37,    2,  239,    2, 0x0a /* Public */,
+      38,    1,  244,    2, 0x0a /* Public */,
+      39,    1,  247,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -166,27 +169,27 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void, 0x80000000 | 17,   18,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
+    QMetaType::Void, 0x80000000 | 16,   17,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 33,    2,
-    QMetaType::Void, 0x80000000 | 35,    2,
-    QMetaType::Void, QMetaType::Int, 0x80000000 | 35,    2,    2,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 32,    2,
+    QMetaType::Void, 0x80000000 | 34,    2,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 34,    2,    2,
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 40,   41,
 
        0        // eod
 };
@@ -207,30 +210,30 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->UpdateBan(); break;
         case 8: _t->on_pushButtonFood_clicked(); break;
         case 9: _t->on_pushButtonDrink_clicked(); break;
-        case 10: _t->on_editButton_clicked(); break;
-        case 11: _t->on_reviewButton_clicked(); break;
-        case 12: _t->on_pushButtonGasDrink_clicked(); break;
-        case 13: _t->on_pushButtonCoffee_clicked(); break;
-        case 14: _t->on_traList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 15: _t->on_nuocNgotList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 16: _t->on_caPheList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 17: _t->on_doAnList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 18: _t->on_banTrongNhaList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 19: _t->on_lau2BanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 20: _t->on_ngoaiSanBanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
-        case 21: _t->on_chonBanButton_clicked(); break;
-        case 22: _t->on_huyChonBanButton_clicked(); break;
-        case 23: _t->on_traBanButton_clicked(); break;
-        case 24: _t->on_action_ng_xu_t_triggered(); break;
-        case 25: _t->on_actionB_n_triggered(); break;
-        case 26: _t->on_actionM_t_h_ng_triggered(); break;
-        case 27: _t->on_actionT_i_kho_n_triggered(); break;
-        case 28: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
-        case 29: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
-        case 30: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
-        case 31: _t->setPermit((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 32: _t->AddBanToArr((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 33: _t->DeleteBanToArr((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->on_reviewButton_clicked(); break;
+        case 11: _t->on_pushButtonGasDrink_clicked(); break;
+        case 12: _t->on_pushButtonCoffee_clicked(); break;
+        case 13: _t->on_traList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 14: _t->on_nuocNgotList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 15: _t->on_caPheList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 16: _t->on_doAnList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 17: _t->on_banTrongNhaList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 18: _t->on_lau2BanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 19: _t->on_ngoaiSanBanList_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 20: _t->on_chonBanButton_clicked(); break;
+        case 21: _t->on_huyChonBanButton_clicked(); break;
+        case 22: _t->on_traBanButton_clicked(); break;
+        case 23: _t->on_action_ng_xu_t_triggered(); break;
+        case 24: _t->on_actionB_n_triggered(); break;
+        case 25: _t->on_actionM_t_h_ng_triggered(); break;
+        case 26: _t->on_actionT_i_kho_n_triggered(); break;
+        case 27: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
+        case 28: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
+        case 29: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
+        case 30: _t->setPermit((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 31: _t->AddBanToArr((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 32: _t->DeleteBanToArr((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: _t->AddTaiKhoanToArr((*reinterpret_cast< Person*(*)>(_a[1]))); break;
         default: ;
         }
     }

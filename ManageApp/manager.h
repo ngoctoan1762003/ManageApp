@@ -5,8 +5,9 @@
 #include "node.h"
 #include "linkedlist.h"
 #include "ban.h"
-#include "taikhoan.h"
 #include "khachhang.h"
+#include "employer.h"
+#include "employee.h"
 #include <fstream>
 
 class Manager
@@ -14,8 +15,8 @@ class Manager
     int size;
     int SLBan;
 public:
-    LinkedList<TaiKhoan> employer;
-    LinkedList<TaiKhoan> employee;
+    LinkedList<Employer> employer;
+    LinkedList<Employee> employee;
 
     LinkedList<KhachHang> client;
 
@@ -30,8 +31,6 @@ public:
     Node<MonHang>* addNodeMonHang;
     MonHang* addMonHang;
     Node<Ban>* addNodeBan;
-    TaiKhoan* addTaiKhoan;
-    Node<TaiKhoan>* addNodeTaiKhoan;
     Ban* addBan;
     Node<SaveDay>* addSaveDay=new Node<SaveDay>;
 
@@ -43,6 +42,7 @@ public:
     void saveMonHang();
     void saveBan();
     void saveKhachHang();
+    void saveTaiKhoan();
     void addMonHangToArr(MonHang*);
     MonHang* GetMonHang(string name);
     Ban* GetBan(int ma);

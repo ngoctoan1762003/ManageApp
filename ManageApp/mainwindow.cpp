@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     manager.loadMonHang();
     manager.loadBan();
     manager.loadMaGiamGia();
+    manager.loadTaiKhoan();
 
     ui->minusButton->hide();
     ui->addButton->hide();
@@ -383,18 +384,6 @@ void MainWindow::on_pushButtonDrink_clicked()
     ui->stackedMenu->setCurrentIndex(0);
 }
 
-
-void MainWindow::on_editButton_clicked()
-{
-    editForm = new EditForm(this);
-    QObject::connect(editForm, SIGNAL(newMonHang(MonHang*)), this, SLOT(addMonHang(MonHang*)));
-    QObject::connect(editForm, SIGNAL(deleteMonHang(string)), this, SLOT(deleteMonHang(string)));
-    QObject::connect(editForm, SIGNAL(editMonHang(int,MonHang*)), this, SLOT(editMonHang(int,MonHang*)));
-    editForm->show();
-    LinkedList<MonHang>* temp = &manager.monHang;
-    editForm->Display(manager.monHang.GetSize(), temp);
-}
-
 void MainWindow::addMonHang(MonHang* mh){
     mh->setMa(manager.monHang.GetSize()+1);
     manager.addMonHangToArr(mh);
@@ -582,11 +571,16 @@ void MainWindow::on_actionM_t_h_ng_triggered()
 
 void MainWindow::on_actionT_i_kho_n_triggered()
 {
-
+    taiKhoanForm=new TaiKhoanForm(this);
+    QObject::connect(taiKhoanForm, SIGNAL(AddTaiKhoanToArr(Person*)), this, SLOT(AddTaiKhoanToArr(Person*)));
+    taiKhoanForm->show();
+    LinkedList<Employer> *tempEmployer=&manager.employer;
+    LinkedList<Employee> *tempEmployee=&manager.employee;
+    taiKhoanForm->Display(tempEmployer, tempEmployee);
 }
 
-void MainWindow::setPermit(int i){
-    if(i==1){
+void MainWindow::setPermit(QString i){
+    if(i=="Employee"){
         ui->actionB_n->setEnabled(false);
         ui->actionM_t_h_ng->setEnabled(false);
         ui->actionT_i_kho_n->setEnabled(false);
@@ -617,3 +611,40 @@ void MainWindow::DeleteBanToArr(int ma){
     manager.saveBan();
 }
 
+void MainWindow::AddTaiKhoanToArr(Person *person){
+    if(person->getRole()=="Employer"){
+        Employer *employer=new Employer;
+        employer->setTen(person->getTen());
+        employer->setTuoi(person->getTuoi());
+        employer->setGioiTinh(person->getGioiTinh());
+        employer->setTaiKhoan(person->getTaiKhoan());
+        employer->setMatKhau(person->getMatKhau());
+
+        Node<Employer> *nodeEmployer=new Node<Employer>;
+        nodeEmployer->CreateNode();
+        nodeEmployer->value=new Employer;
+        nodeEmployer->value=employer;
+
+        manager.employer.AddTail(nodeEmployer);
+    }
+    else{
+        Employee *employee=new Employee;
+        employee->setTen(person->getTen());
+        employee->setTuoi(person->getTuoi());
+        employee->setGioiTinh(person->getGioiTinh());
+        employee->setTaiKhoan(person->getTaiKhoan());
+        employee->setMatKhau(person->getMatKhau());
+        QDateTime date = QDateTime::currentDateTime();
+        QString formattedTime = date.toString("dd/MM/yyyy");
+        employee->setNgayVaoLam(formattedTime);
+
+        Node<Employee> *nodeEmployee=new Node<Employee>;
+        nodeEmployee->CreateNode();
+        nodeEmployee->value=new Employee;
+        nodeEmployee->value=employee;
+
+        manager.employee.AddTail(nodeEmployee);
+    }
+    manager.saveTaiKhoan();
+    qDebug()<<"oke";
+}

@@ -18,6 +18,7 @@
 #include "editform.h"
 #include "review.h"
 #include "loginform.h"
+#include "taikhoanform.h"
 #include "editbanform.h"
 
 QT_BEGIN_NAMESPACE
@@ -89,8 +90,6 @@ private slots:
 
     void on_pushButtonDrink_clicked();
 
-    void on_editButton_clicked();
-
     void on_reviewButton_clicked();
 
     void on_pushButtonGasDrink_clicked();
@@ -133,11 +132,13 @@ public slots:
 
     void editMonHang(int,MonHang*);
 
-    void setPermit(int);
+    void setPermit(QString);
 
     void AddBanToArr(int, QString);
 
     void DeleteBanToArr(int);
+
+    void AddTaiKhoanToArr(Person *person);
 
 private:
     Ui::MainWindow *ui;
@@ -145,6 +146,7 @@ private:
     TongKet *tongKet;
     EditForm *editForm;
     EditBanForm *editBanForm;
+    TaiKhoanForm *taiKhoanForm;
 };
 
 #endif // MAINWINDOW_H

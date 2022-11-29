@@ -1,4 +1,4 @@
-13
+14
 1
 TraSua
 20000
@@ -64,3 +64,8 @@ CaPheSua
 18000
 Ly
 CaPhe
+14
+TraVai
+18000
+Ly
+Tra
