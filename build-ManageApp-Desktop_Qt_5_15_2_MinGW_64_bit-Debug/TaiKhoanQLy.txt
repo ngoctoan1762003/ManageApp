@@ -1,4 +1,4 @@
-3
+2
 toan
 176
 Toàn
@@ -8,9 +8,4 @@ quan
 123
 Quân
 19
-Nam
-thien
-222
-Thiện
-22
 Nam

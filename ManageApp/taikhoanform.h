@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QListWidget>
+#include <QMessageBox>
 #include "linkedlist.h"
 #include "employee.h"
 #include "employer.h"
@@ -28,9 +29,16 @@ public:
 signals:
     void AddTaiKhoanToArr(Person *person);
 
+    void EditTaiKhoanToArr(QString name, Person *person);
+
+    void DeleteTaiKhoan(QString, QString);
+
 public slots:
 
     void AddTaiKhoan(Person *person);
+
+    void Edit(Person *person);
+
 
 private slots:
     void on_chuButton_clicked();
@@ -44,6 +52,8 @@ private slots:
     void on_addButton_clicked();
 
     void on_editButton_clicked();
+
+    void on_deleteButton_clicked();
 
 private:
     Ui::TaiKhoanForm *ui;

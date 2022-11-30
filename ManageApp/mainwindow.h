@@ -140,6 +140,10 @@ public slots:
 
     void AddTaiKhoanToArr(Person *person);
 
+    void EditTaiKhoanToArr(QString, Person *person);
+
+    void DeleteTaiKhoan(QString, QString);
+
 private:
     Ui::MainWindow *ui;
     HoaDonWindow *hoaDonWindow;

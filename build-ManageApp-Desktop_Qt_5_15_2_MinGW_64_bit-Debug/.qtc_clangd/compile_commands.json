@@ -3546,10 +3546,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_edittaikhoan.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addtaikhoanform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_edittaikhoan.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addtaikhoanform.h"
 },
 {
     "arguments": [
@@ -3620,10 +3620,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_loginform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addbanform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_loginform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addbanform.h"
 },
 {
     "arguments": [
@@ -3694,10 +3694,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_editbanform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_review.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_editbanform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_review.h"
 },
 {
     "arguments": [
@@ -3768,10 +3768,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_resetprop.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_mainwindow.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_resetprop.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_mainwindow.h"
 },
 {
     "arguments": [
@@ -3842,10 +3842,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_taikhoanform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_taikhoanform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addform.h"
 },
 {
     "arguments": [
@@ -4138,10 +4138,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_mainwindow.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_resetprop.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_mainwindow.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_resetprop.h"
 },
 {
     "arguments": [
@@ -4212,10 +4212,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_review.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_taikhoanform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_review.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_taikhoanform.h"
 },
 {
     "arguments": [
@@ -4286,10 +4286,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_editbanform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_editbanform.h"
 },
 {
     "arguments": [
@@ -4360,10 +4360,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addtaikhoanform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_loginform.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addtaikhoanform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_loginform.h"
 },
 {
     "arguments": [
@@ -4434,9 +4434,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_addbanform.h"
+        "D:\\ManageApp\\build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\ui_edittaikhoan.h"
     ],
     "directory": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_addbanform.h"
+    "file": "D:/ManageApp/build-ManageApp-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/ui_edittaikhoan.h"
 }
 ]

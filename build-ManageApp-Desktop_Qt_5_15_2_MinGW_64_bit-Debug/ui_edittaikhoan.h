@@ -11,9 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,15 +29,20 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
+    QLineEdit *ten;
+    QLineEdit *tuoi;
+    QComboBox *gioiTinh;
+    QLineEdit *taiKhoan;
+    QLineEdit *matKhau;
 
     void setupUi(QDialog *EditTaiKhoan)
     {
         if (EditTaiKhoan->objectName().isEmpty())
             EditTaiKhoan->setObjectName(QString::fromUtf8("EditTaiKhoan"));
-        EditTaiKhoan->resize(563, 501);
+        EditTaiKhoan->resize(563, 365);
         buttonBox = new QDialogButtonBox(EditTaiKhoan);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setGeometry(QRect(200, 450, 341, 32));
+        buttonBox->setGeometry(QRect(200, 320, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         label = new QLabel(EditTaiKhoan);
@@ -50,16 +57,33 @@ public:
         label_2->setGeometry(QRect(90, 60, 71, 31));
         label_3 = new QLabel(EditTaiKhoan);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(90, 100, 71, 31));
+        label_3->setGeometry(QRect(90, 109, 71, 31));
         label_4 = new QLabel(EditTaiKhoan);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(90, 140, 71, 31));
+        label_4->setGeometry(QRect(90, 159, 71, 31));
         label_5 = new QLabel(EditTaiKhoan);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(90, 180, 71, 31));
+        label_5->setGeometry(QRect(90, 209, 71, 31));
         label_6 = new QLabel(EditTaiKhoan);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(90, 220, 71, 31));
+        label_6->setGeometry(QRect(90, 260, 71, 31));
+        ten = new QLineEdit(EditTaiKhoan);
+        ten->setObjectName(QString::fromUtf8("ten"));
+        ten->setGeometry(QRect(210, 59, 221, 31));
+        tuoi = new QLineEdit(EditTaiKhoan);
+        tuoi->setObjectName(QString::fromUtf8("tuoi"));
+        tuoi->setGeometry(QRect(210, 109, 221, 31));
+        gioiTinh = new QComboBox(EditTaiKhoan);
+        gioiTinh->addItem(QString());
+        gioiTinh->addItem(QString());
+        gioiTinh->setObjectName(QString::fromUtf8("gioiTinh"));
+        gioiTinh->setGeometry(QRect(210, 160, 221, 31));
+        taiKhoan = new QLineEdit(EditTaiKhoan);
+        taiKhoan->setObjectName(QString::fromUtf8("taiKhoan"));
+        taiKhoan->setGeometry(QRect(210, 210, 221, 31));
+        matKhau = new QLineEdit(EditTaiKhoan);
+        matKhau->setObjectName(QString::fromUtf8("matKhau"));
+        matKhau->setGeometry(QRect(210, 260, 221, 31));
 
         retranslateUi(EditTaiKhoan);
         QObject::connect(buttonBox, SIGNAL(accepted()), EditTaiKhoan, SLOT(accept()));
@@ -77,6 +101,9 @@ public:
         label_4->setText(QCoreApplication::translate("EditTaiKhoan", "Gi\341\273\233i t\303\255nh", nullptr));
         label_5->setText(QCoreApplication::translate("EditTaiKhoan", "T\303\240i kho\341\272\243n", nullptr));
         label_6->setText(QCoreApplication::translate("EditTaiKhoan", "M\341\272\255t kh\341\272\251u", nullptr));
+        gioiTinh->setItemText(0, QCoreApplication::translate("EditTaiKhoan", "Nam", nullptr));
+        gioiTinh->setItemText(1, QCoreApplication::translate("EditTaiKhoan", "N\341\273\257", nullptr));
+
     } // retranslateUi
 
 };

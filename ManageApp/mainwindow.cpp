@@ -54,15 +54,9 @@ void MainWindow::on_addButton_clicked()
         QAbstractItemModel *model = ui->hoaDon->model();
 
         QModelIndex index = model->index(i, 0);
-        qDebug()<<"Vong lap";
-        //qDebug()<<monHangChon->getTen();
         if(index.data().toString()==monHangChon->getTen()){
             addIndex=i;
-            qDebug()<<"index"<<monHangChon->getChiSoTrongHD();
-                        qDebug()<<"index"<<tenHangChon[i].value->getTen();
-
             *soLuong[monHangChon->getChiSoTrongHD()].value+=1;
-            qDebug()<<"so luong: "<<*soLuong[monHangChon->getChiSoTrongHD()].value;
             break;
         }
 
@@ -70,43 +64,33 @@ void MainWindow::on_addButton_clicked()
         if(i==ui->hoaDon->rowCount() && index.data().toString()!=monHangChon->getTen()){
             addIndex=i;
             numberOfRow++;
-            //qDebug()<<"Oke";
 
             monHangChon->setChiSoTrongHD(ui->hoaDon->rowCount());
 
-            //static Node<MonHang> node;
             node= new Node<MonHang>;
             node->CreateNode();
             node->value=new MonHang;
             *node->value=*monHangChon;
 
             tenHangChon.AddTail(node);
-            //delete node;
-                        qDebug()<<"Oke2";
 
 
-            //static Node<int> nodei;
             nodei=new Node<int>;
             nodei->CreateNode();
             nodei->value=new int;
             *nodei->value=1;
             soLuong.AddTail(nodei);
-            //delete nodei;
-            //qDebug()<<"Oke3";
 
 
             nodegia=new Node<int>;
             nodegia->CreateNode();
             nodegia->value=new int;
             *nodegia->value=monHangChon->getGia();
-            qDebug()<<*nodegia->value;
             giaHangChon.AddTail(nodegia);
-            //qDebug()<<*giaHangChon[monHangChon->getChiSoTrongHD()].value;
 
             break;
         }
     }
-    //qDebug()<<"ok";
     ui->hoaDon->setRowCount(numberOfRow);
     QTableWidgetItem *item;
     for(int i=0; i<ui->hoaDon->columnCount(); i++){
@@ -119,11 +103,9 @@ void MainWindow::on_addButton_clicked()
             item->setText(QString::fromStdString(to_string(tong)));
         }
         ui->hoaDon->setItem(addIndex,i,item);
-                //qDebug()<<"done";
     }
     sum+=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
     Update();
-                qDebug()<<"doneadd";
 }
 
 void MainWindow::on_thanhToanButton_clicked()
@@ -222,7 +204,6 @@ void MainWindow::on_thanhToanButton_clicked()
     nodeSave->CreateNode();
     nodeSave->value=new Save;
     *nodeSave->value=saveObject;
-    qDebug()<<nodeSave->value->GetSaveTongTien();
     saveDay.saveObjectArr.AddTail(nodeSave);
 
     sumDay+=finalsum;
@@ -257,13 +238,13 @@ void MainWindow::on_minusButton_clicked()
         QModelIndex index = model->index(i, 0);
         if(index.data().toString()==monHangChon->getTen()){
             minusIndex=i;
-            soLuong[monHangChon->getChiSoTrongHD()].value--;
+            *soLuong[monHangChon->getChiSoTrongHD()].value-=1;
 
-            if(soLuong[monHangChon->getChiSoTrongHD()].value==0){
+            if(*soLuong[monHangChon->getChiSoTrongHD()].value==0){
                 numberOfRow--;
-                //tenHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD());
-                //giaHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD()-1);
-                //soLuong.RemoveAfterIndex(monHangChon->getChiSoTrongHD());
+                tenHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD()-1);
+                giaHangChon.RemoveAfterIndex(monHangChon->getChiSoTrongHD()-1);
+                soLuong.RemoveAfterIndex(monHangChon->getChiSoTrongHD()-1);
             }
 
             break;
@@ -278,13 +259,13 @@ void MainWindow::on_minusButton_clicked()
                 item= new QTableWidgetItem;
                 if(i==0) item->setText(tenHangChon[j].value->getTen());
                 if(i==1) item->setText(QString::fromStdString(to_string(*soLuong[j].value)));
-                //if(i==2) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value)));
-                //if(i==3) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value*(*soLuong[j].value))));
+                if(i==2) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value)));
+                if(i==3) item->setText(QString::fromStdString(to_string(*giaHangChon[j].value*(*soLuong[j].value))));
                 ui->hoaDon->setItem(j,i,item);
             }
         }
 
-        //sum-=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
+        sum-=*giaHangChon[monHangChon->getChiSoTrongHD()].value;
         Update();
     }
 }
@@ -310,7 +291,6 @@ void MainWindow::on_finishDayButton_clicked()
     for(int i=0; i<saveDay.saveObjectArr.GetSize(); i++){
         outfile<<"Hóa Đơn Thứ "<<i+1<<endl;
         outfile<<"Số Lượng Hàng: "<<saveDay.saveObjectArr[i].value->GetSaveSoLuongHang()<<endl;
-        //qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang;
 
         outfile<<"Ten\t\t\t\t";
         outfile<<"SL\t";
@@ -320,8 +300,6 @@ void MainWindow::on_finishDayButton_clicked()
         outfile<<endl;
 
         for(int j=0; j<saveDay.saveObjectArr.GetNode(i)->value->saveSoLuongHang; j++){
-            //qDebug()<<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen();
-            //qDebug()<<"\t"<<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value;
             outfile<<changeQString(saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getTen(),25).toStdString()<<"\t"
                   <<*saveDay.saveObjectArr.GetNode(i)->value->saveSoLuong.GetNode(j)->value<<"\t"
                  <<saveDay.saveObjectArr.GetNode(i)->value->saveMonHang.GetNode(j)->value->getGia()<<"\t\t"
@@ -337,11 +315,8 @@ void MainWindow::on_finishDayButton_clicked()
     tongKet=new TongKet(this);
     tongKet->resize(650,600+ui->hoaDon->rowCount()*20);
     tongKet->show();
-        //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee1";
     int soHoaDon=saveDay.saveObjectArr.GetSize();
-    //qDebug()<<soHoaDon;
     tongKet->Display(soHoaDon, sumDay);
-    //qDebug()<<"okeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
 
     soNgay++;
     saveDay.saveObjectArr.clear();
@@ -398,8 +373,6 @@ void MainWindow::deleteMonHang(string name){
             break;
         }
     }
-    qDebug()<<QString::fromStdString(name);
-    qDebug()<<index;
     manager.monHang.RemoveAfterIndex(index-1);
     UpdateMH();
     manager.saveMonHang();
@@ -573,6 +546,8 @@ void MainWindow::on_actionT_i_kho_n_triggered()
 {
     taiKhoanForm=new TaiKhoanForm(this);
     QObject::connect(taiKhoanForm, SIGNAL(AddTaiKhoanToArr(Person*)), this, SLOT(AddTaiKhoanToArr(Person*)));
+    QObject::connect(taiKhoanForm, SIGNAL(EditTaiKhoanToArr(QString,Person*)), this, SLOT(EditTaiKhoanToArr(QString,Person*)));
+    QObject::connect(taiKhoanForm, SIGNAL(DeleteTaiKhoan(QString, QString)), this, SLOT(DeleteTaiKhoan(QString, QString)));
     taiKhoanForm->show();
     LinkedList<Employer> *tempEmployer=&manager.employer;
     LinkedList<Employee> *tempEmployee=&manager.employee;
@@ -647,4 +622,54 @@ void MainWindow::AddTaiKhoanToArr(Person *person){
     }
     manager.saveTaiKhoan();
     qDebug()<<"oke";
+}
+
+void MainWindow::EditTaiKhoanToArr(QString name, Person *person){
+    if(person->getRole()=="Employer"){
+        Employer *tempEmployer;
+        for(int i=0; i<manager.employer.GetSize(); i++){
+            if(manager.employer.GetNode(i)->value->getTen()==name){
+                tempEmployer=manager.employer.GetNode(i)->value;
+                break;
+            }
+        }
+        tempEmployer->setTen(person->getTen());
+        tempEmployer->setTuoi(person->getTuoi());
+        tempEmployer->setGioiTinh(person->getGioiTinh());
+        tempEmployer->setTaiKhoan(person->getTaiKhoan());
+        tempEmployer->setMatKhau(person->getMatKhau());
+    }
+    else{
+        Employee *tempEmployee;
+        for(int i=0; i<manager.employee.GetSize(); i++){
+            if(manager.employee.GetNode(i)->value->getTen()==name){
+                tempEmployee=manager.employee.GetNode(i)->value;
+                break;
+            }
+        }
+        tempEmployee->setTen(person->getTen());
+        tempEmployee->setTuoi(person->getTuoi());
+        tempEmployee->setGioiTinh(person->getGioiTinh());
+        tempEmployee->setTaiKhoan(person->getTaiKhoan());
+        tempEmployee->setMatKhau(person->getMatKhau());
+    }
+    manager.saveTaiKhoan();
+}
+
+void MainWindow::DeleteTaiKhoan(QString name, QString role){
+    if(role=="Employer"){
+        for(int i=0; i<manager.employer.GetSize(); i++){
+            if(manager.employer.GetNode(i)->value->getTen()==name){
+                manager.employer.RemoveAfterIndex(i-1);
+            }
+        }
+    }
+    else{
+        for(int i=0; i<manager.employee.GetSize(); i++){
+            if(manager.employee.GetNode(i)->value->getTen()==name){
+                manager.employee.RemoveAfterIndex(i-1);
+            }
+        }
+    }
+    manager.saveTaiKhoan();
 }

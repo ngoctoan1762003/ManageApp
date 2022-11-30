@@ -13,7 +13,7 @@ QString Employer::getThongTin(){
     temp.append("\nTuổi: ");
     temp.append(QString::number(tuoi));
     temp.append("\nGiới tính: ");
-    temp.append(QString::number(tuoi));
+    temp.append(gioiTinh);
     temp.append("\nTài khoản: ");
     temp.append(taiKhoan);
     temp.append("\nMật khẩu: ");
