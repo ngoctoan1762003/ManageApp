@@ -27,7 +27,7 @@ class Ui_ReSetProp
 public:
     QDialogButtonBox *buttonBox;
     QLabel *label_5;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout_2;
     QLabel *tenLabel;
@@ -57,30 +57,30 @@ public:
         font.setPointSize(15);
         label_5->setFont(font);
         label_5->setAlignment(Qt::AlignCenter);
-        widget = new QWidget(ReSetProp);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(90, 130, 531, 241));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(ReSetProp);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(90, 130, 531, 241));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        tenLabel = new QLabel(widget);
+        tenLabel = new QLabel(layoutWidget);
         tenLabel->setObjectName(QString::fromUtf8("tenLabel"));
 
         verticalLayout_2->addWidget(tenLabel);
 
-        giaLabel = new QLabel(widget);
+        giaLabel = new QLabel(layoutWidget);
         giaLabel->setObjectName(QString::fromUtf8("giaLabel"));
 
         verticalLayout_2->addWidget(giaLabel);
 
-        donViLabel = new QLabel(widget);
+        donViLabel = new QLabel(layoutWidget);
         donViLabel->setObjectName(QString::fromUtf8("donViLabel"));
 
         verticalLayout_2->addWidget(donViLabel);
 
-        loaiLabel = new QLabel(widget);
+        loaiLabel = new QLabel(layoutWidget);
         loaiLabel->setObjectName(QString::fromUtf8("loaiLabel"));
 
         verticalLayout_2->addWidget(loaiLabel);
@@ -90,17 +90,18 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        tenLine = new QLineEdit(widget);
+        tenLine = new QLineEdit(layoutWidget);
         tenLine->setObjectName(QString::fromUtf8("tenLine"));
 
         verticalLayout->addWidget(tenLine);
 
-        giaLine = new QLineEdit(widget);
+        giaLine = new QLineEdit(layoutWidget);
         giaLine->setObjectName(QString::fromUtf8("giaLine"));
 
         verticalLayout->addWidget(giaLine);
 
-        donViTinhBox = new QComboBox(widget);
+        donViTinhBox = new QComboBox(layoutWidget);
+        donViTinhBox->addItem(QString());
         donViTinhBox->addItem(QString());
         donViTinhBox->addItem(QString());
         donViTinhBox->addItem(QString());
@@ -110,7 +111,7 @@ public:
 
         verticalLayout->addWidget(donViTinhBox);
 
-        loaiHangBox = new QComboBox(widget);
+        loaiHangBox = new QComboBox(layoutWidget);
         loaiHangBox->addItem(QString());
         loaiHangBox->addItem(QString());
         loaiHangBox->addItem(QString());
@@ -143,6 +144,7 @@ public:
         donViTinhBox->setItemText(2, QCoreApplication::translate("ReSetProp", "Lon", nullptr));
         donViTinhBox->setItemText(3, QCoreApplication::translate("ReSetProp", "Xien", nullptr));
         donViTinhBox->setItemText(4, QCoreApplication::translate("ReSetProp", "Dia", nullptr));
+        donViTinhBox->setItemText(5, QCoreApplication::translate("ReSetProp", "Cai", nullptr));
 
         loaiHangBox->setItemText(0, QCoreApplication::translate("ReSetProp", "Tra", nullptr));
         loaiHangBox->setItemText(1, QCoreApplication::translate("ReSetProp", "NuocNgot", nullptr));

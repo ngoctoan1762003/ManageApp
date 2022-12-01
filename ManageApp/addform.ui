@@ -132,6 +132,11 @@
           <string>Dia</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>Cai</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item>

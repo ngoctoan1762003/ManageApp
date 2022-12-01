@@ -50,7 +50,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -125,6 +125,11 @@
         <item>
          <property name="text">
           <string>Dia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cai</string>
          </property>
         </item>
        </widget>

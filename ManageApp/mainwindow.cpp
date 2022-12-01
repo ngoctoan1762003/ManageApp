@@ -181,6 +181,7 @@ void MainWindow::on_thanhToanButton_clicked()
                     }
                     else{
                         QMessageBox::about(this, "Lỗi", "Quý khách đã dùng mã này");
+                        return;
                     }
                 }
             }

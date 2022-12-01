@@ -1,4 +1,4 @@
-15
+16
 1
 TraSua
 20000
@@ -71,6 +71,11 @@ Ly
 Tra
 15
 BanhQuy
-15000
-Dia
+8000
+Cai
+DoAn
+16
+Tiramisu
+25000
+Cai
 DoAn
