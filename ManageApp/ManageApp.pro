@@ -30,6 +30,7 @@ SOURCES += \
     resetprop.cpp \
     review.cpp \
     save.cpp \
+    searchform.cpp \
     taikhoanform.cpp \
     tongket.cpp
 
@@ -56,6 +57,7 @@ HEADERS += \
     resetprop.h \
     review.h \
     save.h \
+    searchform.h \
     taikhoanform.h \
     tongket.h
 
@@ -71,6 +73,7 @@ FORMS += \
     mainwindow.ui \
     resetprop.ui \
     review.ui \
+    searchform.ui \
     taikhoanform.ui \
     tongket.ui
 

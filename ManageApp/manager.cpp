@@ -16,13 +16,11 @@ void Manager::loadMonHang(){
     string donViTinh;
     string loaiHang;
     infile>>size;
-    qDebug()<<size;
     for(int i=0; i<size; i++){
         addMonHang=new MonHang;
         infile>>ma;
         addMonHang->setMa(ma);
         infile>>ten;
-        //QDebug()<<QString::fromStdString(ten);
         addMonHang->setTen(QString::fromStdString(ten));
         infile>>gia;
         addMonHang->setGia(gia);
@@ -128,17 +126,13 @@ void Manager::loadBan(){
     ifstream infile("./BanInput.txt", std::ios::in);
 
     infile>>SLBan;
-    qDebug()<<SLBan;
     int ma;
     string viTri;
-    //qDebug()<<size;
     for(int i=0; i<SLBan; i++){
         addBan=new Ban;
         infile>>ma;
         addBan->setMa(ma);
         infile>>viTri;
-        qDebug()<<QString::fromStdString(viTri);
-        //QDebug()<<QString::fromStdString(ten);
         addBan->setViTri(QString::fromStdString(viTri));
 
         addNodeBan=new Node<Ban>;

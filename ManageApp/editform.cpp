@@ -28,6 +28,7 @@ void EditForm::Display(int soLuong, LinkedList<MonHang> *&mh){
             if(i==3) item->setText(QString::fromStdString(mh->GetNode(addIndex)->value->getLoaiHang()));
             ui->monHangTable->setItem(addIndex,i,item);
         }
+        monHang.AddTail(mh->GetNode(addIndex));
     }
 }
 
@@ -50,11 +51,11 @@ void EditForm::AddMonHangToTable(MonHang* mh){
         if(i==3) item->setText(QString::fromStdString(mh->getLoaiHang()));
         ui->monHangTable->setItem(ui->monHangTable->rowCount()-1,i,item);
     }
-    qDebug()<<"oke";
     emit newMonHang(mh);
 }
 
 void EditForm::EditMonHangToTable(MonHang* mh){
+    emit editMonHang(ui->monHangTable->item(ui->monHangTable->currentRow(), 0)->text(), mh);
     QTableWidgetItem *item;
     for(int i=0; i<ui->monHangTable->columnCount(); i++){
         item= new QTableWidgetItem;
@@ -65,8 +66,6 @@ void EditForm::EditMonHangToTable(MonHang* mh){
         if(i==3) item->setText(QString::fromStdString(mh->getLoaiHang()));
         ui->monHangTable->setItem(ui->monHangTable->currentRow(),i,item);
     }
-    emit editMonHang(ui->monHangTable->currentRow(), mh);
-    qDebug()<<"done";
 }
 
 void EditForm::on_exitButton_clicked()
@@ -82,7 +81,6 @@ void EditForm::on_minusButton_clicked()
 
         QTableWidgetItem *item;
         for(int index=ui->monHangTable->currentRow(); index<ui->monHangTable->rowCount()-1; index++){
-            //qDebug()<<index;
             for(int i=0; i<ui->monHangTable->columnCount(); i++){
                 item= new QTableWidgetItem;
                 item->setText(ui->monHangTable->item(index+1, i)->text());
@@ -103,3 +101,74 @@ void EditForm::on_editButton_clicked()
                        ui->monHangTable->item(ui->monHangTable->currentRow(), 2)->text(),ui->monHangTable->item(ui->monHangTable->currentRow(), 3)->text());
 }
 
+void EditForm::Update(){
+    ui->monHangTable->setRowCount(selected.GetSize());
+    QTableWidgetItem *item;
+    for(int addIndex=0; addIndex<selected.GetSize(); addIndex++){
+        for(int i=0; i<ui->monHangTable->columnCount(); i++){
+            item= new QTableWidgetItem;
+            if(i==0) item->setText(selected.GetNode(addIndex)->value->getTen());
+            if(i==1) item->setText(QString::fromStdString(to_string(selected.GetNode(addIndex)->value->getGia())));
+            if(i==2) item->setText(QString::fromStdString(selected.GetNode(addIndex)->value->getDonViTinh()));
+            if(i==3) item->setText(QString::fromStdString(selected.GetNode(addIndex)->value->getLoaiHang()));
+            ui->monHangTable->setItem(addIndex,i,item);
+        }
+    }
+}
+
+void EditForm::on_findButton_clicked()
+{
+    SearchForm *searchForm=new SearchForm(this);
+    searchForm->show();
+    QObject::connect(searchForm, SIGNAL(Search(QString)), this, SLOT(Search(QString)));
+}
+
+bool EditForm::Compare(QString first, QString second){
+    for(int i=0; i<first.length(); i++){
+        if(first.length()-i<second.length()) return false;
+        if(first.at(i).toLower()==second.at(0).toLower()){
+
+            int k=1;
+            int j=i+1;
+            while(k<second.length()){
+                if(first.at(j).toLower()!=second.at(k).toLower()){
+
+                    break;
+                }
+
+                k++;
+                j++;
+            }
+
+            if(k>=second.length()) return true;
+        }
+    }
+    return false;
+}
+
+void EditForm::Search(QString name){
+    selected.clear();
+
+    if(name=="") {
+        for(int i=0; i<monHang.GetSize(); i++){
+             selected.AddTail(monHang.GetNode(i));
+        }
+    }
+    else {
+        for(int i=0; i<monHang.GetSize(); i++){
+
+            if(Compare(monHang.GetNode(i)->value->getTen(), name)){
+                Node<MonHang> *node=new Node<MonHang>;
+                node->CreateNode();
+                node->value=new MonHang;
+                *node->value=*monHang.GetNode(i)->value;
+                selected.AddTail(node);
+
+            }
+
+        }
+
+    }
+    Update();
+
+}

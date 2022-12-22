@@ -19,6 +19,7 @@ release/person.o
 release/resetprop.o
 release/review.o
 release/save.o
+release/searchform.o
 release/taikhoanform.o
 release/tongket.o
 release/qrc_Resource.o
@@ -33,5 +34,6 @@ release/moc_loginform.o
 release/moc_mainwindow.o
 release/moc_resetprop.o
 release/moc_review.o
+release/moc_searchform.o
 release/moc_taikhoanform.o
 release/moc_tongket.o

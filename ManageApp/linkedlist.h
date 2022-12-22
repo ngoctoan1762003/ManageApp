@@ -90,12 +90,6 @@ public:
         return *node;
     }
     void clear(){
-        /*Node<TValue> *node=new Node<TValue>;
-        while(head!=NULL){
-            node=head;
-            head=head->next;
-            free(node);
-        }*/
         head=new Node<TValue>;
         head=NULL;
     }

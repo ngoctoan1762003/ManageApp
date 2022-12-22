@@ -26,6 +26,7 @@ public:
     QPushButton *editButton;
     QPushButton *exitButton;
     QTableWidget *monHangTable;
+    QPushButton *findButton;
 
     void setupUi(QDialog *EditForm)
     {
@@ -61,6 +62,9 @@ public:
         monHangTable->setAlternatingRowColors(true);
         monHangTable->setSelectionBehavior(QAbstractItemView::SelectRows);
         monHangTable->horizontalHeader()->setDefaultSectionSize(195);
+        findButton = new QPushButton(EditForm);
+        findButton->setObjectName(QString::fromUtf8("findButton"));
+        findButton->setGeometry(QRect(850, 250, 161, 71));
 
         retranslateUi(EditForm);
 
@@ -82,6 +86,7 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("EditForm", "Don vi tinh", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = monHangTable->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("EditForm", "Loai mat hang", nullptr));
+        findButton->setText(QCoreApplication::translate("EditForm", "T\303\254m ki\341\272\277m", nullptr));
     } // retranslateUi
 
 };

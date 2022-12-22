@@ -130,7 +130,7 @@ public slots:
 
     void addMonHang(MonHang*);
 
-    void editMonHang(int,MonHang*);
+    void editMonHang(QString,MonHang*);
 
     void setPermit(QString);
 

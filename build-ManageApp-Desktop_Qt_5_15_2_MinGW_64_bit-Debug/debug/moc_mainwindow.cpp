@@ -190,7 +190,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 32,    2,
     QMetaType::Void, 0x80000000 | 34,    2,
-    QMetaType::Void, QMetaType::Int, 0x80000000 | 34,    2,    2,
+    QMetaType::Void, QMetaType::QString, 0x80000000 | 34,    2,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -236,7 +236,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 26: _t->on_actionT_i_kho_n_triggered(); break;
         case 27: _t->deleteMonHang((*reinterpret_cast< string(*)>(_a[1]))); break;
         case 28: _t->addMonHang((*reinterpret_cast< MonHang*(*)>(_a[1]))); break;
-        case 29: _t->editMonHang((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
+        case 29: _t->editMonHang((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< MonHang*(*)>(_a[2]))); break;
         case 30: _t->setPermit((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 31: _t->AddBanToArr((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
         case 32: _t->DeleteBanToArr((*reinterpret_cast< int(*)>(_a[1]))); break;

@@ -379,8 +379,9 @@ void MainWindow::deleteMonHang(string name){
     manager.saveMonHang();
 }
 
-void MainWindow::editMonHang(int index, MonHang* mh){
-    MonHang* newMH=manager.monHang.GetNode(index)->value;
+void MainWindow::editMonHang(QString name, MonHang* mh){
+    //MonHang* newMH=manager.monHang.GetNode(index)->value;
+    MonHang* newMH=manager.GetMonHang(name.toStdString());
     newMH->setTen(mh->getTen());
     newMH->setGia(mh->getGia());
     newMH->setDonViTinh(mh->getDonViTinh());
@@ -536,7 +537,7 @@ void MainWindow::on_actionM_t_h_ng_triggered()
     editForm = new EditForm(this);
     QObject::connect(editForm, SIGNAL(newMonHang(MonHang*)), this, SLOT(addMonHang(MonHang*)));
     QObject::connect(editForm, SIGNAL(deleteMonHang(string)), this, SLOT(deleteMonHang(string)));
-    QObject::connect(editForm, SIGNAL(editMonHang(int,MonHang*)), this, SLOT(editMonHang(int,MonHang*)));
+    QObject::connect(editForm, SIGNAL(editMonHang(QString,MonHang*)), this, SLOT(editMonHang(QString,MonHang*)));
     editForm->show();
     LinkedList<MonHang>* temp = &manager.monHang;
     editForm->Display(manager.monHang.GetSize(), temp);
@@ -622,7 +623,6 @@ void MainWindow::AddTaiKhoanToArr(Person *person){
         manager.employee.AddTail(nodeEmployee);
     }
     manager.saveTaiKhoan();
-    qDebug()<<"oke";
 }
 
 void MainWindow::EditTaiKhoanToArr(QString name, Person *person){

@@ -56,12 +56,12 @@ Ly
 CaPhe
 12
 CaPheSaiGon
-20000
+18000
 Ly
 CaPhe
 13
 CaPheSua
-18000
+19000
 Ly
 CaPhe
 14
