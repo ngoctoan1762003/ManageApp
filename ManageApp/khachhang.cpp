@@ -42,7 +42,7 @@ int KhachHang::getTongTien(){
 }
 bool KhachHang::checkMa(QString st){
     for(int i=0; i<maDaDung.GetSize(); i++){
-        if(st==maDaDung.GetNode(i)->value) return false;
+        if(st==*maDaDung.GetNode(i)->value) return false;
     }
     QString* addMaDaDung=new QString;
     *addMaDaDung=st;
